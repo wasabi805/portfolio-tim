@@ -3,7 +3,7 @@ import { mq } from '../../../media-queries/mediaQueries';
 
 export const introContainer = css({
     background: "black",
-    height: "65vh",
+    height: "45vh",
     paddingTop: "40vh",
     fontFamily: "MonumentExtended-Regular",
     color: 'white',
