@@ -19,6 +19,6 @@ export const introContainer = css({
     },
 
     [mq.lg]: {
-        padding: "8rem 22rem",
+        padding: "8rem 30rem",
     }
 })

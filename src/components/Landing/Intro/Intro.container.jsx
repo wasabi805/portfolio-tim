@@ -1,9 +1,11 @@
 import React from 'react';
-import Intro from "./Intro"
+import Intro from "./Intro";
 
 const IntroContainer = ()=>{
     return(
-        <Intro/>
+        <>
+            <Intro/>
+        </>
     )
 }
 

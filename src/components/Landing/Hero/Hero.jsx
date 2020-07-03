@@ -10,6 +10,7 @@ import {
 } from "../Home/Home.styles";
 import {ReactComponent as SoundWaveSvg} from "../../../svg/Sound-Wave.svg";
 import {ReactComponent as OptimusSvg} from "../../../svg/iconfinder_Transformers_Autobot_Decepticon_movie_cartoon_game_11_6176941.svg";
+import Samples from "../Samples/Samples";
 
 const Hero = ()=>{
     return(
@@ -28,14 +29,16 @@ const Hero = ()=>{
                         It's Tim
                     </span>
 
-                    <div className={subLineWrapper}>
-                        <span className={subLine02}>
-                            <OptimusSvg />
-                        </span>
-                        <span className={subLine01}>
-                            <p>'UI FrontEnd Developer'</p>
-                        </span>
-                    </div>
+                    <Samples/>
+
+                    {/*<div className={subLineWrapper}>*/}
+                    {/*    <span className={subLine02}>*/}
+                    {/*        <OptimusSvg />*/}
+                    {/*    </span>*/}
+                    {/*    <span className={subLine01}>*/}
+                    {/*        <p>'UI FrontEnd Developer'</p>*/}
+                    {/*    </span>*/}
+                    {/*</div>*/}
 
                 </div>
             </div>

@@ -30,13 +30,15 @@ export const line02 = css({
 
 export const subLineWrapper = css({
     position: 'relative',
-    width: '45px',
-    right: '-529px',
+    width: '92px',
+    top: '202px',
+    right: '-410px',
 
     "& p":{
         position: 'absolute',
-        top: '-15px',
-        left: '54px',
+        fontSize: '28px',
+        top: '-18px',
+        left: '104px',
     }
 });
 
@@ -60,7 +62,7 @@ export const soundWaveContainer= css({
     top: '26%',
     left: '20%',
     right: '20%',
-    opacity: '0.5',
+    opacity: '0.15',
 
     [mq.sm]:{
         // top: "500px",
