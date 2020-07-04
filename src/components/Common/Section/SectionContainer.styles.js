@@ -17,8 +17,8 @@ export const sectionStyle= css({
 
     position: 'relative',
     background: body.section,
-    color: colors.white,
-    paddingTop: "40vh",
     fontFamily: 'MonumentExtended-Regular',
+    color: colors.white,
     padding: '0 8rem',
+    paddingBottom: "35vh",
 });
