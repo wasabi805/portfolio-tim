@@ -1,77 +1,57 @@
-import React from "react";
-import { sectionStyle } from "../../Common/Section/SectionContainer.styles";
+import React from 'react';
+import { sectionStyle } from '../../Common/Section/SectionContainer.styles';
+import { skillsTile , skillWrapper, skillsBannerIMage } from './Skills.styles';
+import {
+    LANGUAGES ,
+    FRAMEWORKS,
+    STATE_MANAGEMENT,
+    TECHNOLOGIES,
+    STYLE_TECH,
+} from '../../../constants/skillsConstants';
+
+import maxHeadroom from '../../../images/max-headroom.png'
+console.log(maxHeadroom, 'maxHeadroom')
 
 const Skills = ()=>{
     return(
         <section id="skills-section" className={ sectionStyle } >
-            <div style={{position: 'relative'}}>
-                <h2 style={{
-                    textAlign: 'right',
-                }}> | Skills |</h2>
-
-                <h4>Stuff</h4>
-
-                <div style={{display: 'flex' , color: 'white'}}>
-                    <div style={{padding: '0 2rem'}}>
-                        Languages
+            <div className={skillWrapper}>
+                <img className={skillsBannerIMage}/>
+                <h2> | Skills |</h2>
+                <div className={skillsTile}>
+                    <p>Languages
                         <ul>
-                            <li>JavaScript</li>
-                            <li>Html</li>
-                            <li>Css</li>
+                            {LANGUAGES.map(lang=><li>{lang}</li>)}
                         </ul>
 
-                        <div>
-                            FrameWorks
+                        <div>FrameWorks
                             <ul>
-                                <li>React</li>
-                                <li>Handlebars</li>
-                                <li>Jest </li>
-                                <li>Enzyme</li>
+                                {FRAMEWORKS.map(fm=><li>{fm}</li>)}
                             </ul>
                         </div>
 
-                        <div>
-                            State Mgmt
+                        <div>State Mgmt
                             <ul>
-                                <li>
-                                    Redux
-                                </li>
-                                <li>
-                                    Thunk
-                                </li>
-                                <li>
-                                    Saga
-                                </li>
+                                {STATE_MANAGEMENT.map(sm=><li>{sm}</li>)}
                             </ul>
                         </div>
-                    </div>
+                    </p>
 
-
-                    <div style={{padding: '0 2rem'}}>
-                        Tech_N'_Tools
+                    <p>Tech_N'_Tools
                         <ul>
-                            <li>JQuery</li>
-                            <li>API</li>
-                            <li>JSON</li>
-                            <li>OOP</li>
+                            {TECHNOLOGIES.map(tech=><li>{tech}</li>)}
                         </ul>
-                    </div>
+                    </p>
 
-                    <div style={{padding: '0 2rem'}}>
-                        Style_N'_Things
+                    <p>Style_N'_Things
                         <ul>
-                            <li>Sass</li>
-                            <li>Emotion</li>
-                            <li>Styled Components</li>
-                            <li>BootStrap</li>
-                            <li>Material UI</li>
+                            {STYLE_TECH.map(st=><li>{st}</li>)}
                         </ul>
-                    </div>
+                    </p>
 
                     <div>
                         Skills Blurb : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
-
                 </div>
             </div>
         </section>

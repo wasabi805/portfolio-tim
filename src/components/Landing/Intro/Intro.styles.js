@@ -1,12 +1,14 @@
 import { css } from 'emotion';
 import { mq } from '../../../media-queries/mediaQueries';
+import { theme } from '../../StyleThemes/StylesThemes';
+const { colors , body } = theme.light;
 
 export const introContainer = css({
-    background: "black",
+    background: body.section,
     height: "45vh",
     paddingTop: "40vh",
     fontFamily: "MonumentExtended-Regular",
-    color: 'white',
+    color: colors.white,
     textAlign : "center",
     padding: "0 8rem",
 
