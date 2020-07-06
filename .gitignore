@@ -8,6 +8,9 @@
 #inteliJ
 .idea/
 
+#any tracks within portfolio
+/src/mp3/
+
 # testing
 /coverage
 
