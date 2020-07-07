@@ -27,3 +27,32 @@ export const mediaButton = css({
         cursor: 'pointer'
     }
 });
+
+export const timeline = css({
+    width: '400px',
+    height: '20px',
+    background: '#4200f7',
+    marginTop: '20px',
+    float: 'left',
+    borderRadius: '15px',
+
+});
+
+export const playHead = css({
+    width: '18px',
+    height: '18px',
+    borderRadius: '50%',
+    marginTop: '1px',
+    background: 'white',
+});
+
+export const pButton = css({
+    height:'60px',
+    width: '60px',
+    border: 'none',
+    backgroundSize: '50% 50%',
+    backgroundPosition: 'center',
+    float:'left',
+    outline:'none'
+
+})
