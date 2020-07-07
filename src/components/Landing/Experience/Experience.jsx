@@ -14,6 +14,7 @@ const Experience = ()=>{
                          width: '100%',
                          background: '#59717126',
                      }}>
+
                 </div>
 
             </div>
