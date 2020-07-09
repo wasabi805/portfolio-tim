@@ -2,7 +2,7 @@ import React from 'react';
 import { sectionStyle } from "../../Common/Section/SectionContainer.styles";
 import {mixesWrapper} from "./Mixes.styles";
 
-import MediaPlayer from "./MediaPlayer/MediaPlayer";
+import MediaPlayer from "./MediaPlayer";
 
 const Mixes = ()=>{
     return(

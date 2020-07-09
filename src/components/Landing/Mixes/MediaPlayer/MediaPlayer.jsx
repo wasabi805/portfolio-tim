@@ -1,14 +1,29 @@
-import {cx} from 'emotion';
-import React, {useEffect, useState, useRef , useLayoutEffect } from 'react';
-import { mediaPlayerWrapper , playButton, mediaButton ,timeline,playHead ,pButton} from './MediaPlayer.styles';
+import { cx } from 'emotion';
+import React, { useEffect, useState, useRef } from 'react';
+import {
+    mediaPlayerWrapper ,
+    timeline,
+    playHead,
+    pButton,
+    getTrackImage,
+    audioPlayer} from './MediaPlayer.styles';
 import {ReactComponent as PlaySvg} from '../../../../svg/009-play.svg';
-import {ReactComponent as StopSvg} from '../../../../svg/017-stop.svg';
-import {ReactComponent as ForwardSvg} from '../../../../svg/007-next.svg';
-import {ReactComponent as ReverseSvg} from '../../../../svg/010-previous.svg';
+import {addListener, removeListener} from "../../../../helpers/helpers";
 
 import Chance from '../../../../images/thumb/chance.png'
 
-const MediaPlayer = ()=>{
+const MediaPlayer = ({
+    handlePlay,
+    getTimeUpdate,
+    loadedTrack,
+    setMovePlayHead,
+    clickPercent
+})=>{
+    const musicNodeRef = useRef();
+    const pButtonNodeRef = useRef();
+    const playHeadNodeRef = useRef();
+    const timeLineNodeRef = useRef();
+    const elapsedTimeNodeRef = useRef();
 
     const [musicNode, setMusicNode] = useState(null)
     const [pButtonNode , setPButtonNode] = useState(null)
@@ -18,180 +33,93 @@ const MediaPlayer = ()=>{
 
     //assigns the dom elements on mount
     useEffect(()=>{
-        setMusicNode(document.getElementById('music'))
-        setPButtonNode(document.getElementById('pButton'))
-        setPlayHeadNode(document.getElementById('playhead'))
-        setTimeLineNode(document.getElementById('timeline'))
-        setElapsedTimeNode(document.getElementById('elapsedTime'))
-    },[])
+        setMusicNode(musicNodeRef.current)
+        setPButtonNode(pButtonNodeRef.current)
+        setPlayHeadNode(playHeadNodeRef.current)
+        setTimeLineNode(timeLineNodeRef.current)
+        setElapsedTimeNode(elapsedTimeNodeRef.current)
+    },[musicNode ,pButtonNode , playHeadNode,timeLineNode, elapsedTimeNode])
 
-    //operates the play button
-    const play = ()=>{
-        if(musicNode.paused){
-            musicNode.play()
-        }else{
-            musicNode.pause()
-        }
-    }
-
-    //updates the progress bar with elapsed time
-    const timeUpdate=(e)=>{
-        const playPercent = stuff.timelineWidth * (musicNode.currentTime / musicNode.duration);
-        playHeadNode.style.marginLeft = playPercent + "px";
-
-        const minutes = "0" + Math.floor(e.target.currentTime / 60);
-        const getSeconds = parseInt((Math.floor(e.target.currentTime) - minutes * 60), 10);
-
-        const seconds = getSeconds < 10 ?
-            "0" + getSeconds : getSeconds
-
-        elapsedTimeNode.innerHTML= `${minutes}:${seconds }`
-    }
-
-    const getPosition =( el )=> {
-        return el.getBoundingClientRect().left;
-    }
-
-    //PART A.) Drag playhead to selected time on track
-    // Note: makes playhead moveable by user, DOES NOT SET THE POSITION see Part B
-    const movePlayHead = (e)=>{
-        console.log(e)
-        const newMargLeft = e.clientX - getPosition(timeLineNode);
-
-        if (newMargLeft >= 0 && newMargLeft <= stuff.timelineWidth) {
-            playHeadNode.style.marginLeft = newMargLeft + "px";
-        }
-        if (newMargLeft < 0) {
-            playHeadNode.style.marginLeft = "0px";
-        }
-        if (newMargLeft > stuff.timelineWidth) {
-            playHeadNode.style.marginLeft = stuff.timelineWidth + "px";
-        }
-    }
-
-    // holds vars once music dom elements mount
-    const stuff={
-        onplayhead : false, // Boolean value so that audio position is updated only when the playhead is released
-        minutes: null,
-        seconds: null,
-    }
+    const play =()=> handlePlay(musicNode)
+    const timeUpdate = (e)=> getTimeUpdate(e , musicNode , playHeadNode ,elapsedTimeNode)
+    const movePlayHead =( e )=> setMovePlayHead( e , timeLineNode , playHeadNode )
 
     // Once the dom nodes are mounted...
     if(timeLineNode && playHeadNode){
+        let onPlayHead = false /** Tracks onMouseUp & onMouseDown for elapsed time bar slider*/
+
         // mouseDown EventListener
         function mouseDown() {
-            stuff.onplayhead = true;
+            onPlayHead = true
             window.addEventListener('mousemove', movePlayHead, true);
-            musicNode.removeEventListener('timeupdate', timeUpdate, false);
+            removeListener(musicNode,'timeupdate', timeUpdate, false);
         }
-        // mouseUp EventListener
-        // getting input from all mouse clicks
-        const mouseUp =(event)=> {
-            if (stuff.onplayhead == true) {
+
+        // gets input from all mouse clicks
+        const mouseUp =( event )=> {
+            if (onPlayHead == true) {
                 movePlayHead(event);
                 window.removeEventListener('mousemove', movePlayHead, true);
-                // change current time
-                musicNode.currentTime = musicNode.duration * clickPercent(event);
-                musicNode.addEventListener('timeupdate', timeUpdate, false);
+
+                // convert duration into current time
+                musicNode.currentTime = musicNode.duration * clickPercent(event , timeLineNode);
+                addListener(musicNode , 'timeupdate', timeUpdate , false)
             }
-            stuff.onplayhead = false;
+            onPlayHead = false;
         }
 
         //defines the width of the timeline
-        stuff.timelineWidth = timeLineNode.offsetWidth - playHeadNode.offsetWidth
+        loadedTrack.timelineWidth = timeLineNode.offsetWidth - playHeadNode.offsetWidth
 
-        //makes playhead draggable
-        playHeadNode.addEventListener('mousedown', mouseDown, false);
-        window.addEventListener('mouseup', mouseUp, false);
+        //makes playHead draggable
+        addListener(playHeadNode , 'mousedown' , mouseDown , false)
+        addListener(window,'mouseup', mouseUp, false);
 
         //PART B.) Drag playhead to selected time on track ------------
-        //Note: This is the part that connects moving the playhead to represent
+        //Note: This is the part that connects moving the playHead to represent
         //  the elapsed track time.
-        timeLineNode.addEventListener("click", function(e) {
+        addListener(timeLineNode, 'click',(e)=> {
+            const { duration} = musicNode
             movePlayHead(e);
-            musicNode.currentTime = musicNode.duration * clickPercent(e);
-        }, false);
-
-        function clickPercent(event) {
-            return (event.clientX - getPosition(timeLineNode)) / stuff.timelineWidth;
-        }
+            musicNode.currentTime = duration * clickPercent(e, timeLineNode);
+        }, false )
         //-------------------------------------------------------------
-
-    }
-    if(pButtonNode){
-        pButtonNode.addEventListener("click", ()=>play())
     }
 
-    if(musicNode){
-        musicNode.addEventListener("timeupdate", timeUpdate, false);
-    }
-
-    console.log(stuff , 'stuff')
+    //adds listener once these two are mounted
+    pButtonNode && addListener(pButtonNode , 'click', ()=>play);
+    musicNode && musicNode.addEventListener('timeupdate', timeUpdate, false);
 
     return(
-        <div className={mediaPlayerWrapper}
-             style={{border: '1px solid cyan'}}
-        >
-            <div style={{
-                border: '1px solid red',
-
-            }}>
-
-                <div id={'track-img'}
-                     style={{display: 'block',
-                         height: '500px' ,
-                         width: '500px',
-                         textAlign: 'center',
-                         backgroundImage: `url(${Chance})`,
-                         backgroundRepeat:'no-repeat',
-                     }}>
-                </div>
+        <div className={mediaPlayerWrapper}>
+            <div id="track-info-container" style={{border: '1px solid red'}}>
+                <div className={getTrackImage(Chance)}/>
 
                 <div style={{float: 'right'}}>
                     Chance the Rapper
                 </div>
 
-                <div id={'elapsedTime'}></div>
+                <div id={'elapsedTime'} ref={elapsedTimeNodeRef}/>
             </div>
 
-            <audio id={'music'}  >
+            <audio id={'music'} ref={musicNodeRef}  >
                 <source src={'./04-Hot-Shower.mp3'} type={'audio/mp3'}/>
             </audio>
 
-            <div id="audioplayer" style={{
-                width: '480px',
-                height: '60px',
-                margin: '50px auto auto auto',
-                border: 'solid',
-            }}>
-                <button id="pButton" className={cx('play' , pButton)} onClick={play}>play</button>
-                <div id="timeline" className={timeline}>
-                    <div id="playhead" className={playHead}></div>
+            <div id="audioplayer" className={audioPlayer}>
+                <button
+                    ref={pButtonNodeRef}
+                    id="pButton"
+                    className={cx('play' , pButton)}
+                    onClick={play}
+                >
+                    <PlaySvg/>
+                </button>
+
+                <div id="timeline" ref={timeLineNodeRef} className={timeline}>
+                    <div id="playhead" ref={playHeadNodeRef} className={playHead}/>
                 </div>
             </div>
-
-
-            {/*<div id="media-controls"*/}
-            {/*     style={{*/}
-            {/*         display: 'inline-flex' ,*/}
-            {/*         position: 'relative',*/}
-            {/*         border: '1px solid yellow',*/}
-            {/*         justifyContent: 'center'*/}
-            {/*     }}>*/}
-            {/*    <span className={playButton} onClick={()=>start()}>*/}
-            {/*        <PlaySvg/>*/}
-            {/*    </span>*/}
-            {/*    <span className={mediaButton}>*/}
-            {/*        <ReverseSvg/>*/}
-            {/*    </span>*/}
-            {/*    <span className={mediaButton} onClick={()=>pause()}>*/}
-            {/*        <StopSvg/>*/}
-            {/*    </span>*/}
-            {/*    <span className={mediaButton}>*/}
-            {/*        <ForwardSvg onClick={()=>move()} />*/}
-            {/*    </span>*/}
-            {/*</div>*/}
-
         </div>
     )
 }

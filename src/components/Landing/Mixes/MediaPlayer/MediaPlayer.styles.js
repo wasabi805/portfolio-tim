@@ -1,4 +1,5 @@
 import { css } from 'emotion';
+import Chance from "../../../../images/thumb/chance.png";
 
 export const mediaPlayerWrapper =css({
     display: 'flex',
@@ -53,6 +54,22 @@ export const pButton = css({
     backgroundSize: '50% 50%',
     backgroundPosition: 'center',
     float:'left',
-    outline:'none'
+    outline:'none',
+    background: "black"
+});
 
-})
+export const getTrackImage = ( src )=> css({
+    display: 'block',
+    height: '500px' ,
+    width: '500px',
+    textAlign: 'center',
+    backgroundImage: `url(${src})`,
+    backgroundRepeat:'no-repeat',
+});
+
+export const audioPlayer = css({
+    width: '480px',
+    height: '60px',
+    margin: '50px auto auto auto',
+    border: 'solid',
+});
