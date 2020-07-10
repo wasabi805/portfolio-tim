@@ -23,6 +23,7 @@ const initialStore = {
                 'Performed unit and integration tests using Jest and Enzyme.',
                 'Helped onboard new developers',
                 'Used GitHub for version control.',
+
             ],
             img: Allstate,
         },
