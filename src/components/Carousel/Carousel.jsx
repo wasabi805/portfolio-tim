@@ -71,7 +71,10 @@ class SimpleSlider extends Component {
                                             Responsibilities
                                             <ul>
                                                 {slide.responsibilities.map(line=>(
-                                                    <li>line</li>
+                                                    <li style={{
+                                                        margin: '10px 0',
+                                                        fontFamily : 'Helvetica'
+                                                    }}>{ line }</li>
                                                 ))}
                                             </ul>
                                         </div>
