@@ -8,7 +8,7 @@ import {
     getTrackImage,
     audioPlayer} from './MediaPlayer.styles';
 import {ReactComponent as PlaySvg} from '../../../../svg/009-play.svg';
-import {addListener, removeListener} from "../../../../helpers/helpers";
+import {addListener, removeListener} from "../../../../helpers/listeners";
 
 import Chance from '../../../../images/thumb/chance.png'
 

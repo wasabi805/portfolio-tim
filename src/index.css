@@ -8,6 +8,7 @@
   src: local('MonumentExtended-Ultrabold'), url(./fonts/MonumentExtended-Ultrabold.ttf) format('truetype');
 }
 
+
 body {
   margin: 0;
   box-sizing: border-box;

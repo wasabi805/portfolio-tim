@@ -1,22 +1,21 @@
 import React from 'react';
 import { sectionStyle } from "../../Common/Section/SectionContainer.styles";
 import { experienceWrapper } from "./Experience.styles";
+import SimpleSlider from '../../Carousel';
 
-const Experience = ()=>{
+import Allstate from '../../../images/allstate_logo.png';
+import SherwinWilliams from '../../../images/SherwinWilliams.png'
+
+const Experience = ({slides})=>{
+
     return(
         <section id="experience-section" className={ sectionStyle }>
             <div className={experienceWrapper}>
                 <h2>Experience</h2>
-
-                <div className={'experience-card'}
-                     style={{
-                         height: '500px',
-                         width: '100%',
-                         background: '#59717126',
-                     }}>
-
-                </div>
-
+                <SimpleSlider
+                    slideContent={slides}
+                    slideImages={[Allstate, SherwinWilliams]}
+                />
             </div>
         </section>
     )

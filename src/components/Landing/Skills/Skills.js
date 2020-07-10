@@ -10,7 +10,6 @@ import {
 } from '../../../constants/skillsConstants';
 
 import maxHeadroom from '../../../images/max-headroom.png'
-console.log(maxHeadroom, 'maxHeadroom')
 
 const Skills = ()=>{
     return(
