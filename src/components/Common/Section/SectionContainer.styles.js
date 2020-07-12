@@ -6,6 +6,7 @@ const { body, colors } =theme.light
 export const sectionStyle= css({
     h2:{
         margin: 0,
+        marginBottom: '2rem',
         fontSize: '4.5rem',
         right  : 0
     },

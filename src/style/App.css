@@ -46,17 +46,26 @@
 /*----------*/
 .tile-grid-container{
   display: grid;
-  /*grid-template-columns: 200px ;*/
   height: 90vh;
-  border: 10px solid darkorange;
+  /*border: 10px solid darkorange;*/
   color: black;
 }
 
 .tile-grid-item{
-  background: azure;
+  display: grid;
+  /*background: azure;*/
   border: 1px solid darkcyan;
   padding: 20px;
+  margin-bottom: 3rem;
+}
 
+.img-left{
+  grid-template-columns: 2fr 1fr ;
+
+}
+
+.img-right{
+  grid-template-columns: 1fr 2fr ;
 }
 
 .gi-1{

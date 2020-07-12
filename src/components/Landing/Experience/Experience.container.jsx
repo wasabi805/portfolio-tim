@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Experience from './Experience';
-import experienceSelectors from '../../../store/Experience/Experience.Selectors';
+import experienceSelectors from '../../../store/Experience/Experience.selectors';
 
 const ExperienceContainer =()=>{
     const slides = useSelector(state =>

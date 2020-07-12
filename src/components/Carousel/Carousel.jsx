@@ -3,10 +3,6 @@ import Slider from "react-slick";
 import { contextStyles , logoWrapperStyles } from "./Carousel.styles";
 import pinkNoise from '../../images/pink-noise.png'
 
-const testMe = ()=>{
-
-}
-
 class SimpleSlider extends Component {
     constructor(props) {
         super(props);
@@ -60,9 +56,6 @@ class SimpleSlider extends Component {
                             </div>
                         )
                     } )}
-
-                    {/*----------*/}
-
                 </Slider>
             </div>
         );

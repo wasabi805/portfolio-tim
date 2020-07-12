@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import actions from './Experience.Actions';
+import actions from './Experience.actions';
 import Allstate from '../../images/allstate_logo.png';
 import SherwinWilliams from '../../images/SherwinWilliams.png';
 import DomsNoms from '../../images/domsNoms.png';

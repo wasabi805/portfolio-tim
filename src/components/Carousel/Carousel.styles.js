@@ -18,7 +18,6 @@ export const contextStyles = css({
 
 export const logoWrapperStyles= css({
     display: 'flex',
-    background: 'cyan',
     flexBasis: '40%',
     alignItems: 'center'
 });
