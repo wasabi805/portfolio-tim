@@ -21,8 +21,12 @@
   overflow: hidden;
 }
 
+.card-container{
+  background: grey
+}
+
 .card-wrapper{
-  /*background: #14c3bd;*/
+  background: #14c3bd;
   padding:1rem;
 }
 .card {
@@ -30,6 +34,8 @@
   border-radius: 2px;
   display: inline-block;
   position: relative;
+  display: flex;
+  height: 70vh;
 }
 
 .card-3 {
