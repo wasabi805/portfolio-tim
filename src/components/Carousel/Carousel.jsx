@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-
+import pinkNoise from '../../images/pink-noise.png'
 class SimpleSlider extends Component {
     constructor(props) {
         super(props);
@@ -25,7 +25,7 @@ class SimpleSlider extends Component {
                     {slideContent.map( slide =>{
                         return(
                             <div id={'card-container'} style={{background: 'grey'}} >
-                                <div className="card-wrapper">
+                                <div className="card-wrapper" style={{backgroundImage: `url(${pinkNoise})`}}>
                                     <div className="card card-3"
                                         style={{
                                         display: 'flex',
