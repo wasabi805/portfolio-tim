@@ -10,7 +10,6 @@ export const heroStyles = css({
     height: '75vh',
     fontFamily: 'MonumentExtended-Regular',
     color: 'white',
-
 });
 
 export const titleContainer = css({
@@ -29,10 +28,15 @@ export const line02 = css({
 });
 
 export const subLineWrapper = css({
+    // position: 'relative',
+    // width: '92px',
+    // top: '202px',
+    // right: '-410px',
+
     position: 'relative',
     width: '92px',
-    top: '202px',
-    right: '-410px',
+    top: '92px',
+    right: '-590px',
 
     "& p":{
         position: 'absolute',

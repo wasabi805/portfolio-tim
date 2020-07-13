@@ -95,30 +95,30 @@ const MediaPlayer = ({
             <div id="track-info-container" style={{border: '1px solid red'}}>
                 <div className={getTrackImage(Chance)}/>
 
-                <div style={{float: 'right'}}>
-                    Chance the Rapper
+
+
+                <audio id={'music'} ref={musicNodeRef}>
+                    <source src={'./04-Hot-Shower.mp3'} type={'audio/mp3'}/>
+                </audio>
+
+                <div id="audioplayer" className={audioPlayer}>
+                    <button
+                        ref={pButtonNodeRef}
+                        id="pButton"
+                        className={cx('play' , pButton)}
+                        onClick={play}
+                    >
+                        <PlaySvg/>
+                    </button>
+
+                    <div id={'elapsedTime'} ref={elapsedTimeNodeRef}/>
+
+                    <div id="timeline" ref={timeLineNodeRef} className={timeline}>
+                        <div id="playhead" ref={playHeadNodeRef} className={playHead}/>
+                    </div>
+
                 </div>
 
-                <div id={'elapsedTime'} ref={elapsedTimeNodeRef}/>
-            </div>
-
-            <audio id={'music'} ref={musicNodeRef}  >
-                <source src={'./04-Hot-Shower.mp3'} type={'audio/mp3'}/>
-            </audio>
-
-            <div id="audioplayer" className={audioPlayer}>
-                <button
-                    ref={pButtonNodeRef}
-                    id="pButton"
-                    className={cx('play' , pButton)}
-                    onClick={play}
-                >
-                    <PlaySvg/>
-                </button>
-
-                <div id="timeline" ref={timeLineNodeRef} className={timeline}>
-                    <div id="playhead" ref={playHeadNodeRef} className={playHead}/>
-                </div>
             </div>
         </div>
     )

@@ -8,9 +8,9 @@ import LandingExample from '../../images/landing-page.png';
 const initialStore = {
     stuff: 'things',
     projects:[
-        { image: DevConnectorImg , title: 'DevConnector', context: 'A project example that for dashboard layout and functionality including register and login.'},
-        { image: DomsNomsImg , title: "Dom's Noms", context: 'A start up mobile bbq catering business.'},
-        { image: LandingExample , title: 'Hero Landing', context: 'A project example for a Hero Landing page'},
+        { id: 'dev-connector-tile' ,image: DevConnectorImg , title: 'DevConnector', context: 'A project example that for dashboard layout and functionality including register and login.'},
+        { id: "doms-noms-tile" ,image: DomsNomsImg , title: "Dom's Noms", context: 'A start up mobile bbq catering business.'},
+        { id: "aws-landing-tile" ,image: LandingExample , title: 'Hero Landing', context: 'A project example for a Hero Landing page'},
     ]
 
 }

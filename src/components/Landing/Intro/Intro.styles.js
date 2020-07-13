@@ -4,23 +4,29 @@ import { theme } from '../../StyleThemes/StylesThemes';
 const { colors , body } = theme.light;
 
 export const introContainer = css({
-    background: body.section,
-    height: "45vh",
-    paddingTop: "40vh",
-    fontFamily: "MonumentExtended-Regular",
-    color: colors.white,
-    textAlign : "center",
-    padding: "0 8rem",
+    // position: 'relative',
+    // border: '1px solid cyan',
+    // fontFamily: "MonumentExtended-Regular",
+    // color: colors.white,
 
-    [mq.sm]: {
-        padding: "0 2rem",
-    },
-
-    [mq.md]: {
-        padding: "0 12rem",
-    },
-
-    [mq.lg]: {
-        padding: "8rem 30rem",
+    "& p":{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform : 'translate(-50%, -50%)'
     }
+
+    // padding: "0 8rem",
+
+    // [mq.sm]: {
+    //     padding: "0 2rem",
+    // },
+    //
+    // [mq.md]: {
+    //     padding: "0 12rem",
+    // },
+    //
+    // [mq.lg]: {
+    //     padding: "8rem 30rem",
+    // }
 })

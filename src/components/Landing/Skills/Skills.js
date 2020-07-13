@@ -9,8 +9,6 @@ import {
     STYLE_TECH,
 } from '../../../constants/skillsConstants';
 
-import maxHeadroom from '../../../images/max-headroom.png'
-
 const Skills = ()=>{
     return(
         <section id="skills-section" className={ sectionStyle } >

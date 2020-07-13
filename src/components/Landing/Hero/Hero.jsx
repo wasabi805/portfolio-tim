@@ -1,21 +1,22 @@
 import React from 'react';
+import {sectionStyle} from '../../Common/Section/SectionContainer.styles';
 import {
-    heroStyles,
+    // heroStyles,
     line01,
     line02,
     soundWaveContainer,
     titleContainer,
     titleWrapper
 } from "../Home/Home.styles";
-import {ReactComponent as SoundWaveSvg} from "../../../svg/Sound-Wave.svg";
-import Samples from "../Samples/Samples";
+import {ReactComponent as SoundWaveSvg} from '../../../svg/Sound-Wave.svg';
 
+import Samples from "../Samples/Samples";
 const Hero = ()=>{
     return(
-        <section className={heroStyles}>
-            <div className={soundWaveContainer}>
-                <SoundWaveSvg/>
-            </div>
+        <section className={sectionStyle}>
+            {/*<div className={soundWaveContainer}>*/}
+            {/*    <SoundWaveSvg/>*/}
+            {/*</div>*/}
 
             <div className={titleContainer}>
                 <div className={titleWrapper}>

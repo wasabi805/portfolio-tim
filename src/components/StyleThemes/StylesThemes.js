@@ -1,3 +1,5 @@
+import noise from '../../images/noisy-texture-blk.png'
+
 export const theme = {
     light : {
         colors:{
@@ -9,6 +11,7 @@ export const theme = {
         body:{
             section: 'black',
             sectionLight: 'grey',
+            sectionNoise : `${noise}`,
             menu: 'magenta'
         }
 

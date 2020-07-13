@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
-import { contextStyles , logoWrapperStyles } from "./Carousel.styles";
-import pinkNoise from '../../images/pink-noise.png'
+import React, { Component } from 'react';
+import { cx } from 'emotion';
+import Slider from 'react-slick';
+import { contextStyles , logoWrapperStyles } from './Carousel.styles';
 
 class SimpleSlider extends Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class SimpleSlider extends Component {
 
     render() {
         const { settings } = this.state;
-        const { slideContent , slideImages } = this.props;
+        const { slideContent } = this.props;
         return (
             <div >
                 <Slider {...settings}>
@@ -28,7 +28,7 @@ class SimpleSlider extends Component {
                             <div className="card-container" >
                                 <div className="card-wrapper">
                                     <div className="card card-3">
-                                        <div className={logoWrapperStyles}>
+                                        <div className={cx(logoWrapperStyles , 'logoWrapperStyles')}>
                                             <div className="grid-container">
                                                 <figure className="grid_item grid_item-1">
                                                     <img className="grid_image"

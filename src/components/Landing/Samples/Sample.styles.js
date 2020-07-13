@@ -9,6 +9,7 @@ export const Sample = css({
     color: colors.white,
     height: '75vh',
     opacity: '0.5',
+    zIndex: 200,
 
     [mq.md]:{
         top: '286px'
