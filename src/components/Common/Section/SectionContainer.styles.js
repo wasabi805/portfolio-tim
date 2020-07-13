@@ -11,7 +11,6 @@ const animateStatic = keyframes`
     background-position: 100% 100%
   }
 `
-
 export const sectionStyle= css({
     h2:{
         margin: 0,
