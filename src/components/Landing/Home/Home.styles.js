@@ -64,19 +64,5 @@ export const soundWaveContainer= css({
     position: 'absolute' ,
     width: '82vw',
     top: '26%',
-    left: '20%',
-    right: '20%',
     opacity: '0.15',
-
-    [mq.sm]:{
-        // top: "500px",
-    },
-
-    [mq.md]:{
-        top:"200px",
-    },
-    [mq.lg]:{
-        top: "5%",
-        width:"96vw",
-    }
 })

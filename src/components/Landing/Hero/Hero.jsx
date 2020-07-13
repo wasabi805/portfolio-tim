@@ -14,9 +14,9 @@ import Samples from "../Samples/Samples";
 const Hero = ()=>{
     return(
         <section className={sectionStyle}>
-            {/*<div className={soundWaveContainer}>*/}
-            {/*    <SoundWaveSvg/>*/}
-            {/*</div>*/}
+            <div className={soundWaveContainer}>
+                <SoundWaveSvg/>
+            </div>
 
             <div className={titleContainer}>
                 <div className={titleWrapper}>

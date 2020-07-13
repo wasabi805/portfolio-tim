@@ -14,9 +14,9 @@ const Samples = ()=>{
                             <p>'UI FrontEnd Developer'</p>
                         </span>
             </div>
-            <svg height="500" width="500">
-                <circle cx="300" cy="220" r="200" stroke="white" stroke-width="3"  />
-            </svg>
+            {/*<svg height="500" width="500">*/}
+            {/*    <circle cx="300" cy="220" r="200" stroke="white" stroke-width="3"  />*/}
+            {/*</svg>*/}
         </section>
     )
 }

@@ -9,6 +9,7 @@ import {
     audioPlayer} from './MediaPlayer.styles';
 import {ReactComponent as PlaySvg} from '../../../../svg/009-play.svg';
 import {addListener, removeListener} from "../../../../helpers/listeners";
+import {ReactComponent as PlayButtonSvg } from'../../../../svg/multimedia.svg'
 
 import Chance from '../../../../images/thumb/chance.png'
 
@@ -92,10 +93,8 @@ const MediaPlayer = ({
 
     return(
         <div className={mediaPlayerWrapper}>
-            <div id="track-info-container" style={{border: '1px solid red'}}>
+            <div id="track-info-container" style={{border: '3px solid white' , width: '50vw'}}>
                 <div className={getTrackImage(Chance)}/>
-
-
 
                 <audio id={'music'} ref={musicNodeRef}>
                     <source src={'./04-Hot-Shower.mp3'} type={'audio/mp3'}/>
@@ -108,10 +107,19 @@ const MediaPlayer = ({
                         className={cx('play' , pButton)}
                         onClick={play}
                     >
-                        <PlaySvg/>
+                        {/*<PlaySvg/>*/}
+                        <PlayButtonSvg/>
                     </button>
 
-                    <div id={'elapsedTime'} ref={elapsedTimeNodeRef}/>
+                    <div
+                        id={'elapsedTime'}
+                        style={{
+                            width : '100px',
+                            display: 'block',
+                            textAlign : 'center'
+                        }}
+                    >
+                        <p style={{marginTop: '20px'}} ref={elapsedTimeNodeRef}>00:00</p></div>
 
                     <div id="timeline" ref={timeLineNodeRef} className={timeline}>
                         <div id="playhead" ref={playHeadNodeRef} className={playHead}/>

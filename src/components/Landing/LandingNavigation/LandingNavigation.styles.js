@@ -4,11 +4,12 @@ import { theme } from "../../StyleThemes/StylesThemes";
 const { menu }  = theme.light.body
 
 export const LandingNavigationSection = css({
-    background: menu,
     display: "inline-flex",
     position: "sticky",
-    top: 0,
+    top: '24px',
+    right: '12px',
     float: "right",
+    zIndex: 200,
     "& a:link":{
         padding: '0 1em',
         textDecoration: 'none',
@@ -17,6 +18,10 @@ export const LandingNavigationSection = css({
         "& hover": {
             cursor : 'pointer'
         }
+    },
+
+    "& a":{
+        color: 'white'
     },
 
     "& ul": {
