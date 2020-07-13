@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Navigation from "./Navigation";
 import { withRouter } from 'react-router-dom'
 import {ROUTE_HOME , ROUTE_ACBA} from "../../constants/routeConstants";
@@ -16,6 +17,10 @@ const NavigationContainer = ({ history })=>{
             goAcba={goAcba}
         />
     )
+}
+
+NavigationContainer.propTypes={
+    history: PropTypes.shape({}).isRequired,
 }
 
 export default withRouter(NavigationContainer)

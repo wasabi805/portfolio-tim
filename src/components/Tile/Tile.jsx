@@ -28,18 +28,21 @@ const Tile = ({ content })=>(
         {content.map( (project , idx)=> {
             if( isEvenIndex(idx) ){
                 return (
-                    <div id={project.id} className={cx(tileGridItem , imgLeftStyle )}>
+                    <a href={project.href}
+                       id={project.id}
+                       className={cx(tileGridItem , imgLeftStyle )}>
                         <TileImage image={content[idx].image} />
                         <TileContext title={content[idx].title} context={content[idx].context }/>
-                    </div>
+                    </a>
                 )
             }else{
                 return (
-                    <div id={project.id}
-                         className={cx(tileGridItem , imgRightStyle)}>
+                    <a  href={project.href}
+                        id={project.id}
+                        className={cx(tileGridItem , imgRightStyle)}>
                         <TileContext title={content[idx].title} context={content[idx].context }/>
                         <TileImage image={content[idx].image} />
-                    </div>
+                    </a>
                 )
             }
         })}
