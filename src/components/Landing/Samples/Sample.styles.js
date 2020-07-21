@@ -1,6 +1,6 @@
 import { css } from 'emotion';
 import { theme } from "../../StyleThemes/StylesThemes";
-import { mq } from '../../../media-queries/mediaQueries';
+import { mediaQuery } from '../../../media-queries/mediaQueries';
 const { colors , body }  = theme.light
 
 export const Sample = css({
@@ -11,11 +11,11 @@ export const Sample = css({
     opacity: '0.5',
     zIndex: 200,
 
-    [mq.md]:{
+    [mediaQuery.md]:{
         top: '286px'
     },
 
-    [mq.xl] : {
+    [mediaQuery.xl] : {
         top: '157px',
     }
 });

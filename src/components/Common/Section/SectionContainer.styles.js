@@ -39,6 +39,6 @@ export const sectionStyle= css({
 
     fontFamily: 'MonumentExtended-Regular',
     color: colors.white,
-    padding: '0 8rem',
-    paddingBottom: "24vh",
+    padding: '0 4rem',
+    paddingBottom: "50vh",
 });

@@ -1,26 +1,49 @@
 import { css } from 'emotion';
-import { theme } from "../../StyleThemes/StylesThemes";
 import maxHeadroom from "../../../images/max-headroom.png";
-const colors = theme.light;
 
-export const skillsTile = css({
-    display: 'flex',
-    color: colors.white,
-    marginTop:'5rem',
-
-    "& p":{
-        padding: '0 2rem',
-    },
+export const skillsSectionTitle = css({
+    float: 'right',
+    position: 'relative',
+    zIndex: '10',
 });
+
+export const skillsBackgroundWrapper = css({
+    position: 'absolute',
+    opacity: '0.4',
+
+    "& div": {
+        position: 'relative'
+    }
+});
+
+export const purpleCircuitsRS = css({
+    display : 'block',
+})
+
+export const purpleCircuitsRotated = css({
+    display : 'block',
+    width: '-webkit-fill-available',
+    transform: 'rotate(180deg)',
+    height: '40vh'
+})
 
 export const skillWrapper = css({
     position: 'relative',
     "& h2":{
         textAlign: 'right',
+        margin: 0,
+    },
+    "& ul":{
+        padding: 0,
+        listStyleType: 'none',
     },
 });
 
 export const skillsBannerIMage  = css({
+    gridColumnStart: 1,
+    gridColumnEnd: '',
+    gridRowStart: 1,
+
     backgroundImage: `url(${maxHeadroom})`,
     backgroundColor: 'cyan' ,
     position: 'absolute',
@@ -29,4 +52,5 @@ export const skillsBannerIMage  = css({
     opacity: 0.3,
     backgroundSize: 'contain',
 });
+
 

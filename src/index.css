@@ -8,6 +8,7 @@
   src: local('MonumentExtended-Ultrabold'), url(./fonts/MonumentExtended-Ultrabold.ttf) format('truetype');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 body {
   margin: 0;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { introContainer } from "./Intro.styles";
 import {sectionStyle} from "../../Common/Section/SectionContainer.styles";
 
 const Intro = ()=>{

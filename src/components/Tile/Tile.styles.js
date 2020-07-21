@@ -1,6 +1,7 @@
 import {css} from 'emotion';
 
 export const getTileImageStyle = (url )=> css({
+    opacity: 0.6,
     boxShadow: 'inset 0 0 100px black',
     backgroundImage : `url(${url})`,
     backgroundSize: 'cover',

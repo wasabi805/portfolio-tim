@@ -1,49 +1,11 @@
 import {css} from 'emotion';
-import { mq } from "../../../media-queries/mediaQueries"
 
 export const homeSection = css({
     position: 'relative'
 });
 
-export const heroStyles = css({
-    background: 'black',
-    height: '75vh',
-    fontFamily: 'MonumentExtended-Regular',
-    color: 'white',
-});
-
-export const titleContainer = css({
-    display : 'flex',
-    flexDirection: 'column' ,
-    paddingLeft: '2rem',
-    paddingTop: '2rem',
-});
-
-export const line01 = css({
-    fontSize : '9rem',
-});
-
-export const line02 = css({
-    fontSize : '7rem',
-});
-
 export const subLineWrapper = css({
-    // position: 'relative',
-    // width: '92px',
-    // top: '202px',
-    // right: '-410px',
-
-    position: 'relative',
-    width: '92px',
-    top: '92px',
-    right: '-590px',
-
-    "& p":{
-        position: 'absolute',
-        fontSize: '28px',
-        top: '-18px',
-        left: '104px',
-    }
+   display: 'flex',
 });
 
 export const subLine01 = css({
@@ -51,18 +13,18 @@ export const subLine01 = css({
 });
 
 export const subLine02 = css({
+    fontSize: '1rem',
+    display: 'inline-flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+
     position: 'relative',
-    width: '6vw',
+    top: '62px',
+    left: '-120px',
 });
 
-export const titleWrapper = css({
-    position: "relative"
-});
-
-export const soundWaveContainer= css({
-    color: 'white',
-    position: 'absolute' ,
-    width: '82vw',
-    top: '26%',
-    opacity: '0.15',
+export const heroBackgroundImg = css({
+    position: 'relative',
+    width: '100%',
+    opacity: '0.4',
 })

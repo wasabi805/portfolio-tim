@@ -1,38 +1,34 @@
 import React from 'react';
+import { cx } from 'emotion';
 import {sectionStyle} from '../../Common/Section/SectionContainer.styles';
 import {
     // heroStyles,
-    line01,
-    line02,
-    soundWaveContainer,
-    titleContainer,
-    titleWrapper
-} from "../Home/Home.styles";
-import {ReactComponent as SoundWaveSvg} from '../../../svg/Sound-Wave.svg';
 
-import Samples from "../Samples/Samples";
+    heroBackgroundImg
+
+} from '../Home/Home.styles';
+import StencilTim from '../../../images/tim-01-stencil-transparet.png';
+import { heroSection, heroContainer , heroContext , heroImage } from "./Hero.styles";
 const Hero = ()=>{
     return(
-        <section className={sectionStyle}>
-            <div className={soundWaveContainer}>
-                <SoundWaveSvg/>
-            </div>
+        <>
+            <section className={cx( sectionStyle , heroSection )}>
 
-            <div className={titleContainer}>
-                <div className={titleWrapper}>
-                    <span className={line01}>
-                        Hello
-                    </span>
-                    <br/>
-                    <span className={line02}>
-                        It's Tim
-                    </span>
-
-                    <Samples/>
-
+            <div className={heroContainer}>
+                <div className={heroContext}>
+                    <h1>Hello</h1>
+                    <h3>My name is</h3>
+                    <h3>Timothy</h3>
                 </div>
+
+                 <span className={heroImage} >
+                    <img
+                        src={StencilTim}
+                        className={heroBackgroundImg}/>
+                </span>
             </div>
         </section>
+        </>
     )
 }
 
