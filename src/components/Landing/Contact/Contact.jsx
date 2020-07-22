@@ -33,7 +33,6 @@ const Contact = ()=>{
                     <small>www.proletdev.com</small>
                 </span>
             </div>
-
         </section>
     )
 }

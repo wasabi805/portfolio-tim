@@ -1,16 +1,17 @@
 import { css , keyframes } from 'emotion';
-import {theme} from "../../StyleThemes/StylesThemes";
-const { body, colors } =theme.light
+import { theme } from "../../StyleThemes/StylesThemes";
+const { body, colors } = theme.light
 
-const animateStatic = keyframes`
-  0%{
-    background-position: 0 0
-  }
-  
-  100%{
-    background-position: 100% 100%
-  }
-`
+const animateStatic = keyframes({
+    "0%" :{
+        backgroundPosition: '0 0'
+    },
+
+    "100%":{
+    backgroundPosition: '100% 100%'
+    }
+});
+
 export const sectionStyle= css({
     h2:{
         margin: 0,
@@ -40,5 +41,5 @@ export const sectionStyle= css({
     fontFamily: 'MonumentExtended-Regular',
     color: colors.white,
     padding: '0 4rem',
-    paddingBottom: "50vh",
+    paddingBottom: "20%",
 });

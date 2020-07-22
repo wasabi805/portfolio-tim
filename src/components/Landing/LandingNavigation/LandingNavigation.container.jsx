@@ -1,5 +1,5 @@
-import React from "react";
-import LandingNavigation from "./LandingNavigation";
+import React from 'react';
+import LandingNavigation from './LandingNavigation';
 
 const LandingNavigationContainer = ()=>{
     return(

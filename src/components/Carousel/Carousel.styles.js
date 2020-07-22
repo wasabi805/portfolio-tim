@@ -1,12 +1,17 @@
 import { css } from'emotion';
 
 export const contextStyles = css({
+    fontFamily: 'Arial',
     perspective: '1000px',
     flexBasis: '60%',
     paddingLeft: "2rem",
     paddingTop: "2rem",
-    backgroundColor: '#00484d',
-    backgroundImage: 'url("https://www.transparenttextures.com/patterns/diagmonds.png")',
+    background: '#2a2b2d',
+    backgroundImage: `url("https://www.transparenttextures.com/patterns/fabric-of-squares.png")`,
+
+    "& li":{
+        listStyleType: 'none',
+    }
 });
 
 export const logoWrapperStyles= css({

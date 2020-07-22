@@ -25,7 +25,7 @@ const Home = ()=>{
                 sections={[
                     SECTION_HOME_ABOUT,
                     SECTION_HOME_SKILLS,
-                    SECTION_HOME_EXPERIENCE,
+                    // SECTION_HOME_EXPERIENCE,
                     SECTION_HOME_PROJECTS,
                     SECTION_HOME_MIXES,
                     SECTION_CONTACT,
@@ -34,7 +34,7 @@ const Home = ()=>{
             <Hero/>
             <Intro/>
             <Skills/>
-            <Experience/>
+            {/*<Experience/>*/}
             <Projects/>
             <Mixes/>
             <Contact/>

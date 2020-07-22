@@ -3,9 +3,7 @@ import Intro from "./Intro";
 
 const IntroContainer = ()=>{
     return(
-        <>
-            <Intro/>
-        </>
+        <Intro/>
     )
 }
 

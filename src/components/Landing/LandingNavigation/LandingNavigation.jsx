@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { LandingNavigationSection } from "./LandingNavigation.styles";
+import { LandingNavigationSection } from './LandingNavigation.styles';
 
-const LandingNavigation = ({sections})=>{
+const LandingNavigation = ({ sections })=>{
     const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
     return(
         <nav className={ LandingNavigationSection }>

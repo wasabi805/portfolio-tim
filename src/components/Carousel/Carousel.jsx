@@ -28,15 +28,6 @@ class SimpleSlider extends Component {
                             <div className="card-container" >
                                 <div className="card-wrapper">
                                     <div className="card card-3">
-                                        <div className={cx(logoWrapperStyles , 'logoWrapperStyles')}>
-                                            <div className="grid-container">
-                                                <figure className="grid_item grid_item-1">
-                                                    <img className="grid_image"
-                                                         src={slide.img}
-                                                         alt=""/>
-                                                </figure>
-                                            </div>
-                                        </div>
 
                                         <div className={contextStyles}>
                                            <h4> Position : {slide.position}</h4>
@@ -49,6 +40,16 @@ class SimpleSlider extends Component {
                                                     <li>{ line }</li>
                                                 ))}
                                             </ul>
+                                        </div>
+
+                                        <div className={cx(logoWrapperStyles , 'logoWrapperStyles')}>
+                                            <div className="grid-container">
+                                                <figure className="grid_item grid_item-1">
+                                                    <img className="grid_image"
+                                                         src={slide.img}
+                                                         alt=""/>
+                                                </figure>
+                                            </div>
                                         </div>
 
                                     </div>

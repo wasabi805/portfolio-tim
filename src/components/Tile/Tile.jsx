@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { isEvenIndex } from '../../helpers/types';
 import {
     getTileImageStyle ,
+    tileImageOverlay,
     tileContextStyle ,
     tileGridContainerStyle,
     tileGridItem,
@@ -12,40 +13,50 @@ import {
 
 } from './Tile.styles';
 
-const TileImage =({image : url} )=>(<div id={'tileImage'} className={getTileImageStyle( url)} style={{zIndex : 0}}/>)
+const TileImage =({image : url} )=>(
+    <div id="tileImage"
+         className={ getTileImageStyle( url) }
+    >
+        <div className={ tileImageOverlay }/>
+    </div>)
 
 const TileContext = ({ title ,context })=>(
-    <div className={tileContextStyle}>
+    <div className={ tileContextStyle }>
         <h3
-            className={ 'glitch'}
-            data-text={title} >{ title }</h3>
+            className="glitch"
+            data-text={ title } >{ title }</h3>
         <p>{ context }</p>
     </div>
 )
 
 const Tile = ({ content })=>(
     <div className={tileGridContainerStyle} >
-        {content.map( (project , idx)=> {
+        { content.map( (project , idx)=> {
             if( isEvenIndex(idx) ){
                 return (
-                    <a href={project.href}
-                       id={project.id}
-                       className={cx(tileGridItem , imgLeftStyle )}>
-                        <TileImage image={content[idx].image} />
-                        <TileContext title={content[idx].title} context={content[idx].context }/>
-                    </a>
+                    <div
+                        id={ project.id }
+                        className={ cx(tileGridItem, imgLeftStyle )}
+                    >
+                        <TileImage image={ content[idx].image }/>
+                        <TileContext title={ content[idx].title } context={ content[idx].context }/>
+                    </div>
                 )
             }else{
                 return (
-                    <a  href={project.href}
-                        id={project.id}
-                        className={cx(tileGridItem , imgRightStyle)}>
-                        <TileContext title={content[idx].title} context={content[idx].context }/>
-                        <TileImage image={content[idx].image} />
-                    </a>
+                    <div
+                        id={ project.id }
+                        className={ cx(tileGridItem , imgRightStyle)}
+                    >
+                        <TileContext
+                            title={ content[idx].title }
+                            context={ content[idx].context }
+                        />
+                        <TileImage image={ content[idx].image } />
+                    </div>
                 )
             }
-        })}
+        }) }
     </div>
 )
 

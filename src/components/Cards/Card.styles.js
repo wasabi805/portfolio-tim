@@ -4,7 +4,6 @@ import { mediaQuery } from "../../media-queries/mediaQueries";
 export const CardContainer = css({
     position: 'relative',
     color: 'white',
-    marginTop:'12rem',
     width: '100%',
 
     gridTemplateColumns: '1fr 1fr 1fr',
@@ -30,7 +29,7 @@ export const CardContainer = css({
 })
 
 export const cardWrapper = css({
-    display: 'flex',
+
 });
 
 export const CardStyle = css({

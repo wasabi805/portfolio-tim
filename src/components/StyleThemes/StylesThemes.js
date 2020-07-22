@@ -11,7 +11,7 @@ export const theme = {
         body:{
             section: 'black',
             sectionLight: 'grey',
-            sectionNoise : `${noise}`,
+            sectionNoise : `${ noise }`,
             menu: 'magenta'
         }
 

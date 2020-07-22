@@ -17,12 +17,10 @@ const Skills = ({ cards })=>{
         <section id="skills-section" className={ sectionStyle } >
             <h2 className={ skillsSectionTitle }>Skills</h2>
             <div className={ skillsBackgroundWrapper }>
-                <div>
+                <div id={'skills-purple'}>
                     <img
                         className={ purpleCircuitsRS }
                         src={ purpleCircuits }
-                    />
-                    <img src={ purpleCircuits } className={ purpleCircuitsRotated }
                     />
                 </div>
 
@@ -32,9 +30,7 @@ const Skills = ({ cards })=>{
                    <img className={ skillsBannerIMage }/>
                </div>
 
-                <CardDeck
-                    cards={cards}
-                />
+                <CardDeck cards={ cards }/>
             </div>
         </section>
     )

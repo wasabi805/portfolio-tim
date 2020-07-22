@@ -1,11 +1,24 @@
 import {css} from 'emotion';
 
-export const getTileImageStyle = (url )=> css({
-    opacity: 0.6,
-    boxShadow: 'inset 0 0 100px black',
+export const getTileImageStyle = ( url )=> css({
+    position: 'relative',
+    zIndex : 1,
+    height: '20vh',
+    overflow: 'hidden',
+    opacity: 0.8,
     backgroundImage : `url(${url})`,
     backgroundSize: 'cover',
     backgroundRepeat: "no-repeat",
+});
+
+export const tileImageOverlay = css({
+    zIndex: '100',
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
+    boxShadow: 'inset 0 0 100px black',
+    backgroundImage: 'linear-gradient(rgb(24 49 62 / 60%), rgb(0 0 0 / 0%)), repeating-linear-gradient(0deg, transparent, transparent 2px, black 4px, black 4px)',
+
 });
 
 export const tileContextStyle = css({
@@ -24,13 +37,13 @@ export const tileContextStyle = css({
 
 export const tileGridContainerStyle = css({
     display: 'grid',
+    gridGap : '5%',
     height: '90vh',
     color: 'black'
 });
 
 export const tileGridItem = css({
     display: 'grid',
-    border: '1px solid #008b8b38',
     padding: '20px',
     marginBottom: '3rem',
 });

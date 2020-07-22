@@ -7,7 +7,7 @@ import AbstractCode03 from '../../images/abstract-code-03-1200-800.jpg';
 const initialStore = {
     cards: [
         {id : 'frameworks', title : "frameworks",
-                list : [ 'react' , 'redux', 'material ui', 'bootstrap',
+                list : [ 'react' , 'express', 'material ui', 'bootstrap',
                     'jquery', 'handlebars', 'jest', 'enzyme' ],
             image: AbstractCode01,
         },
@@ -18,7 +18,7 @@ const initialStore = {
         },
 
         { id: 'technology', title: 'technology',
-            list: ['redux thunk' , 'redux saga' , 'API' , 'JSON'],
+            list: ['redux', 'redux thunk' , 'redux saga' , 'mongodb','API' , 'JSON'],
             image: AbstractCode03
         },
     ]

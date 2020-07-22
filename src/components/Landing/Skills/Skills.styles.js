@@ -17,6 +17,7 @@ export const skillsBackgroundWrapper = css({
 });
 
 export const purpleCircuitsRS = css({
+    width: '100%',
     display : 'block',
 })
 

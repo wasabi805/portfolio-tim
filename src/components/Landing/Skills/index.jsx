@@ -1,1 +1,1 @@
-export { default } from "./Skills.container"
+export { default } from './Skills.container';

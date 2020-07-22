@@ -5,27 +5,9 @@ export const mediaPlayerWrapper =css({
     flexDirection: 'column',
 });
 
-export const playButton = css({
-    border: '1px solid lime',
-    borderRadius: '50%',
-    padding: '1rem',
-    "& hover":{
-        cursor: 'pointer',
-        background: 'blue'
-    }
-})
-
-export const mediaButton = css({
-    border: '1px solid lime',
-    borderRadius: '50%',
-    margin: 'auto 12px' ,
-    padding: '1rem',
-    width: '2rem',
-    height: '2rem',
-
-    "& hover":{
-        cursor: 'pointer'
-    }
+export const trackInfoContainer = css({
+    border: '3px solid white',
+    width: '50vw',
 });
 
 export const timeline = css({
@@ -69,8 +51,17 @@ export const getTrackImage = ( src )=> css({
 
 export const audioPlayer = css({
     display: 'flex',
-    // width: '700px',
     height: '60px',
     justifyContent: 'center',
     border: 'solid',
 });
+
+export const elapsedTime = css({
+    width : '100px',
+    display: 'block',
+    textAlign : 'center'
+});
+
+export const timeDisplay = css({
+    marginTop: '20px'
+})

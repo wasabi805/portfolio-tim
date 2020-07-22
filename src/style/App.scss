@@ -5,7 +5,6 @@
 }
 
 .grid-container > figure{
-  /*background: lime;*/
   margin: 0;
   padding: 12px;
 }
@@ -26,7 +25,7 @@
 }
 
 .card-wrapper{
-  background: #14c5bf36;
+  background: teal;
   padding:1rem;
 }
 .card {
@@ -103,8 +102,4 @@
       transform: skew((random(10) - 5) + deg);
     }
   }
-}
-
-#color-fill .hex {
-  fill: rgba(77, 163, 196, 0.65);
 }

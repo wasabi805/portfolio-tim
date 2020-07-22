@@ -2,12 +2,16 @@ import { cx } from 'emotion';
 import React, { useEffect, useState, useRef } from 'react';
 import {
     mediaPlayerWrapper ,
+    trackInfoContainer,
     timeline,
     playHead,
     pButton,
     getTrackImage,
-    audioPlayer} from './MediaPlayer.styles';
-import {ReactComponent as PlaySvg} from '../../../../svg/009-play.svg';
+    audioPlayer,
+    elapsedTime,
+    timeDisplay,
+
+} from './MediaPlayer.styles';
 import {addListener, removeListener} from "../../../../helpers/listeners";
 import {ReactComponent as PlayButtonSvg } from'../../../../svg/multimedia.svg'
 
@@ -24,7 +28,7 @@ const MediaPlayer = ({
     const pButtonNodeRef = useRef();
     const playHeadNodeRef = useRef();
     const timeLineNodeRef = useRef();
-    const elapsedTimeNodeRef = useRef();
+    const timeDisplayNodeRef = useRef();
 
     const [musicNode, setMusicNode] = useState(null)
     const [pButtonNode , setPButtonNode] = useState(null)
@@ -38,7 +42,7 @@ const MediaPlayer = ({
         setPButtonNode(pButtonNodeRef.current)
         setPlayHeadNode(playHeadNodeRef.current)
         setTimeLineNode(timeLineNodeRef.current)
-        setElapsedTimeNode(elapsedTimeNodeRef.current)
+        setElapsedTimeNode(timeDisplayNodeRef.current)
     },[musicNode ,pButtonNode , playHeadNode,timeLineNode, elapsedTimeNode])
 
     const play =()=> handlePlay(musicNode)
@@ -92,41 +96,32 @@ const MediaPlayer = ({
     musicNode && musicNode.addEventListener('timeupdate', timeUpdate, false);
 
     return(
-        <div className={mediaPlayerWrapper}>
-            <div id="track-info-container" style={{border: '3px solid white' , width: '50vw'}}>
+        <div className={ mediaPlayerWrapper }>
+            <div id="track-info-container" className={ trackInfoContainer }>
                 <div className={getTrackImage(Chance)}/>
 
-                <audio id={'music'} ref={musicNodeRef}>
+                <audio id="music" ref={ musicNodeRef }>
                     <source src={'./04-Hot-Shower.mp3'} type={'audio/mp3'}/>
                 </audio>
 
-                <div id="audioplayer" className={audioPlayer}>
+                <div id="audioplayer" className={ audioPlayer }>
                     <button
                         ref={pButtonNodeRef}
                         id="pButton"
                         className={cx('play' , pButton)}
                         onClick={play}
                     >
-                        {/*<PlaySvg/>*/}
                         <PlayButtonSvg/>
                     </button>
 
-                    <div
-                        id={'elapsedTime'}
-                        style={{
-                            width : '100px',
-                            display: 'block',
-                            textAlign : 'center'
-                        }}
-                    >
-                        <p style={{marginTop: '20px'}} ref={elapsedTimeNodeRef}>00:00</p></div>
-
-                    <div id="timeline" ref={timeLineNodeRef} className={timeline}>
-                        <div id="playhead" ref={playHeadNodeRef} className={playHead}/>
+                    <div id="elapsedTime" className={ elapsedTime }>
+                        <p className={ timeDisplay } ref={ timeDisplayNodeRef }>00:00</p>
+                    </div>
+                    <div id="timeline" ref={ timeLineNodeRef } className={ timeline }>
+                        <div id="playhead" ref={ playHeadNodeRef } className={ playHead }/>
                     </div>
 
                 </div>
-
             </div>
         </div>
     )

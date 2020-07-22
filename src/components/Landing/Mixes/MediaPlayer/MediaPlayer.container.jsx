@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import MediaPlayer from "./MediaPlayer";
+import MediaPlayer from './MediaPlayer';
 
 const MediaPlayerContainer = ()=>{
 

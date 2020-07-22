@@ -1,5 +1,6 @@
 import { css } from 'emotion';
-import {theme} from "../StyleThemes/StylesThemes";
+import { theme } from '../StyleThemes/StylesThemes';
+
 const { colors } = theme.light
 
 export const getNavBodyStyles =css({

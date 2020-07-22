@@ -13,12 +13,15 @@ export const iconWrapper = css({
     position: 'relative',
     display: 'flex',
     justifyContent: 'center',
-    padding: '3rem 0'
+    padding: '3rem 0',
+    border: '1px solid lime'
 });
 
 export const icon = css({
     position: 'relative',
+    width: '100%',
+    height: '100%',
     padding : '0 3rem',
-    display: 'block',
+    display: 'inline-block',
     margin: '0 10px'
 })

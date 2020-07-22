@@ -1,8 +1,6 @@
 import { css } from 'emotion';
 import { theme } from "../../StyleThemes/StylesThemes";
 
-const { menu }  = theme.light.body
-
 export const LandingNavigationSection = css({
     display: "inline-flex",
     position: "sticky",
