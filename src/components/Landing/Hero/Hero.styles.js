@@ -41,12 +41,32 @@ export const heroContainer = css({
 
 export const heroContext = css({
     position: 'relative',
-    paddingLeft: '1rem',
+    width: '100%',
 
-    [mediaQuery.md]:{
+    [ mediaQuery.md ]:{
         width: '45vw',
         paddingLeft: '4rem',
+    },
+
+    "& h1":{
+        paddingLeft: '0.5rem',
+        paddingTop: '12vh',
+
+
+        [ mediaQuery.sm ] :{
+            paddingLeft: 0
+        }
+    },
+
+    "& h3":{
+        paddingLeft: '1em',
+        [ mediaQuery.sm ] :{
+            paddingLeft: 0
+        },
+
+        fontSize : '5.5vw',
     }
+
 });
 
 export const heroTitle = css({

@@ -11,28 +11,52 @@ import { heroSection, heroContainer , heroContextWrapper, heroContext, heroTitle
 
 const Hero = () => {
 
-    const isPhone = useMediaQuery({
-        query: '(max-device-width: 1224px)'
+    const isMobile = useMediaQuery({
+        query: '(max-device-width: 576px)'
     })
 
-    const isDesktopOrLaptop = useMediaQuery({
-        query: '( min-device-width: 1224px )'
+    const isLaptop = useMediaQuery({
+        query: '( min-device-width: 768px )'
     })
+
+    const fadeDown = 'animate__animated animate__fadeInDown'
 
     return(
         <>
             <section className={ cx( sectionStyle , heroSection )}>
-                <div className={ heroContainer }>
-                    <div className={ heroContextWrapper }>
-                        <div className={ heroContext }>
-                            <h1 className={ cx( heroTitle, 'animate__animated animate__fadeInDown',)}>
-                                Hello
-                            </h1>
 
-                            <h3 className={
-                                cx('animate__animated animate__fadeInDown', )}>My name is</h3>
-                            <h3 className={
-                                cx('animate__animated animate__fadeInDown', )}>Timothy</h3>
+
+
+                <div id={'one'} className={ heroContainer }>
+                    <div id={'two'} className={ heroContextWrapper }>
+                        <div id={'three'} className={ heroContext }>
+
+                            { isMobile && (
+                                <>
+                                    <div id={'four'} className={heroImage} >
+                                        <img src={ StencilTim } className={ heroBackgroundImg }/>
+                                    </div>
+
+                                    <h1 className={ cx( heroTitle, fadeDown)}>
+                                        Hello
+                                    </h1>
+                                    <h3 className={cx(fadeDown )}> My </h3>
+                                    <h3 className={cx(fadeDown )}> name </h3>
+                                    <h3 className={cx(fadeDown )}> is </h3>
+                                    <h3 className={cx(fadeDown )}> Timothy </h3>
+                                </>
+                            )}
+
+                            {isLaptop && (
+                                <>
+                                    <h1 className={ cx( heroTitle, 'animate__animated animate__fadeInDown',)}>
+                                        Hello
+                                    </h1>
+
+                                    <h3 className={cx('animate__animated animate__fadeInDown', )}>My name is</h3>
+                                    <h3 className={cx('animate__animated animate__fadeInDown', )}>Timothy</h3>
+                                </>
+                            )}
 
                             <div className={circleContainer} >
                                 <QuarterCircle/>
@@ -43,9 +67,11 @@ const Hero = () => {
                         </div>
                     </div>
 
-                    <div className={heroImage} >
-                        <img src={ StencilTim } className={ heroBackgroundImg }/>
-                    </div>
+                    {isLaptop && (
+                        <div className={heroImage} >
+                            <img src={ StencilTim } className={ heroBackgroundImg }/>
+                        </div>
+                    )}
 
                 </div>
             </section>
