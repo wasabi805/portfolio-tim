@@ -98,7 +98,10 @@ const MediaPlayer = ({
     return(
         <div className={ mediaPlayerWrapper }>
             <div id="track-info-container" className={ trackInfoContainer }>
-                <div className={getTrackImage(Chance)}/>
+
+                <div id={'track-img-delete-when-done'} className={getTrackImage(Chance)}>
+                    <img src={Chance} />
+                </div>
 
                 <audio id="music" ref={ musicNodeRef }>
                     <source src={'./04-Hot-Shower.mp3'} type={'audio/mp3'}/>

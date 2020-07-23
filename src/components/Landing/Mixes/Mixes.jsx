@@ -6,11 +6,10 @@ import MediaPlayer from "./MediaPlayer";
 
 const Mixes = ()=>{
     return(
-        <section id="mixes-section" className={sectionStyle}>
-            <div className={mixesWrapper}>
+        <section id="mixes-section" className={ sectionStyle }>
+            <div className={ mixesWrapper }>
                 <h2>Mixes</h2>
             </div>
-
             <MediaPlayer/>
         </section>
     )

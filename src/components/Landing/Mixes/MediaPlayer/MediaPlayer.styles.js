@@ -2,12 +2,12 @@ import { css } from 'emotion';
 
 export const mediaPlayerWrapper =css({
     display: 'flex',
-    flexDirection: 'column',
+    border: '1px dotted lime',
 });
 
 export const trackInfoContainer = css({
+    position: 'relative',
     border: '3px solid white',
-    width: '50vw',
 });
 
 export const timeline = css({
@@ -41,12 +41,22 @@ export const pButton = css({
 });
 
 export const getTrackImage = ( src )=> css({
-    display: 'block',
-    height: '500px' ,
-    width: '500px',
+    position: 'relative',
+    display: 'inline-block',
+    height: '300px' ,
+    width: '300px',
     textAlign: 'center',
-    backgroundImage: `url(${src})`,
+
+    border: '1px solid cyan',
+
+    // backgroundImage: `url(${src})`,
     backgroundRepeat:'no-repeat',
+    "& img":{
+        position: 'absolute',
+        height: 'auto',
+        width: '100%'
+    }
+
 });
 
 export const audioPlayer = css({

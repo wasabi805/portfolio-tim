@@ -1,5 +1,7 @@
 import { css , keyframes } from 'emotion';
 import { theme } from "../../StyleThemes/StylesThemes";
+import { mediaQuery } from "../../../media-queries/mediaQueries";
+
 const { body, colors } = theme.light
 
 const animateStatic = keyframes({
@@ -22,7 +24,10 @@ export const sectionStyle= css({
 
     h3:{
         margin: 0,
-        fontSize: '4.5rem'
+
+        [mediaQuery.sm] :{
+            fontSize: '4.5rem',
+        }
     },
 
     //centered content

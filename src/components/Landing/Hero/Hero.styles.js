@@ -1,4 +1,6 @@
 import { css , keyframes } from 'emotion';
+import { mediaQuery } from "../../../media-queries/mediaQueries";
+
 const fillLine = keyframes({
     "0%": {
     opacity: 0,
@@ -28,16 +30,28 @@ export const heroSection = css({
 
 export const heroContainer = css({
     position: 'relative',
-    display: 'flex',
     width: '100%',
     paddingTop: '10vh',
+
+    [mediaQuery.md] :{
+        display: 'flex',
+    }
+
 });
 
 export const heroContext = css({
     position: 'relative',
-    width: '45vw',
-    paddingLeft: '4rem',
+    paddingLeft: '1rem',
+
+    [mediaQuery.md]:{
+        width: '45vw',
+        paddingLeft: '4rem',
+    }
 });
+
+export const heroTitle = css({
+
+})
 
 export const heroContextWrapper = css({
     position: 'relative',
@@ -46,6 +60,11 @@ export const heroContextWrapper = css({
 
 export const heroImage = css({
     opacity : 0.5,
+    position: 'absolute',
+
+    [mediaQuery.md]:{
+        position: 'relative',
+    }
 });
 
 export const circleContainer = css({

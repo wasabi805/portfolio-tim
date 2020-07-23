@@ -46,7 +46,7 @@ const Tile = ({ content })=>(
                 return (
                     <div
                         id={ project.id }
-                        className={ cx(tileGridItem , imgRightStyle)}
+                        className={ cx(tileGridItem, imgRightStyle)}
                     >
                         <TileContext
                             title={ content[idx].title }
