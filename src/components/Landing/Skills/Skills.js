@@ -10,7 +10,7 @@ import {
     purpleCircuitsRS,
 } from './Skills.styles';
 
-import { CardDeck } from "../../Cards/CardDeck";
+import CardDeck from "../../Cards";
 import purpleCircuits from '../../../images/Purple-technology-data-internet-72 copy.jpg'
 const Skills = ({ cards })=>{
     return(

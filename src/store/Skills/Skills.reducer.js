@@ -18,7 +18,7 @@ const initialStore = {
         },
 
         { id: 'technology', title: 'technology',
-            list: ['redux', 'redux thunk' , 'redux saga' , 'mongodb','API' , 'JSON'],
+            list: ['redux', 'redux thunk' , 'redux saga' ,'express','mongodb','API' , 'JSON'],
             image: AbstractCode03
         },
     ]

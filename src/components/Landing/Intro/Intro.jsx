@@ -6,7 +6,7 @@ const Intro = ()=>{
     return(
         <section className={sectionStyle}>
                <div className={ IntroContext } >
-                   <h4> Intro :
+                   <h4 style={{paddingBottom: '10vh',}} > Intro :
                        When the la-la hits ya lyrics just splits ya
                        Head so hard, that your hat can't fit you
                        Either I'm with ya or against ya

@@ -29,13 +29,17 @@ export const CardContainer = css({
 })
 
 export const cardWrapper = css({
-
+    [ mediaQuery.md ] :{
+        border: '1px solid #00ff0038',
+    }
 });
 
 export const CardStyle = css({
     color: 'white',
     background: '#2a2b2d',
     backgroundImage: `url("https://www.transparenttextures.com/patterns/fabric-of-squares.png")`,
+    marginBottom: '3vh',
+    border: '1px solid #00ff0038',
 
     "& figure":{
         padding: 0,
@@ -63,21 +67,34 @@ export const CardStyle = css({
             fontFamily: ['Questrial' , 'sans-serif'],
             margin: '0 2em',
             display: 'inline-block',
-            fontSize: '1vw'
+            fontSize: '3vw',
+
+            [mediaQuery.sm] :{
+                fontSize : '1vw'
+            }
         },
 
         "& h3":{
             textAlign: 'center',
             flexBasis: '100%',
-            fontSize: '2vw',
+            fontSize: '5.5vw',
             fontWeight : 400,
             letterSpacing: '4px',
             marginBlockStart: '1em',
             marginBlockEnd:'1em',
             marginInlineStart: '0px',
             marginInlineEnd:'0px',
+
+            [mediaQuery.sm] :{
+                fontSize : '2vw'
+            }
         },
+    },
+
+    [ mediaQuery.md ] :{
+        border: 'none',
     }
+
 });
 
 export const CardImgWrapper = css({

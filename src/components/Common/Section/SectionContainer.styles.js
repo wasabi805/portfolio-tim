@@ -18,8 +18,12 @@ export const sectionStyle= css({
     h2:{
         margin: 0,
         marginBottom: '2rem',
-        fontSize: '4.5rem',
-        right  : 0
+        right  : 0,
+        fontSize: '3rem',
+
+        [ mediaQuery.md ] :{
+            fontSize: '4.5rem',
+        }
     },
 
     h3:{
@@ -37,6 +41,18 @@ export const sectionStyle= css({
 
     fontFamily: 'MonumentExtended-Regular',
     color: colors.white,
-    padding: '0 4rem',
-    paddingBottom: "20%",
+    padding: '0 2rem',
+
+
+    [mediaQuery.md] :{
+        // padding: '0 4rem',
+        padding: '15vh 2rem'
+    },
+    [mediaQuery.lg] :{
+        padding: '15vh 4rem',
+    }
+
+
+
+
 });

@@ -1,10 +1,16 @@
 import { css } from 'emotion';
+import { mediaQuery } from '../../../media-queries/mediaQueries';
 import maxHeadroom from "../../../images/max-headroom.png";
 
 export const skillsSectionTitle = css({
-    float: 'right',
     position: 'relative',
     zIndex: '10',
+    textAlign: 'center',
+
+    [mediaQuery.md]:{
+        float: 'right',
+    }
+
 });
 
 export const skillsBackgroundWrapper = css({
