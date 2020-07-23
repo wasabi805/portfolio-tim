@@ -106,7 +106,7 @@ export const circleContainer = css({
 
 export const jobTitle = css({
     color: '#bb54a885',
-    fontSize: '4vh',
+    fontSize: '4vw',
     position: 'absolute',
     width: '100%',
     top:'50%',

@@ -1,7 +1,9 @@
 import { css } from 'emotion';
 
 export const homeSection = css({
-    position: 'relative'
+    width: '100vw',
+    padding: '0',
+    margin: '0',
 });
 
 export const heroBackgroundImg = css({

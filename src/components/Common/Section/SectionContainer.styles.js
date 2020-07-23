@@ -51,8 +51,4 @@ export const sectionStyle= css({
     [mediaQuery.lg] :{
         padding: '15vh 4rem',
     }
-
-
-
-
 });

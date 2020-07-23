@@ -2,14 +2,22 @@ import { css } from 'emotion';
 import { mediaQuery } from '../../../media-queries/mediaQueries';
 
 export const projectsWrapper = css({
-    position: 'relative',
     display: 'block',
+    padding: '12vh 0',
 
     "& h2":{
-        textAlign: 'center'
+        fontSize: '10vw',
+        textAlign: 'center',
+        [mediaQuery.lg]:{
+            fontSize: '5vw',
+        },
     },
     "& a ":{
         textDecoration : 'none'
+    },
+
+    [mediaQuery.lg] : {
+        paddingTop: '1.25rem',
     }
 });
 
@@ -20,6 +28,7 @@ export const projectsBackgroundImage = css({
 
     "& img": {
         display: 'block',
+        width: '100%',
 
         [mediaQuery.sm] : {
             width: '45vw   '

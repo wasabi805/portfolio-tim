@@ -35,7 +35,7 @@ const Home = ()=>{
             <Intro/>
             <Skills/>
             {/*<Experience/>*/}
-            {/*<Projects/>*/}
+            <Projects/>
             {/*<Mixes/>*/}
             {/*<Contact/>*/}
         </div>

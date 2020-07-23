@@ -38,7 +38,6 @@ export const CardStyle = css({
     color: 'white',
     background: '#2a2b2d',
     backgroundImage: `url("https://www.transparenttextures.com/patterns/fabric-of-squares.png")`,
-    marginBottom: '3vh',
     border: '1px solid #00ff0038',
 
     "& figure":{

@@ -1,10 +1,12 @@
 import React  from 'react';
 import { cx } from 'emotion';
 import PropTypes from 'prop-types';
+import { useMediaQuery } from 'react-responsive';
 import { isEvenIndex } from '../../helpers/types';
 import {
     getTileImageStyle ,
     tileImageOverlay,
+    tileTitle,
     tileContextStyle ,
     tileGridContainerStyle,
     tileGridItem,
@@ -12,6 +14,7 @@ import {
     imgRightStyle,
 
 } from './Tile.styles';
+import {media} from "../../enums/media";
 
 const TileImage =({image : url} )=>(
     <div id="tileImage"
@@ -23,42 +26,67 @@ const TileImage =({image : url} )=>(
 const TileContext = ({ title ,context })=>(
     <div className={ tileContextStyle }>
         <h3
-            className="glitch"
-            data-text={ title } >{ title }</h3>
+            // className={cx("glitch" , tileTitle )}
+            // data-text={ title }
+        >{ title }
+        </h3>
         <p>{ context }</p>
     </div>
 )
 
-const Tile = ({ content })=>(
-    <div className={tileGridContainerStyle} >
-        { content.map( (project , idx)=> {
-            if( isEvenIndex(idx) ){
-                return (
-                    <div
-                        id={ project.id }
-                        className={ cx(tileGridItem, imgLeftStyle )}
-                    >
-                        <TileImage image={ content[idx].image }/>
-                        <TileContext title={ content[idx].title } context={ content[idx].context }/>
-                    </div>
-                )
-            }else{
-                return (
-                    <div
-                        id={ project.id }
-                        className={ cx(tileGridItem, imgRightStyle)}
-                    >
-                        <TileContext
-                            title={ content[idx].title }
-                            context={ content[idx].context }
-                        />
-                        <TileImage image={ content[idx].image } />
-                    </div>
-                )
-            }
-        }) }
-    </div>
-)
+const Tile = ({ content })=>{
+
+    const isMobile = useMediaQuery({ query: media.MOBILE });
+    const isLaptop = useMediaQuery({ query: media.LAPTOP });
+
+    return(
+        <div className={tileGridContainerStyle} >
+            {isLaptop && (
+                <>
+                    { content.map( (project , idx)=> {
+                        if( isEvenIndex(idx) ){
+                            return (
+                                <div
+                                    id={ project.id }
+                                    className={ cx(tileGridItem, imgLeftStyle )}
+                                >
+                                    <TileImage image={ content[idx].image }/>
+                                    <TileContext title={ content[idx].title } context={ content[idx].context }/>
+                                </div>
+                            )
+                        }else{
+                            return (
+                                <div
+                                    id={ project.id }
+                                    className={ cx(tileGridItem, imgRightStyle)}
+                                >
+                                    <TileContext
+                                        title={ content[idx].title }
+                                        context={ content[idx].context }
+                                    />
+                                    <TileImage image={ content[idx].image } />
+                                </div>
+                            )
+                        }
+                    }) }
+                </>
+            )}
+
+            {isMobile && (
+                <>
+                    {content.map( (project , idx)=> (
+                        <div id={ project.id } className={ cx(tileGridItem, imgLeftStyle )}>
+                            <TileImage image={ content[idx].image }/>
+                            <TileContext title={ content[idx].title } context={ content[idx].context }/>
+                        </div>
+                    ))}
+                </>
+            )}
+
+
+        </div>
+    )
+}
 
 Tile.propTypes = {
     content : PropTypes.arrayOf(

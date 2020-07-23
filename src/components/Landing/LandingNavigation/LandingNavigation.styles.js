@@ -4,6 +4,7 @@ import { theme } from "../../StyleThemes/StylesThemes";
 export const LandingNavigationSection = css({
     display: "inline-flex",
     position: "sticky",
+    fontSize: '2vw',
     top: '24px',
     right: '12px',
     float: "right",
