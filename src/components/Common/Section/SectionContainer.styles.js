@@ -30,14 +30,6 @@ export const sectionStyle= css({
         }
     },
 
-    //centered content
-    h4:{
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform : 'translate(-50%, -50%)'
-    },
-
     position: 'relative',
     background: body.section,
     backgroundImage: `url(${body.sectionNoise})`,

@@ -1,7 +1,9 @@
 import React from 'react';
 import { cx } from 'emotion';
 import animate from 'animate.css';
-import { useMediaQuery } from 'react-responsive'
+import { animation } from '../../../enums/animation';
+import { useMediaQuery } from 'react-responsive';
+import { media } from '../../../enums/media';
 import {sectionStyle} from '../../Common/Section/SectionContainer.styles';
 import { heroBackgroundImg } from '../Home/Home.styles';
 import { jobTitle , circleContainer } from "./Hero.styles";
@@ -11,56 +13,46 @@ import { heroSection, heroContainer , heroContextWrapper, heroContext, heroTitle
 
 const Hero = () => {
 
-    const isMobile = useMediaQuery({
-        query: '(max-device-width: 576px)'
-    })
-
-    const isLaptop = useMediaQuery({
-        query: '( min-device-width: 768px )'
-    })
-
-    const fadeDown = 'animate__animated animate__fadeInDown'
+    const isMobile = useMediaQuery({ query: media.MOBILE })
+    const isLaptop = useMediaQuery({ query: media.LAPTOP })
+    const TitleText = ({ text })=> <h3 className={cx(animation.FADE_IN_DOWN )}> { text } </h3>
 
     return(
         <>
             <section className={ cx( sectionStyle , heroSection )}>
-
-
-
-                <div id={'one'} className={ heroContainer }>
-                    <div id={'two'} className={ heroContextWrapper }>
-                        <div id={'three'} className={ heroContext }>
+                <div className={ heroContainer }>
+                    <div className={ heroContextWrapper }>
+                        <div className={ heroContext }>
 
                             { isMobile && (
                                 <>
-                                    <div id={'four'} className={heroImage} >
+                                    <div className={heroImage} >
                                         <img src={ StencilTim } className={ heroBackgroundImg }/>
                                     </div>
 
-                                    <h1 className={ cx( heroTitle, fadeDown)}>
+                                    <h1 className={ cx( heroTitle, animation.FADE_IN_DOWN)}>
                                         Hello
                                     </h1>
-                                    <h3 className={cx(fadeDown )}> My </h3>
-                                    <h3 className={cx(fadeDown )}> name </h3>
-                                    <h3 className={cx(fadeDown )}> is </h3>
-                                    <h3 className={cx(fadeDown )}> Timothy </h3>
+                                    <TitleText text={'My'} />
+                                    <TitleText text={'name is'} />
+                                    <TitleText text={'Timothy'} />
                                 </>
                             )}
 
                             {isLaptop && (
                                 <>
-                                    <h1 className={ cx( heroTitle, 'animate__animated animate__fadeInDown',)}>
+                                    <h1 className={ cx( heroTitle, animation.FADE_IN_DOWN,)}>
                                         Hello
                                     </h1>
 
-                                    <h3 className={cx('animate__animated animate__fadeInDown', )}>My name is</h3>
-                                    <h3 className={cx('animate__animated animate__fadeInDown', )}>Timothy</h3>
+                                    <TitleText text={'My name is'}/>
+                                    <TitleText text={'Timothy'}/>
                                 </>
                             )}
 
                             <div className={circleContainer} >
                                 <QuarterCircle/>
-                                <span className={cx(jobTitle , 'animate__animated animate__lightSpeedInRight')} >
+                                <span className={cx(jobTitle , animation.LS_IN_RIGHT)} >
                                     Front End Developer
                                 </span>
                             </div>
@@ -72,7 +64,6 @@ const Hero = () => {
                             <img src={ StencilTim } className={ heroBackgroundImg }/>
                         </div>
                     )}
-
                 </div>
             </section>
         </>

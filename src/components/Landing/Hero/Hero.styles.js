@@ -52,10 +52,13 @@ export const heroContext = css({
         paddingLeft: '0.5rem',
         paddingTop: '12vh',
 
-
         [ mediaQuery.sm ] :{
             paddingLeft: 0
-        }
+        },
+
+        [ mediaQuery.md ] :{
+            paddingTop: 0
+        },
     },
 
     "& h3":{
