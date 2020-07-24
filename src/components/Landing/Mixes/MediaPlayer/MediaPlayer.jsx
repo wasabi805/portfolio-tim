@@ -15,7 +15,8 @@ import {
 import {addListener, removeListener} from "../../../../helpers/listeners";
 import {ReactComponent as PlayButtonSvg } from'../../../../svg/multimedia.svg'
 
-import Chance from '../../../../images/thumb/chance.png'
+import Chance from '../../../../images/thumb/chance.png';
+import Tinashe from '../../../../images/thumb/Tinashe_-_2_On.png'
 
 const MediaPlayer = ({
     handlePlay,
@@ -100,11 +101,11 @@ const MediaPlayer = ({
             <div id="track-info-container" className={ trackInfoContainer }>
 
                 <div id={'track-img-delete-when-done'} className={getTrackImage(Chance)}>
-                    <img src={Chance} />
+                    <img src={Tinashe} />
                 </div>
 
                 <audio id="music" ref={ musicNodeRef }>
-                    <source src={'./04-Hot-Shower.mp3'} type={'audio/mp3'}/>
+                    <source src={'./01-2-On-(feat. Schoolboy Q).mp3'} type={'audio/mp3'}/>
                 </audio>
 
                 <div id="audioplayer" className={ audioPlayer }>

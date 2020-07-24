@@ -36,8 +36,8 @@ const Home = ()=>{
             <Skills/>
             {/*<Experience/>*/}
             <Projects/>
-            {/*<Mixes/>*/}
-            {/*<Contact/>*/}
+            <Mixes/>
+            <Contact/>
         </div>
     )
 };

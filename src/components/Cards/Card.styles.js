@@ -29,6 +29,7 @@ export const CardContainer = css({
 })
 
 export const cardWrapper = css({
+    padding: '3rem 0',
     [ mediaQuery.md ] :{
         border: '1px solid #00ff0038',
     }

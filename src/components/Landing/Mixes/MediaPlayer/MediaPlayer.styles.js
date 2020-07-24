@@ -7,6 +7,8 @@ export const mediaPlayerWrapper =css({
 
 export const trackInfoContainer = css({
     position: 'relative',
+    display: 'inline-block',
+    width: '100%',
     border: '3px solid white',
 });
 
@@ -17,7 +19,7 @@ export const timeline = css({
     marginTop: '20px',
     float: 'left',
     borderRadius: '15px',
-
+    marginRight: '15px',
 });
 
 export const playHead = css({
@@ -42,9 +44,6 @@ export const pButton = css({
 
 export const getTrackImage = ( src )=> css({
     position: 'relative',
-    display: 'inline-block',
-    height: '300px' ,
-    width: '300px',
     textAlign: 'center',
 
     border: '1px solid cyan',
@@ -52,9 +51,9 @@ export const getTrackImage = ( src )=> css({
     // backgroundImage: `url(${src})`,
     backgroundRepeat:'no-repeat',
     "& img":{
-        position: 'absolute',
+        // position: 'absolute',
         height: 'auto',
-        width: '100%'
+        // width: '100%'
     }
 
 });
