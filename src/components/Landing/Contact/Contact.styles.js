@@ -19,7 +19,7 @@ export const footerWrapper = css({
     position: 'relative',
     minHeight: '30vh',
     padding: '0',
-    border: '1px solid lime'
+    border: '1px solid #00ff003b'
 });
 
 export const footerContainer = css({

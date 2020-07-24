@@ -2,7 +2,8 @@ import { css } from 'emotion';
 
 export const mediaPlayerWrapper =css({
     display: 'flex',
-    border: '1px dotted lime',
+    // border: '1px dotted lime',
+    paddingBottom: '22vh'
 });
 
 export const trackInfoContainer = css({
