@@ -1,5 +1,6 @@
 import { css } from 'emotion';
 import { theme } from "../../StyleThemes/StylesThemes";
+import { mediaQuery } from "../../../media-queries/mediaQueries";
 
 export const LandingNavigationSection = css({
     display: "inline-flex",
@@ -25,5 +26,9 @@ export const LandingNavigationSection = css({
 
     "& ul": {
         listStyle: "none"
+    },
+
+    [mediaQuery.lg]: {
+        fontSize: '1.2vw',
     }
 });

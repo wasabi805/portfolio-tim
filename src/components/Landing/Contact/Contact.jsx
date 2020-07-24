@@ -6,12 +6,16 @@ import {
     footer,
     footerWrapper,
     footerContainer,
+    footerContextWrapper,
     iconWrapper,
+    contactEmail,
+    contactPhone,
+    contactLocation,
     iconContainer,
     iconWrapperText,
     contactInfo,
-    socialIconContainer,
-
+    socialMediaContainer,
+    socialIconWrapper,
     } from './Contact.styles';
 import {ReactComponent as PinSvg} from '../../../svg/placeholder.svg';
 import {ReactComponent as PhoneSvg} from '../../../svg/phone.svg';
@@ -26,13 +30,7 @@ const Contact = ()=>{
         <section id="contact-section" className={cx(sectionStyle, footer )}>
             <div className={footerWrapper}>
                 <div className={ footerContainer }>
-                    <h3 style={{
-                        position: 'absolute',
-                        fontSize: '4vw',
-                        paddingLeft: '5vw',
-                        paddingTop: '13px',
-
-                    }} >Contact</h3>
+                    <h5>Contact</h5>
                    <div>
                        <div className={contactInfo}>
                            <span className={ iconContainer }>
@@ -40,7 +38,7 @@ const Contact = ()=>{
                                    <PinSvg/>
                                </span>
                            </span>
-                           <p className={ cx(iconWrapperText, css({fontSize : '2.2vw'})) }>Tempe, Arizona</p>
+                           <p className={ cx(iconWrapperText, contactLocation)} >Tempe, Arizona</p>
                        </div>
 
 
@@ -50,7 +48,7 @@ const Contact = ()=>{
                                    <PhoneSvg/>
                                </span>
                            </span>
-                           <p className={ iconWrapperText }>650 464 9906</p>
+                           <p className={ cx(iconWrapperText , contactPhone) }>650 464 9906</p>
                        </div>
 
                        <div className={contactInfo}>
@@ -59,7 +57,7 @@ const Contact = ()=>{
                                    <EmailSvg/>
                                </span>
                            </span>
-                           <p className={ iconWrapperText }>tim@proletdev.com</p>
+                           <p className={ cx(iconWrapperText , contactEmail) }>tim@proletdev.com</p>
                        </div>
                    </div>
 
@@ -69,43 +67,35 @@ const Contact = ()=>{
 
                 <div className={ footerContainer } >
                     <div>
-                        <div style={{
-                        }}>
+                        <div className={ footerContextWrapper} >
                             <h4>
                                 About Timothy...
                             </h4>
 
-                            <p style={{
-                                fontFamily: 'Helvetica',
-                                paddingLeft: '5px',
-                                fontSize: '8px',
-                            }}>
+                            <p>
                                 I love Barro's pizza and playing Gears. Let's be internet BFFs.
                             </p>
 
-                            <div style={{
-                                display: 'flex',
-                                zIndex: 10,
-                            }}>
-                                <span className={ socialIconContainer }>
+                            <div className={ socialMediaContainer }  >
+                                <span className={ socialIconWrapper }>
                                     <span>
                                         <FacebookIcon/>
                                     </span>
                                 </span>
 
-                                <span className={ socialIconContainer }>
+                                <span className={ socialIconWrapper }>
                                     <span>
                                         <TwitterIcon/>
                                     </span>
                                 </span>
 
-                                <span className={ socialIconContainer }>
+                                <span className={ socialIconWrapper }>
                                     <span>
                                         <LinkedInIcon/>
                                     </span>
                                 </span>
 
-                                <span className={ socialIconContainer }>
+                                <span className={ socialIconWrapper }>
                                     <span>
                                         <GithubIcon/>
                                     </span>

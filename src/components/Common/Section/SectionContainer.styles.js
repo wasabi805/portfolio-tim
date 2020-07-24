@@ -43,9 +43,7 @@ export const sectionStyle= css({
     color: colors.white,
     padding: '0 2rem',
 
-
     [mediaQuery.md] :{
-        // padding: '0 4rem',
         padding: '15vh 2rem'
     },
     [mediaQuery.lg] :{
