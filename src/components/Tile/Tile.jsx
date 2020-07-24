@@ -15,6 +15,7 @@ import {
 
 } from './Tile.styles';
 import {media} from "../../enums/media";
+import DevConnectorMobile from "../../images/devconnector-mobile.png";
 
 const TileImage =({image : url} )=>(
     <div id="tileImage"
@@ -34,7 +35,7 @@ const TileContext = ({ title ,context })=>(
     </div>
 )
 
-const Tile = ({ content })=>{
+const Tile = ({ content, mobileImages })=>{
 
     const isMobile = useMediaQuery({ query: media.MOBILE });
     const isLaptop = useMediaQuery({ query: media.LAPTOP });
@@ -76,7 +77,9 @@ const Tile = ({ content })=>{
                 <>
                     {content.map( (project , idx)=> (
                         <div id={ project.id } className={ cx(tileGridItem, imgLeftStyle )}>
-                            <TileImage image={ content[idx].image }/>
+                            { (project.hasMobileImg  ?
+                                <TileImage image={ content[idx].hasMobileImg }/> :
+                                <TileImage image={ content[idx].image }/> )}
                             <TileContext title={ content[idx].title } context={ content[idx].context }/>
                         </div>
                     ))}

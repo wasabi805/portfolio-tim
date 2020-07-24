@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx , css } from 'emotion';
 import { sectionStyle } from '../../Common/Section/SectionContainer.styles';
 import {
     sectionTitle ,
@@ -30,6 +30,7 @@ const Contact = ()=>{
                         position: 'absolute',
                         fontSize: '4vw',
                         paddingLeft: '5vw',
+                        paddingTop: '13px',
 
                     }} >Contact</h3>
                    <div>
@@ -39,7 +40,7 @@ const Contact = ()=>{
                                    <PinSvg/>
                                </span>
                            </span>
-                           <p className={ iconWrapperText }>Tempe, Arizona</p>
+                           <p className={ cx(iconWrapperText, css({fontSize : '2.2vw'})) }>Tempe, Arizona</p>
                        </div>
 
 
@@ -58,7 +59,7 @@ const Contact = ()=>{
                                    <EmailSvg/>
                                </span>
                            </span>
-                           <p className={ iconWrapperText }>timothy.j.ocampo@gmail.com</p>
+                           <p className={ iconWrapperText }>tim@proletdev.com</p>
                        </div>
                    </div>
 
@@ -69,21 +70,21 @@ const Contact = ()=>{
                 <div className={ footerContainer } >
                     <div>
                         <div style={{
-                            padding:' 20%',
                         }}>
                             <h4>
                                 About Timothy...
                             </h4>
 
-                            <p>
-                                Lorem ipsum blah blah blah blah
-                                blah blah blah blah blah blah
-                                blah blah blah blah blah blah
+                            <p style={{
+                                fontFamily: 'Helvetica',
+                                paddingLeft: '5px',
+                                fontSize: '8px',
+                            }}>
+                                I love Barro's pizza and playing Gears. Let's be internet BFFs.
                             </p>
 
                             <div style={{
                                 display: 'flex',
-                                border: '1px solid cyan',
                                 zIndex: 10,
                             }}>
                                 <span className={ socialIconContainer }>

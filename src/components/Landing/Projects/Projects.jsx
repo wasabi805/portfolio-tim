@@ -13,6 +13,9 @@ const Projects = ()=>{
     const projectsList = useSelector( state =>
         getNestedProperty( selectors.projects(state) , 'projects'));
 
+    const mobileImages = useSelector( state=>
+        getNestedProperty( selectors.projects(state) , 'mobileImg') )
+
     const isMobile = useMediaQuery({ query: media.MOBILE })
     const isLaptop = useMediaQuery({ query: media.LAPTOP })
 
@@ -42,7 +45,10 @@ const Projects = ()=>{
 
                 </div>
 
-                <Tile content={ projectsList } />
+                <Tile
+                    content={ projectsList }
+                    mobileImages={ mobileImages }
+                />
             </div>
         </section>
     )

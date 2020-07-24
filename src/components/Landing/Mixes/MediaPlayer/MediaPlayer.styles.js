@@ -1,9 +1,10 @@
 import { css } from 'emotion';
+import {mediaQuery} from "../../../../media-queries/mediaQueries";
 
 export const mediaPlayerWrapper =css({
     display: 'flex',
     // border: '1px dotted lime',
-    paddingBottom: '22vh'
+    paddingBottom: '17vh'
 });
 
 export const trackInfoContainer = css({
@@ -46,15 +47,12 @@ export const pButton = css({
 export const getTrackImage = ( src )=> css({
     position: 'relative',
     textAlign: 'center',
-
-    border: '1px solid cyan',
-
-    // backgroundImage: `url(${src})`,
-    backgroundRepeat:'no-repeat',
     "& img":{
-        // position: 'absolute',
         height: 'auto',
-        // width: '100%'
+        width: '100%',
+        [mediaQuery.sm]:{
+            width: 'initial'
+        }
     }
 
 });

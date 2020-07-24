@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
 @font-face {
   font-family: 'MonumentExtended-Regular';
   src: local('MonumentExtended-Regular'), url(./fonts/MonumentExtended-Regular.ttf) format('truetype');
@@ -8,14 +10,47 @@
   src: local('MonumentExtended-Ultrabold'), url(./fonts/MonumentExtended-Ultrabold.ttf) format('truetype');
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@font-face {
+  font-family: 'D-DIN';
+  src: local('D-DIN'), url(./fonts/D-DIN.ttf) format('truetype') ;
+}
+
+@font-face {
+  font-family: 'D-DIN-Bold';
+  src: local('D-DIN-Bold'), url(./fonts/D-DIN-Bold.ttf) format('truetype') ;
+}
+
+@font-face {
+  font-family: 'D-DIN-Italic';
+  src: local('D-DIN-Italic'), url(./fonts/D-DIN-Italic.ttf) format('truetype') ;
+}
+@font-face {
+  font-family: 'D-DINCondensed';
+  src: local('D-DINCondensed'), url(./fonts/D-DINCondensed.ttf) format('truetype') ;
+}
+@font-face {
+  font-family: 'D-DINCondensed-Bold';
+  src: local('D-DINCondensed-Bold'), url(./fonts/D-DINCondensed-Bold.ttf) format('truetype') ;
+}
+@font-face {
+  font-family: 'D-DINExp';
+  src: local('D-DINExp'), url(./fonts/D-DINExp.ttf) format('truetype') ;
+}
+@font-face {
+  font-family: 'D-DINExp-Bold';
+  src: local('D-DINExp-Bold'), url(./fonts/D-DINExp-Bold.ttf) format('truetype') ;
+}
+@font-face {
+  font-family: 'D-DINExp-Italic';
+  src: local('D-DINExp-Italic'), url(./fonts/D-DINExp-Italic.ttf) format('truetype') ;
+}
 
 body {
   margin: 0;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -25,5 +60,5 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }

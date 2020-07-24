@@ -26,7 +26,7 @@ export const footerContainer = css({
     display: 'grid',
     flex: 1,
     placeItems: 'center',
-    fontSize: '2vw',
+    fontSize: '3vw',
     background: '#2a2b2d',
     backgroundImage: `url("https://www.transparenttextures.com/patterns/fabric-of-squares.png")`,
 });
@@ -35,10 +35,10 @@ export const iconContainer = css({
     display: 'grid',
     placeItems: 'center',
     borderRadius: '50%',
-    width: '3vw',
-    height:' 3vw',
+    width: '5vw',
+    height:' 5vw',
     textAlign: 'center',
-    margin: 'auto 14px',
+    margin: 'auto 6px 5px 0px;',
     background: '#62627e',
     zIndex: 1,
 });
@@ -59,12 +59,8 @@ export const contactInfo = css({
 });
 
 export const socialIconContainer = css({
-    display: 'grid',
-    placeItems: 'center',
-    width: '3vw',
-    height:' 3vw',
-    textAlign: 'center',
-    margin: 'auto 14px',
+    margin: '4px',
+    padding:'10px',
     background: '#62627e',
     zIndex: 1,
 });
