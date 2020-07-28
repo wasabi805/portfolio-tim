@@ -8,7 +8,6 @@ export const IntroContext = css({
         marginBottom: 0,
         paddingTop: '2vh',
 
-
        [mediaQuery.md] : {
            position: 'absolute',
            top: '50%',

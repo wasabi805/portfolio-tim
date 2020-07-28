@@ -46,12 +46,12 @@ export const pButton = css({
 
 export const getTrackImage = ( src )=> css({
     position: 'relative',
-    textAlign: 'center',
+    // textAlign: 'center',
     "& img":{
         height: 'auto',
         width: '100%',
         [mediaQuery.sm]:{
-            width: 'initial'
+
         }
     }
 

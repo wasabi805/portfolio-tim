@@ -1,5 +1,7 @@
 import { cx } from 'emotion';
 import React, { useEffect, useState, useRef } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import animeGirl from '../../../../images/thumb/animeGirl-600x600.jpg'
 import {
     mediaPlayerWrapper ,
     trackInfoContainer,
@@ -15,15 +17,19 @@ import {
 import {addListener, removeListener} from "../../../../helpers/listeners";
 import {ReactComponent as PlayButtonSvg } from'../../../../svg/multimedia.svg'
 
-import Chance from '../../../../images/thumb/chance.png';
-import Tinashe from '../../../../images/thumb/Tinashe_-_2_On.png'
+import {media} from "../../../../enums/media";
+// import
 
 const MediaPlayer = ({
     handlePlay,
     getTimeUpdate,
     loadedTrack,
     setMovePlayHead,
-    clickPercent
+    clickPercent,
+                         trackListing,
+                         switchImage,
+
+                         currentTrack
 })=>{
     const musicNodeRef = useRef();
     const pButtonNodeRef = useRef();
@@ -31,11 +37,13 @@ const MediaPlayer = ({
     const timeLineNodeRef = useRef();
     const timeDisplayNodeRef = useRef();
 
-    const [musicNode, setMusicNode] = useState(null)
+    const [musicNode, setMusicNode] = useState(null);
     const [pButtonNode , setPButtonNode] = useState(null)
     const [playHeadNode ,setPlayHeadNode] = useState(null);
-    const [timeLineNode, setTimeLineNode] = useState(null)
-    const [elapsedTimeNode , setElapsedTimeNode] = useState(null)
+    const [timeLineNode, setTimeLineNode] = useState(null);
+    const [elapsedTimeNode , setElapsedTimeNode] = useState(null);
+
+    const isLaptop = useMediaQuery({ query: media.LAPTOP })
 
     //assigns the dom elements on mount
     useEffect(()=>{
@@ -63,6 +71,9 @@ const MediaPlayer = ({
 
         // gets input from all mouse clicks
         const mouseUp =( event )=> {
+
+            switchImage( musicNode.currentTime )
+
             if (onPlayHead == true) {
                 movePlayHead(event);
                 window.removeEventListener('mousemove', movePlayHead, true);
@@ -96,17 +107,50 @@ const MediaPlayer = ({
     pButtonNode && addListener(pButtonNode , 'click', ()=>play);
     musicNode && musicNode.addEventListener('timeupdate', timeUpdate, false);
 
+    const imgOrObj = ( currentTrack.img !== 'animeGirl' ? currentTrack.img : '' )
     return(
-        <div className={ mediaPlayerWrapper }>
+        <div className={ mediaPlayerWrapper } style={{border: '1px solid cyan'}}>
+            <audio id="music" ref={ musicNodeRef }>
+                <source src={'./June2020_portfolioMix.mp3'} type={'audio/mp3'}/>
+            </audio>
             <div id="track-info-container" className={ trackInfoContainer }>
+               <div style={
+                   {display : 'flex' ,  border : '1px solid lime', }
+               }>
+                   <div id={'track-img-delete-when-done'} className={getTrackImage()}
+                        style={
+                            {flex: 1}
+                        }
+                   >
+                       {/*<img src={(currentTrack.img )}/>*/}
+                       <img src={imgOrObj}/>
 
-                <div id={'track-img-delete-when-done'} className={getTrackImage(Chance)}>
-                    <img src={Tinashe} />
-                </div>
 
-                <audio id="music" ref={ musicNodeRef }>
-                    <source src={'./01-2-On-(feat. Schoolboy Q).mp3'} type={'audio/mp3'}/>
-                </audio>
+                   </div>
+
+                   {}
+
+                   {isLaptop && (
+                       <div style={
+                           {background : '#00ffff4a' , flex: '1' , display: 'flex'}
+                       }>
+                           <ul style={{
+                               position: 'absolute',
+                               fontSize: '1vw',
+                               top: '0',
+                               bottom: '70px',
+                               fontFamily: 'D-DINCondensed',
+                               listStyleType: 'none',
+                               overflow: 'auto',
+                           }}>
+                               {trackListing.map( track => (
+                                   <li>{track.id} - {track.artist} | {track.title} </li>
+                               ) )}
+                           </ul>
+                       </div>
+                   )}
+
+               </div>
 
                 <div id="audioplayer" className={ audioPlayer }>
                     <button
@@ -119,7 +163,10 @@ const MediaPlayer = ({
                     </button>
 
                     <div id="elapsedTime" className={ elapsedTime }>
-                        <p className={ timeDisplay } ref={ timeDisplayNodeRef }>00:00</p>
+                        <p className={ timeDisplay } ref={ timeDisplayNodeRef }>
+                            00:00
+                        </p>
+
                     </div>
                     <div id="timeline" ref={ timeLineNodeRef } className={ timeline }>
                         <div id="playhead" ref={ playHeadNodeRef } className={ playHead }/>

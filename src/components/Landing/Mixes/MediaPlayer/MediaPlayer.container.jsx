@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React, { useCallback, useState} from 'react';
 import MediaPlayer from './MediaPlayer';
 
-const MediaPlayerContainer = ()=>{
+const MediaPlayerContainer = ( {trackListing } )=>{
 
     const [loadedTrack , setLoadedTrack] = useState(
         {timelineWidth: null,    /** Calculated width for loaded audio file specific to loaded song  */
         });
+
+
 
     /**Button Controls*/
     const handlePlay =( node )=> (node && node.paused ? node.play() : node.pause());
@@ -16,6 +18,24 @@ const MediaPlayerContainer = ()=>{
         parseInt((Math.floor(e.target.currentTime) - minutes * 60), 10)
     );
 
+    const [currentTrack , setCurrentTrack] = useState(trackListing[0])
+
+    const switchImage = ( seconds ) => {
+
+        const jumpToTrack = trackListing.find(
+            song => (
+                seconds >= song.startTime &&
+                seconds <= song.endTime
+            ))
+
+        if(currentTrack !== jumpToTrack ){
+            setCurrentTrack(jumpToTrack || {})
+        }
+
+        console.log(jumpToTrack)
+
+    }
+
     /**Elapsed Time Bar*/
     /**
      * @function{ getTimeUpdate } : Paints the elapsedTime bar as song progresses.
@@ -24,7 +44,12 @@ const MediaPlayerContainer = ()=>{
      * @param playHeadNode : sliderHandle
      * @param elapsedTimeNode :
      */
-    const getTimeUpdate = (e , musicNode , playHeadNode ,elapsedTimeNode)=>{
+    const getTimeUpdate = (
+        e ,
+        musicNode ,
+        playHeadNode ,
+        elapsedTimeNode )=>
+    {
         if(musicNode, playHeadNode, elapsedTimeNode){
             const playPercent = loadedTrack.timelineWidth * (musicNode.currentTime / musicNode.duration);
             playHeadNode.style.marginLeft = playPercent + "px";
@@ -33,14 +58,19 @@ const MediaPlayerContainer = ()=>{
             const seconds = getSeconds(e, calculatedMinutes);
             const calcSeconds = seconds < 10 ? "0" + seconds : seconds
 
+            //Display TrackImage
+            switchImage( musicNode.currentTime )
+
+            console.log(musicNode.currentTime)
+            //Display Time
             elapsedTimeNode.innerHTML= `${calculatedMinutes}:${calcSeconds }`
         }
     };
 
+
     const getPosition =( el )=> {
         return el.getBoundingClientRect().left;
     }
-
     //PART A.) Drag playHead to selected time on track
     // Note: makes playHead moveable by user, DOES NOT SET THE POSITION see Part B
     const setMovePlayHead = (e , timeLineNode , playHeadNode)=>{
@@ -70,6 +100,10 @@ const MediaPlayerContainer = ()=>{
             loadedTrack={loadedTrack}
             setMovePlayHead={setMovePlayHead}
             clickPercent={clickPercent}
+            trackListing={ trackListing }
+
+            switchImage={ switchImage }
+            currentTrack={currentTrack}
         />
     )
 }

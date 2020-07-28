@@ -4,13 +4,13 @@ import { mixesWrapper } from './Mixes.styles';
 
 import MediaPlayer from "./MediaPlayer";
 
-const Mixes = ()=>{
+const Mixes = ({ trackListing })=>{
     return(
         <section id="mixes-section" className={ sectionStyle }>
-            <div className={ mixesWrapper }>
+            <div className={ mixesWrapper } style={{width: '99%'}}>
                 <h2>Mixes</h2>
             </div>
-            <MediaPlayer/>
+            <MediaPlayer trackListing={ trackListing } />
         </section>
     )
 }

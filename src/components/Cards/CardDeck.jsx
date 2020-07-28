@@ -1,5 +1,6 @@
 import React from 'react';
-import { CardContainer, cardWrapper, CardStyle , CardImgWrapper } from './Card.styles';
+import { cx } from 'emotion';
+import { CardContainer, cardWrapper, CardStyle , CardImgWrapper, endAlign, startAlign } from './Card.styles';
 
 export const CardDeck =({ cards })=>{
     const groupBy = 4
@@ -18,20 +19,30 @@ export const CardDeck =({ cards })=>{
                 return(
                     <div className={ cardWrapper }>
                         <div className={CardStyle}>
+
+                            <h3 style={{
+                                position: 'absolute',
+                                display: 'inline-block',
+                                marginLeft: '2vw',
+                                marginTop: '5vh',
+                                fontSize: '1.7vw',
+                                zIndex: 9,
+                            }}>
+                                { card.id.toUpperCase() }
+                            </h3>
+
                             <figure className={CardImgWrapper}>
                                 <div/>
                                 <img src={card.image}/>
                             </figure>
 
                             <div >
-                                <h3>
-                                    { card.id.toUpperCase() }
-                                </h3>
-
                                 {card.list.map( item =>(
                                     listItem({ item }))).reduce( splitList, [])
                                     .map( rowContent => (
-                                            <ul>{ rowContent }</ul>
+                                            <ul className={ cx((
+                                                rowContent.length %2 === 0 ? endAlign: startAlign))}
+                                            >{ rowContent }</ul>
                                         ))
                                 }
                             </div>

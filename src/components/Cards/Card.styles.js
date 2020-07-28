@@ -29,7 +29,7 @@ export const CardContainer = css({
 })
 
 export const cardWrapper = css({
-    padding: '3rem 0',
+    padding: '0',
     [ mediaQuery.md ] :{
         border: '1px solid #00ff0038',
     }
@@ -61,16 +61,20 @@ export const CardStyle = css({
         justifyContent: 'center',
         position: 'relative',
         padding: '2em',
-        paddingTop : '0.5em',
+        // paddingTop : '0.5em',
 
         "& ul":{
-            fontFamily: ['Questrial' , 'sans-serif'],
+            fontFamily: 'D-DINCondensed',
             margin: '0 2em',
             display: 'inline-block',
             fontSize: '3vw',
 
             [mediaQuery.sm] :{
                 fontSize : '1vw'
+            },
+
+            "& li":{
+               marginTop: '1vh'
             }
         },
 
@@ -95,6 +99,14 @@ export const CardStyle = css({
         border: 'none',
     }
 
+});
+
+export const endAlign = css({
+    textAlign: 'end',
+});
+
+export const startAlign = css({
+    textAlign: 'start'
 });
 
 export const CardImgWrapper = css({
