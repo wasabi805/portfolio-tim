@@ -107,7 +107,7 @@ const MediaPlayer = ({
     pButtonNode && addListener(pButtonNode , 'click', ()=>play);
     musicNode && musicNode.addEventListener('timeupdate', timeUpdate, false);
 
-    const imgOrObj = ( currentTrack.img !== 'animeGirl' ? currentTrack.img : '' )
+    // const imgOrObj = ( currentTrack.img !== 'animeGirl' ? currentTrack.img : '' )
     return(
         <div className={ mediaPlayerWrapper } style={{border: '1px solid cyan'}}>
             <audio id="music" ref={ musicNodeRef }>
@@ -122,9 +122,9 @@ const MediaPlayer = ({
                             {flex: 1}
                         }
                    >
-                       {/*<img src={(currentTrack.img )}/>*/}
-                       <img src={imgOrObj}/>
 
+                       {/*<img src={imgOrObj}/>*/}
+                        <img src={ currentTrack.img }/>
 
                    </div>
 
@@ -143,7 +143,7 @@ const MediaPlayer = ({
                                listStyleType: 'none',
                                overflow: 'auto',
                            }}>
-                               {trackListing.map( track => (
+                               {trackListing &&  trackListing.map( track => (
                                    <li>{track.id} - {track.artist} | {track.title} </li>
                                ) )}
                            </ul>

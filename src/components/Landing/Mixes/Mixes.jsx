@@ -4,13 +4,15 @@ import { mixesWrapper } from './Mixes.styles';
 
 import MediaPlayer from "./MediaPlayer";
 
-const Mixes = ({ trackListing })=>{
+const Mixes = ({ trackListing, xx })=>{
+
+    console.log('is it here?' , trackListing)
     return(
         <section id="mixes-section" className={ sectionStyle }>
             <div className={ mixesWrapper } style={{width: '99%'}}>
                 <h2>Mixes</h2>
             </div>
-            <MediaPlayer trackListing={ trackListing } />
+            <MediaPlayer trackListing={ trackListing } xx={xx} />
         </section>
     )
 }

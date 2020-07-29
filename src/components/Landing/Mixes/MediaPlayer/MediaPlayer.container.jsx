@@ -1,7 +1,8 @@
-import React, { useCallback, useState} from 'react';
+import React, { useCallback, useState , useEffect} from 'react';
 import MediaPlayer from './MediaPlayer';
+import animeGirl from '../../../../images/thumb/animeGirl-600x600.jpg'
 
-const MediaPlayerContainer = ( {trackListing } )=>{
+const MediaPlayerContainer = ( {trackListing , xx } )=>{
 
     const [loadedTrack , setLoadedTrack] = useState(
         {timelineWidth: null,    /** Calculated width for loaded audio file specific to loaded song  */
@@ -18,7 +19,13 @@ const MediaPlayerContainer = ( {trackListing } )=>{
         parseInt((Math.floor(e.target.currentTime) - minutes * 60), 10)
     );
 
-    const [currentTrack , setCurrentTrack] = useState(trackListing[0])
+    // const [currentTrack , setCurrentTrack] = useState(trackListing[0])
+    const [currentTrack , setCurrentTrack] = useState( {artist: "Tinashe ft Schoolboy Q",
+        endTime: "213",
+        id: "01",
+        img: "https://i.ibb.co/VxVcr1h/Tinashe-2-On-608x608.jpg",
+        startTime: "0",
+        title: "2 On"} )
 
     const switchImage = ( seconds ) => {
 
@@ -104,6 +111,7 @@ const MediaPlayerContainer = ( {trackListing } )=>{
 
             switchImage={ switchImage }
             currentTrack={currentTrack}
+            xx={xx}
         />
     )
 }
