@@ -1,17 +1,20 @@
 import { css } from 'emotion';
-import {mediaQuery} from "../../../../media-queries/mediaQueries";
 
 export const mediaPlayerWrapper =css({
     display: 'flex',
-    // border: '1px dotted lime',
     paddingBottom: '17vh'
 });
 
-export const trackInfoContainer = css({
+export const contextContainer = css({
     position: 'relative',
     display: 'inline-block',
     width: '100%',
     border: '3px solid white',
+});
+
+export const context = css({
+    display : 'flex' ,
+    border : '1px solid lime',
 });
 
 export const timeline = css({
@@ -44,15 +47,29 @@ export const pButton = css({
     background: "transparent"
 });
 
-export const getTrackImage = ( src )=> css({
+export const contextText = css({
+    flex: '1' ,
+    display: 'flex',
+    background : '#00ffff4a',
+});
+
+export const playlist = css({
+    position: 'absolute',
+    fontSize: '1vw',
+    top: '0',
+    bottom: '70px',
+    fontFamily: 'D-DINCondensed',
+    listStyleType: 'none',
+    overflow: 'auto',
+});
+
+export const contextImage = css({
+    display: 'flex',
     position: 'relative',
-    // textAlign: 'center',
+
     "& img":{
         height: 'auto',
         width: '100%',
-        [mediaQuery.sm]:{
-
-        }
     }
 
 });

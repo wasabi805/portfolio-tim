@@ -1,16 +1,21 @@
-import React, { useCallback, useState , useEffect} from 'react';
+import React, { useState } from 'react';
 import MediaPlayer from './MediaPlayer';
-import animeGirl from '../../../../images/thumb/animeGirl-600x600.jpg'
 
-const MediaPlayerContainer = ( {trackListing , xx } )=>{
+const MediaPlayerContainer = ({ trackListing })=>{
+    const initialTrack = {
+        artist: "Tinashe ft Schoolboy Q",
+        endTime: "213",
+        id: "01",
+        img: "https://i.ibb.co/VxVcr1h/Tinashe-2-On-608x608.jpg",
+        startTime: "0",
+        title: "2 On"
+    }
 
-    const [loadedTrack , setLoadedTrack] = useState(
-        {timelineWidth: null,    /** Calculated width for loaded audio file specific to loaded song  */
-        });
+    /** Calculates width for loaded audio file specific to loaded song  */
+    const [loadedTrack , setLoadedTrack] = useState({timelineWidth: null});
 
+    const [currentTrack, setCurrentTrack] = useState( initialTrack )
 
-
-    /**Button Controls*/
     const handlePlay =( node )=> (node && node.paused ? node.play() : node.pause());
 
     /**Time Conversion*/
@@ -19,16 +24,7 @@ const MediaPlayerContainer = ( {trackListing , xx } )=>{
         parseInt((Math.floor(e.target.currentTime) - minutes * 60), 10)
     );
 
-    // const [currentTrack , setCurrentTrack] = useState(trackListing[0])
-    const [currentTrack , setCurrentTrack] = useState( {artist: "Tinashe ft Schoolboy Q",
-        endTime: "213",
-        id: "01",
-        img: "https://i.ibb.co/VxVcr1h/Tinashe-2-On-608x608.jpg",
-        startTime: "0",
-        title: "2 On"} )
-
     const switchImage = ( seconds ) => {
-
         const jumpToTrack = trackListing.find(
             song => (
                 seconds >= song.startTime &&
@@ -39,8 +35,7 @@ const MediaPlayerContainer = ( {trackListing , xx } )=>{
             setCurrentTrack(jumpToTrack || {})
         }
 
-        console.log(jumpToTrack)
-
+        // console.log(seconds, 'seconds')
     }
 
     /**Elapsed Time Bar*/
@@ -65,21 +60,19 @@ const MediaPlayerContainer = ( {trackListing , xx } )=>{
             const seconds = getSeconds(e, calculatedMinutes);
             const calcSeconds = seconds < 10 ? "0" + seconds : seconds
 
-            //Display TrackImage
+            /**Display TrackImage*/
             switchImage( musicNode.currentTime )
 
-            console.log(musicNode.currentTime)
-            //Display Time
+            /** Display Time*/
             elapsedTimeNode.innerHTML= `${calculatedMinutes}:${calcSeconds }`
         }
     };
 
-
     const getPosition =( el )=> {
         return el.getBoundingClientRect().left;
     }
-    //PART A.) Drag playHead to selected time on track
-    // Note: makes playHead moveable by user, DOES NOT SET THE POSITION see Part B
+    /** PART A.) Drag playHead to selected time on track (Part B is in MediaPlayer.js)*/
+    /** Note: Makes playHead moveable by user, DOES NOT SET THE POSITION see Part B*/
     const setMovePlayHead = (e , timeLineNode , playHeadNode)=>{
         const newMargLeft = e.clientX - getPosition(timeLineNode);
 
@@ -94,9 +87,8 @@ const MediaPlayerContainer = ( {trackListing , xx } )=>{
         }
     }
 
-    function clickPercent(event ,timeLineNode) {
-        return (event.clientX - getPosition(timeLineNode)) / loadedTrack.timelineWidth;
-    }
+    const clickPercent = ( event, timeLineNode )=> (
+        ( event.clientX - getPosition( timeLineNode )) / loadedTrack.timelineWidth);
 
     return(
         <MediaPlayer
@@ -108,10 +100,8 @@ const MediaPlayerContainer = ( {trackListing , xx } )=>{
             setMovePlayHead={setMovePlayHead}
             clickPercent={clickPercent}
             trackListing={ trackListing }
-
             switchImage={ switchImage }
             currentTrack={currentTrack}
-            xx={xx}
         />
     )
 }
