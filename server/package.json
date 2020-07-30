@@ -11,7 +11,8 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "mongodb": "^3.5.9",
-    "mongoose": "^5.9.26"
+    "mongoose": "^5.9.26",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
