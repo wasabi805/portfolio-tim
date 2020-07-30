@@ -23,4 +23,6 @@ app.use('/api/skills', skills)
 
 app.get('/', (req, res) => res.send('Welcome to the back end of my portfolio!'));
 
-app.listen(PORT, () => console.log(`Server is listening at http://localhost:${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Server is listening at http://localhost:${PORT}`, this.address().port, app.settings.env)
+});
