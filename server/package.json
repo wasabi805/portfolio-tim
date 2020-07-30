@@ -9,6 +9,7 @@
   "author": "Tim Ocampo",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.26"
   },
