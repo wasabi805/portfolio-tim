@@ -22,9 +22,6 @@ app.use((req, res, next)=>{
 app.use('/api/tracks', tracks); //see http://localhost:5000/api/tracks/test
 app.use('/api/skills', skills)
 
-app.get('/', (req, res) => res.send('Welcome to the back end of my portfolio!'));
-
 app.listen(PORT, () => {
-    console.log(process.env, '&&&&&&')
     console.log(`Server is listening at http://localhost:${PORT}`)
 });
