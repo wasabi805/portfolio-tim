@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
-const port = 5000;
+const PORT = process.env.PORT || 5000;
+
 const db = require('./config/keys').mongoURI;
 const tracks = require('./routes/api/tracks');
 const skills = require('./routes/api/skills');
@@ -22,4 +23,4 @@ app.use('/api/skills', skills)
 
 app.get('/', (req, res) => res.send('Welcome to the back end of my portfolio!'));
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+app.listen(PORT, () => console.log(`Server is listening at http://localhost:${PORT}`));
