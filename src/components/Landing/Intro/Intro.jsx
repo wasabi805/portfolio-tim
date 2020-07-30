@@ -1,12 +1,14 @@
 import React from 'react';
-import { sectionStyle } from '../../Common/Section/SectionContainer.styles';
+import { cx } from 'emotion';
+import { sectionStyle , sectionPaddingBottom} from '../../Common/Section/SectionContainer.styles';
 import { IntroContext } from './Intro.styles';
+
 
 const Intro = ()=>{
     return(
-        <section className={sectionStyle}>
+        <section className={cx(sectionStyle , sectionPaddingBottom)}>
                <div className={ IntroContext } >
-                   <h4 style={{paddingBottom: '10vh',}} > Intro :
+                   <h4> Intro :
                        When the la-la hits ya lyrics just splits ya
                        Head so hard, that your hat can't fit you
                        Either I'm with ya or against ya

@@ -2,22 +2,20 @@ import React  from 'react';
 import { cx } from 'emotion';
 import PropTypes from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
+import { media } from "../../enums/media";
 import { isEvenIndex } from '../../helpers/types';
 import {
     getTileImageStyle ,
     tileImageOverlay,
-    tileTitle,
     tileContextStyle ,
     tileGridContainerStyle,
     tileGridItem,
     imgLeftStyle,
     imgRightStyle,
-
+    tileTitle
 } from './Tile.styles';
-import {media} from "../../enums/media";
-import DevConnectorMobile from "../../images/devconnector-mobile.png";
 
-const TileImage =({image : url} )=>(
+const TileImage =( {image : url} )=>(
     <div id="tileImage"
          className={ getTileImageStyle( url) }
     >
@@ -26,11 +24,11 @@ const TileImage =({image : url} )=>(
 
 const TileContext = ({ title ,context })=>(
     <div className={ tileContextStyle }>
-        <h3
+        <h5
             // className={cx("glitch" , tileTitle )}
-            // data-text={ title }
+            data-text={ title }
         >{ title }
-        </h3>
+        </h5>
         <p>{ context }</p>
     </div>
 )
@@ -48,6 +46,7 @@ const Tile = ({ content, mobileImages })=>{
                         if( isEvenIndex(idx) ){
                             return (
                                 <div
+                                    key={ `project-${project.id}` }
                                     id={ project.id }
                                     className={ cx(tileGridItem, imgLeftStyle )}
                                 >
@@ -58,6 +57,7 @@ const Tile = ({ content, mobileImages })=>{
                         }else{
                             return (
                                 <div
+                                    key={ `project-${project.id}` }
                                     id={ project.id }
                                     className={ cx(tileGridItem, imgRightStyle)}
                                 >
@@ -85,8 +85,6 @@ const Tile = ({ content, mobileImages })=>{
                     ))}
                 </>
             )}
-
-
         </div>
     )
 }

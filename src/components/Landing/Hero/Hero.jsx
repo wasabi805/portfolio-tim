@@ -53,7 +53,7 @@ const Hero = () => {
                             <div className={circleContainer} >
                                 <QuarterCircle/>
                                 <span className={cx(jobTitle , animation.LS_IN_RIGHT)} >
-                                    Front End Developer
+                                    Full Stack Developer
                                 </span>
                             </div>
                         </div>

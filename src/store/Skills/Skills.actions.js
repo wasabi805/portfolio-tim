@@ -6,6 +6,8 @@ import { createActions } from 'redux-actions';
 
 const skillsActions = createActions(
     'SOME_PLACEHOLDER',
+    'FETCH_SKILLS_LIST',
+    'UPDATE_SKILLS_LIST'
 )
 
 export default skillsActions

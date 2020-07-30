@@ -1,5 +1,6 @@
 import React from 'react';
-import { sectionStyle } from '../../Common/Section/SectionContainer.styles';
+import { cx } from 'emotion';
+import { sectionStyle , sectionPaddingBottom } from '../../Common/Section/SectionContainer.styles';
 
 import {
     skillsSectionTitle,
@@ -14,7 +15,7 @@ import CardDeck from "../../Cards";
 import purpleCircuits from '../../../images/Purple-technology-data-internet-72 copy.jpg'
 const Skills = ({ cards })=>{
     return(
-        <section id="skills-section" className={ sectionStyle } >
+        <section id="skills-section" className={ cx(sectionStyle, sectionPaddingBottom ) } >
             <h2 className={ skillsSectionTitle }>Skills</h2>
             <div className={ skillsBackgroundWrapper }>
                 <div id={'skills-purple'}>

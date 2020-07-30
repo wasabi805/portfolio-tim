@@ -28,7 +28,7 @@ export const LandingNavigationSection = css({
         listStyle: "none"
     },
 
-    [mediaQuery.lg]: {
+    [mediaQuery.DeskTopWide]: {
         fontSize: '1.2vw',
     }
 });

@@ -19,7 +19,7 @@ export const tileImageOverlay = css({
     width: '100%',
 
 
-    [mediaQuery.md] : {
+    [mediaQuery.Desktop] : {
         boxShadow: 'inset 0 0 100px black',
         backgroundImage: 'linear-gradient(rgb(24 49 62 / 60%), rgb(0 0 0 / 0%)), repeating-linear-gradient(0deg, transparent, transparent 2px, black 4px, black 4px)',
     },
@@ -32,21 +32,32 @@ export const tileTitle = css({
 
 export const tileContextStyle = css({
     color: 'white',
+    margin: 'auto',
+    width: '100%',
     "& h3":{
-        // fontSize : '2rem',
         paddingTop: '25px',
         fontSize: '5vw',
         fontFamily: '',
         marginLeft : '2rem',
 
-        [mediaQuery.lg]: {
+        [mediaQuery.DeskTopWide]: {
             fontSize: '2.6vw',
+        }
+    },
+
+    "& h5":{
+        fontSize: '3vw',
+        margin: 0,
+        textAlign: 'center',
+
+        [mediaQuery.Desktop]:{
+            fontSize: '2vw',
         }
     },
 
     "& p":{
         fontFamily: 'Helvetica',
-        [mediaQuery.md]: {
+        [mediaQuery.Desktop]: {
             marginLeft: '4rem',
         }
     }
@@ -62,7 +73,7 @@ export const tileGridItem = css({
     // display: 'grid',
     padding: '20px',
     zIndex: '10',
-    [mediaQuery.lg]:{
+    [mediaQuery.DeskTopWide]:{
         display: 'grid',
         marginBottom: '3rem',
     }

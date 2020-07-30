@@ -7,7 +7,7 @@ const LandingNavigation = ({ sections })=>{
     return(
         <nav className={ LandingNavigationSection }>
             {sections.map(sec => (
-                <a href="" onClick={ ()=>scrollToRef() }>{sec}</a>
+                <a key={`link-${sec}`} href="" onClick={ ()=>scrollToRef() }>{sec}</a>
             ))}
         </nav>
     )

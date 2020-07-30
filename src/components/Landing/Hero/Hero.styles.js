@@ -31,9 +31,9 @@ export const heroSection = css({
 export const heroContainer = css({
     position: 'relative',
     width: '100%',
-    paddingTop: '10vh',
+    paddingTop: '5vh',
 
-    [mediaQuery.md] :{
+    [mediaQuery.Desktop] :{
         display: 'flex',
     }
 
@@ -43,7 +43,7 @@ export const heroContext = css({
     position: 'relative',
     width: '100%',
 
-    [ mediaQuery.md ]:{
+    [ mediaQuery.Desktop ]:{
         width: '45vw',
         paddingLeft: '4rem',
     },
@@ -52,18 +52,18 @@ export const heroContext = css({
         paddingLeft: '0.5rem',
         paddingTop: '12vh',
 
-        [ mediaQuery.sm ] :{
+        [ mediaQuery.TabletPortrait ] :{
             paddingLeft: 0
         },
 
-        [ mediaQuery.md ] :{
+        [ mediaQuery.Desktop ] :{
             paddingTop: 0
         },
     },
 
     "& h3":{
         paddingLeft: '1em',
-        [ mediaQuery.sm ] :{
+        [ mediaQuery.TabletPortrait ] :{
             paddingLeft: 0
         },
 
@@ -85,8 +85,9 @@ export const heroImage = css({
     opacity : 0.5,
     position: 'absolute',
 
-    [mediaQuery.md]:{
-        position: 'relative',
+    [mediaQuery.Desktop]:{
+        width: '60vw',
+        right: 0,
     }
 });
 
@@ -95,6 +96,7 @@ export const circleContainer = css({
     width:' 100%',
     textAlign: 'center',
     marginTop: '3em',
+    marginBottom: '3em',
     "& path":{
         stroke: '#4a4a4a85',
         fill: 'none',

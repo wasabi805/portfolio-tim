@@ -27,7 +27,7 @@ const newProjects = ()=>{
 
         "h4" :{
             fontSize: '4vw',
-            [mediaQuery.md] : {
+            [mediaQuery.Desktop] : {
                 fontSize: '1.75vw',
             }
         }

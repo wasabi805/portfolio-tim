@@ -8,7 +8,7 @@ export const footer = css({
     padding: '0',
     margin: '0',
 
-    [mediaQuery.xs] :{
+    [mediaQuery.mobile] :{
         padding: '0',
         margin: '0'
     },
@@ -35,7 +35,7 @@ export const footerContainer = css({
         paddingLeft: '5vw',
         paddingTop: '13px',
 
-        [mediaQuery.lg]:{
+        [mediaQuery.DeskTopWide]:{
             // position: 'relative',
             fontSize: '4vw',
             marginLeft: '-17vw',
@@ -54,7 +54,7 @@ export const footerContextWrapper = css({
     "& h4":{
         fontSize: '3vw',
         color: '#cb82bd',
-        [mediaQuery.lg]:{
+        [mediaQuery.DeskTopWide]:{
             margin: 0,
             marginTop: '16vh',
         }
@@ -65,7 +65,7 @@ export const footerContextWrapper = css({
         paddingLeft: '5px',
         fontSize: '8px',
 
-        [mediaQuery.lg] : {
+        [mediaQuery.DeskTopWide] : {
             fontSize: '1.2vw'
         }
     }
@@ -82,7 +82,7 @@ export const iconContainer = css({
     background: '#62627e',
     zIndex: 1,
 
-    [mediaQuery.lg]:{
+    [mediaQuery.DeskTopWide]:{
         width: '3vw',
         height:' 3vw',
     }
@@ -98,20 +98,20 @@ export const iconWrapperText = css({
 });
 
 export const contactEmail = css({
-    [ mediaQuery.lg ]: {
+    [ mediaQuery.DeskTopWide ]: {
         fontSize : '2vw',
     },
 })
 
 export const contactPhone =css({
-    [ mediaQuery.lg ]: {
+    [ mediaQuery.DeskTopWide ]: {
         fontSize : '1.5vw',
     },
 })
 
 export const contactLocation = css({
     fontSize : '2.2vw',
-    [ mediaQuery.lg ]: {
+    [ mediaQuery.DeskTopWide ]: {
         fontSize : '1.2vw',
     },
 });
@@ -125,7 +125,7 @@ export const contactInfo = css({
 export const socialMediaContainer = css({
     display: 'flex',
     zIndex: 10,
-    [mediaQuery.lg]: {
+    [mediaQuery.DeskTopWide]: {
         width: '16vw',
         paddingBottom: '12vh',
     },

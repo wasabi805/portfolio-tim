@@ -101,7 +101,7 @@ const MediaPlayer = ({
                        <div className={ contextText }>
                            <ul className={ playlist }>
                                {trackListing && trackListing.map( track => (
-                                   <li>{track.id} - {track.artist} | {track.title} </li>
+                                   <li key={`track-${track.id}`} >{track.id} - {track.artist} | {track.title} </li>
                                ) )}
                            </ul>
                        </div>

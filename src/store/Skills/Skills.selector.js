@@ -1,5 +1,10 @@
 import { getNestedProperty } from "../../helpers/objectUtils";
 
+const getSkills = state => getNestedProperty( state , 'skills' || {} );
+
 export default {
-    cards : state => getNestedProperty( state , 'skills' , 'cards' )
+    skills : {
+        data: state => getSkills( state ),
+        list : state => getNestedProperty( getSkills(state) , 'cards')
+    }
 }

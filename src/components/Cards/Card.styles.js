@@ -8,13 +8,13 @@ export const CardContainer = css({
 
     gridTemplateColumns: '1fr 1fr 1fr',
 
-    [mediaQuery.md]: {
+    [mediaQuery.Desktop]: {
         display: 'grid',
         columnGap: '1vw',
         paddingTop: '12vh',
     },
 
-    [mediaQuery.lg]: {
+    [mediaQuery.DeskTopWide]: {
         display: 'grid',
         columnGap: '2rem',
     },
@@ -29,17 +29,20 @@ export const CardContainer = css({
 })
 
 export const cardWrapper = css({
+    display: 'flex',
     padding: '0',
-    [ mediaQuery.md ] :{
-        border: '1px solid #00ff0038',
-    }
+});
+
+export const cardBorder = css({
+    boxShadow: 'rgb(0 180 255 / 20%) 0px 3px 3px -2px, rgb(26 158 148 / 14%) 0px 3px 4px 0px, rgb(60 255 115 / 12%) 0px 1px 8px 0px',
 });
 
 export const CardStyle = css({
     color: 'white',
     background: '#2a2b2d',
     backgroundImage: `url("https://www.transparenttextures.com/patterns/fabric-of-squares.png")`,
-    border: '1px solid #00ff0038',
+    position: 'relative',
+    height: '100%',
 
     "& figure":{
         padding: 0,
@@ -60,7 +63,7 @@ export const CardStyle = css({
         flexWrap: 'wrap',
         justifyContent: 'center',
         position: 'relative',
-        padding: '2em',
+        padding: '3em',
         // paddingTop : '0.5em',
 
         "& ul":{
@@ -69,7 +72,7 @@ export const CardStyle = css({
             display: 'inline-block',
             fontSize: '3vw',
 
-            [mediaQuery.sm] :{
+            [mediaQuery.TabletPortrait] :{
                 fontSize : '1vw'
             },
 
@@ -89,24 +92,16 @@ export const CardStyle = css({
             marginInlineStart: '0px',
             marginInlineEnd:'0px',
 
-            [mediaQuery.sm] :{
+            [mediaQuery.TabletPortrait] :{
                 fontSize : '2vw'
             }
         },
     },
 
-    [ mediaQuery.md ] :{
+    [ mediaQuery.Desktop ] :{
         border: 'none',
     }
 
-});
-
-export const endAlign = css({
-    textAlign: 'end',
-});
-
-export const startAlign = css({
-    textAlign: 'start'
 });
 
 export const CardImgWrapper = css({
@@ -114,8 +109,38 @@ export const CardImgWrapper = css({
 
     "& div": {
         position: 'absolute',
+        display: 'inline',
         top: 0, right :0, bottom: 0, left: 0,
         zIndex: 3,
-        background: 'linear-gradient(rgba(10, 10, 10, 0.6), rgb(0 0 0 / 0%)), repeating-linear-gradient(0deg, transparent, transparent 2px, black 3px, black 3px)'
+        background: 'linear-gradient(rgba(10, 10, 10, 0.6), rgb(0 0 0 / 0%)), repeating-linear-gradient(0deg, transparent, transparent 2px, black 3px, black 3px)',
+
+        "& svg":{
+            position: 'absolute',
+            bottom: '10%'
+        }
+    },
+});
+
+export const cardTitle = css({
+    position: 'absolute',
+    bottom: 0,
+    display: 'block',
+    left: '0', right: '0',
+    marginBottom: '1vh',
+    textAlign: 'center',
+    fontSize: '1.5vw',
+    zIndex: 9,
+
+    // [mediaQuery.xl]:{
+    //     fontSize: '1.7vw',
+    // }
+});
+
+export const cardList = css({
+    textAlign: 'center',
+    "& li":{
+        listStyleType:'none',
+        fontSize: '1.3vw' ,
+        fontFamily: 'D-DINCondensed'
     }
 });

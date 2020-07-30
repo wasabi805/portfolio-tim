@@ -17,5 +17,5 @@ export function* fetchTrackListingSaga(){
     }catch (e) {
         console.log('there was an error in fetchTrackListingSaga ' , e)
     }
-};
+}
 
