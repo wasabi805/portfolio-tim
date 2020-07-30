@@ -5,7 +5,7 @@ export const AppStyle = css({
 
     [mediaQuery.xl]:{
         position: 'relative',
-        width: '75vw',
+        // width: '75vw',
         marginLeft: 'auto',
         marginRight: 'auto',
     }

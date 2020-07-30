@@ -1,4 +1,4 @@
-const breakpoints = [275 ,544, 768, 992, 1170]
+const breakpoints = [275 ,544, 768, 992, 1920]
 export const mediaQuery = {
     mobile: `@media (min-width: ${breakpoints[0]}px)`,
     TabletPortrait: `@media (min-width: ${breakpoints[1]}px)`,

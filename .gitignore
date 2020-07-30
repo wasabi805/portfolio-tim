@@ -17,6 +17,9 @@
 #keys
 /server/config/keys
 
+#mix
+/public/June2020_portfolioMix.mp3
+
 # misc
 .DS_Store
 .env.local

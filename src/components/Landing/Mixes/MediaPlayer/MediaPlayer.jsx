@@ -88,7 +88,7 @@ const MediaPlayer = ({
     return(
         <div className={ mediaPlayerWrapper }>
             <audio id="music" ref={ musicNodeRef }>
-                <source src={'./June2020_portfolioMix.mp3'} type={'audio/mp3'}/>
+                <source src={'https://proletdev.s3-us-west-1.amazonaws.com/June2020_portfolioMix+copy.mp3'} type={'audio/mp3'}/>
             </audio>
 
             <div className={ contextContainer }>

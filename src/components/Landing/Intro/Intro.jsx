@@ -8,7 +8,7 @@ const Intro = ()=>{
     return(
         <section className={cx(sectionStyle , sectionPaddingBottom)}>
                <div className={ IntroContext } >
-                   <h4> Intro :
+                   <h4 > Intro :
                        When the la-la hits ya lyrics just splits ya
                        Head so hard, that your hat can't fit you
                        Either I'm with ya or against ya
