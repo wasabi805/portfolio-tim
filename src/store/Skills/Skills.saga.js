@@ -8,6 +8,8 @@ export function* fetchSkillsListSaga() {
                 ( res) => res)
         );
 
+        console.log('what is response', response)
+
         yield put({
             type: "UPDATE_SKILLS_LIST",
             payload: response.data
