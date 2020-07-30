@@ -22,6 +22,15 @@ app.use((req, res, next)=>{
 app.use('/api/tracks', tracks); //see http://localhost:5000/api/tracks/test
 app.use('/api/skills', skills)
 
+// app.get('/', (req, res) => res.send('Welcome to the back end of my portfolio!'));
+//Serves static assets if in prod
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('dist'));
+    app.get('*', (req, res)=>{
+        res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+    })
+}
+
 app.listen(PORT, () => {
     console.log(`Server is listening at http://localhost:${PORT}`)
 });
