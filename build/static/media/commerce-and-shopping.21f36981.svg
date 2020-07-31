@@ -1,0 +1,11 @@
+<svg id="Capa_1"
+     enable-background="new 0 0 512 512"
+     height="50%"
+     viewBox="0 0 512 512"
+     width="50%"
+     xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <path fill="white"  d="m0 91v38.459l256 139.446 256-139.446v-38.459z"/>
+        <path fill="white" d="m0 163.638v257.362h512v-257.362l-256 139.457z"/>
+    </g>
+</svg>

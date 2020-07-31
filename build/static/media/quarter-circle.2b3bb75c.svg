@@ -1,0 +1,19 @@
+<svg
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 594 594"
+        width = '50%'
+>
+    <defs>
+        <style>.cls-1{
+            fill:none;
+            stroke: #ffffff;
+            stroke-miterlimit:10;
+            stroke-width:4px;
+            }</style>
+    </defs>
+
+    <path class="cls-1"
+          d="M595,300c0,162.92-132.08,295-295,295S5,462.92,5,300,137.08,5,300,5"
+          transform="translate(-3 -3)"/>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<svg version="1.1"
+	 id="Capa_1"
+	 xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 viewBox="0 0 512 512"
+	 style="enable-background:new 0 0 512 512;"
+	 xml:space="preserve"
+	 width="100%"
+	 height="100%"
+>
+<g>
+	<g>
+		<path fill="white"
+				d="M288,176v-64c0-17.664,14.336-32,32-32h32V0h-64c-53.024,0-96,42.976-96,96v80h-64v80h64v256h96V256h64l32-80H288z"/>
+	</g>
+</g>
+
+</svg>
