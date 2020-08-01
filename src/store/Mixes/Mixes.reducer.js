@@ -3,6 +3,7 @@ import actions from './Mixes.actions';
 
 const initialStore={
     newTrackList : '',
+    initialTrack : null,
     trackList : []
 }
 
@@ -10,8 +11,18 @@ export default handleActions({
     [actions.updateTrackListing] :( state , { payload } )=>{
         return{
             ...state,
-            trackList: payload
+            trackList: payload,
+            initialTrack: payload[0]
         }
-    }
+    },
+
+    [actions.setInitialTrack] :( state, { payload } )=>{
+        console.log('i fired!' , payload)
+        return{
+            ...state,
+            initialTrack: payload
+        }
+    },
+
 }, initialStore)
 

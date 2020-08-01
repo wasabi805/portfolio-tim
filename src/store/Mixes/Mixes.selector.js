@@ -7,6 +7,9 @@ const getMixes = state => {
 export default {
     mixes : {
         data: state => getMixes( state ),
-        trackData: state => getNestedProperty( getMixes( state ), 'trackData' )
-    }
+        trackData: state => getNestedProperty( getMixes( state ), 'trackData' ),
+        initialTrack: state => getNestedProperty( getMixes( state ),'trackData'),
+    },
+
+
 }

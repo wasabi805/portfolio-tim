@@ -1,6 +1,7 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 import { TRACK_LIST } from '../../constants/routeConstants';
+import {UPDATE_TRACK_LISTING, SET_INITIAL_TRACK } from "../../constants/actions";
 
 export function* fetchTrackListingSaga(){
     try{
@@ -10,9 +11,10 @@ export function* fetchTrackListingSaga(){
         );
 
         yield put({
-            type: "UPDATE_TRACK_LISTING",
+            type: UPDATE_TRACK_LISTING,
             payload: response.data
-        })
+        });
+
     }catch (e) {
         console.log('there was an error in fetchTrackListingSaga ' , e)
     }

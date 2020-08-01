@@ -1,21 +1,13 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import MediaPlayer from './MediaPlayer';
 
-const MediaPlayerContainer = ({ trackListing })=>{
-    const initialTrack = {
-        artist: "Tinashe ft Schoolboy Q",
-        endTime: "213",
-        id: "01",
-        img: "https://i.ibb.co/VxVcr1h/Tinashe-2-On-608x608.jpg",
-        startTime: "0",
-        title: "2 On"
-    }
+const MediaPlayerContainer = ({ trackListing , initialTrackImage })=>{
 
     /** Calculates width for loaded audio file specific to loaded song  */
     const [loadedTrack , setLoadedTrack] = useState({timelineWidth: null});
 
-    const [currentTrack, setCurrentTrack] = useState( initialTrack )
+    const [currentTrack, setCurrentTrack] = useState()
 
     const handlePlay =( node )=> (node && node.paused ? node.play() : node.pause());
 
@@ -24,6 +16,11 @@ const MediaPlayerContainer = ({ trackListing })=>{
     const getSeconds= (e, minutes)=>(
         parseInt((Math.floor(e.target.currentTime) - minutes * 60), 10)
     );
+
+    /**Set Initial Track Image*/
+    useEffect(()=>{
+        setCurrentTrack(initialTrackImage)
+    }, initialTrackImage)
 
     const switchImage = ( seconds ) => {
         const jumpToTrack = trackListing.find(
@@ -103,6 +100,10 @@ const MediaPlayerContainer = ({ trackListing })=>{
             currentTrack={currentTrack}
         />
     )
+}
+
+MediaPlayerContainer.defaultProps={
+
 }
 
 MediaPlayerContainer.propTypes={

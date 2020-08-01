@@ -12,9 +12,13 @@ const MixesContainer = ()=>{
     const trackListing = useSelector(
         state => mixesSelectors.mixes.data(state).trackList);
 
+    const initialTrackImage = useSelector( state => mixesSelectors.mixes.data(state).trackList[0])
+
+
     return(
         <Mixes
             trackListing={ trackListing }
+            initialTrackImage={ initialTrackImage }
         />
     )
 }

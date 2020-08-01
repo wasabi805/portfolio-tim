@@ -4,7 +4,7 @@ import { sectionStyle } from '../../Common/Section/SectionContainer.styles';
 import { mixesWrapper } from './Mixes.styles';
 import MediaPlayer from "./MediaPlayer";
 
-const Mixes = ({ trackListing , initialTrack })=>{
+const Mixes = ({ trackListing, initialTrackImage })=>{
     return(
         <section id="mixes-section" className={ sectionStyle }>
             <div className={ mixesWrapper }>
@@ -12,6 +12,7 @@ const Mixes = ({ trackListing , initialTrack })=>{
             </div>
             <MediaPlayer
                 trackListing={ trackListing }
+                initialTrackImage={ initialTrackImage }
             />
         </section>
     )
@@ -29,14 +30,7 @@ Mixes.propTypes={
         }).isRequired
     ),
 
-    initialTrack: PropTypes.shape({
-        id: PropTypes.string,
-        title: PropTypes.string,
-        artist: PropTypes.string,
-        startTime: PropTypes.string,
-        endTime: PropTypes.string,
-        img: PropTypes.string,
-    }).isRequired,
+    loadInitialTrack: PropTypes.func.isRequired,
 }
 
 export default Mixes

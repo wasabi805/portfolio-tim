@@ -17,7 +17,8 @@ const MediaPlayer = ({
     clickPercent,
     trackListing,
     switchImage,
-    currentTrack
+    currentTrack,
+    loadInitialTrack,
 })=>{
     const musicNodeRef = useRef();
     const pButtonNodeRef = useRef();
@@ -133,6 +134,10 @@ const MediaPlayer = ({
             </div>
         </div>
     )
+}
+
+MediaPlayer.defaultProps={
+    currentTrack: {img: ''}
 }
 
 MediaPlayer.propTypes={
