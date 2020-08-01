@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getNavBodyStyles } from './Navigation.styles';
 import { COMP_NAME_HOME , COMP_NAME_ACBA} from '../../constants/routeConstants';
 import { Button } from '../Common/Buttons';
@@ -18,4 +19,10 @@ const Navigation = ({ goHome, goAcba })=>{
         </nav>
     )
 };
+
+Navigation.propTypes={
+    goHome : PropTypes.func.isRequired,
+    goAcba : PropTypes.func.isRequired,
+}
+
 export default Navigation

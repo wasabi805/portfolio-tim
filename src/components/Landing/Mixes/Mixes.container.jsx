@@ -10,10 +10,12 @@ const MixesContainer = ()=>{
     }, [])
 
     const trackListing = useSelector(
-        state => mixesSelectors.mixes.data(state).trackList)
+        state => mixesSelectors.mixes.data(state).trackList);
 
     return(
-        <Mixes trackListing={ trackListing }/>
+        <Mixes
+            trackListing={ trackListing }
+        />
     )
 }
 

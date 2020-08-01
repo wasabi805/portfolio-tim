@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { cx } from 'emotion';
 import { sectionStyle , sectionPaddingBottom } from '../../Common/Section/SectionContainer.styles';
 
@@ -14,6 +15,7 @@ import {
 import CardDeck from "../../Cards";
 import purpleCircuits from '../../../images/Purple-technology-data-internet-72 copy.jpg'
 const Skills = ({ cards })=>{
+
     return(
         <section id="skills-section" className={ cx(sectionStyle, sectionPaddingBottom ) } >
             <h2 className={ skillsSectionTitle }>Skills</h2>
@@ -35,6 +37,19 @@ const Skills = ({ cards })=>{
             </div>
         </section>
     )
-}
+};
+
+Skills.defaultProps={
+    cards: undefined,
+};
+
+Skills.propTypes={
+    cards: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        list: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+        title: PropTypes.string.isRequired,
+    }))
+};
 
 export default Skills

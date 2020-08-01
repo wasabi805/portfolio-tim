@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import MediaPlayer from './MediaPlayer';
 
 const MediaPlayerContainer = ({ trackListing })=>{
@@ -92,8 +93,6 @@ const MediaPlayerContainer = ({ trackListing })=>{
 
     return(
         <MediaPlayer
-            getMinutes={getMinutes}
-            getSeconds={getSeconds}
             handlePlay={handlePlay}
             getTimeUpdate={getTimeUpdate}
             loadedTrack={loadedTrack}
@@ -104,6 +103,19 @@ const MediaPlayerContainer = ({ trackListing })=>{
             currentTrack={currentTrack}
         />
     )
+}
+
+MediaPlayerContainer.propTypes={
+    trackListing: PropTypes.arrayOf(
+        PropTypes.shape({
+            artist: PropTypes.string,
+            endTime: PropTypes.string,
+            id: PropTypes.string,
+            img: PropTypes.string,
+            startTime: PropTypes.string,
+            title: PropTypes.string,
+        })
+    ).isRequired
 }
 
 export default MediaPlayerContainer

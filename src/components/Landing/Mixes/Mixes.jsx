@@ -1,17 +1,42 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { sectionStyle } from '../../Common/Section/SectionContainer.styles';
 import { mixesWrapper } from './Mixes.styles';
 import MediaPlayer from "./MediaPlayer";
 
-const Mixes = ({ trackListing, xx })=>{
+const Mixes = ({ trackListing , initialTrack })=>{
     return(
         <section id="mixes-section" className={ sectionStyle }>
             <div className={ mixesWrapper }>
                 <h2>Mixes</h2>
             </div>
-            <MediaPlayer trackListing={ trackListing } xx={xx} />
+            <MediaPlayer
+                trackListing={ trackListing }
+            />
         </section>
     )
+}
+
+Mixes.propTypes={
+    trackListing: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string,
+            title: PropTypes.string,
+            artist: PropTypes.string,
+            startTime: PropTypes.string,
+            endTime: PropTypes.string,
+            img: PropTypes.string,
+        }).isRequired
+    ),
+
+    initialTrack: PropTypes.shape({
+        id: PropTypes.string,
+        title: PropTypes.string,
+        artist: PropTypes.string,
+        startTime: PropTypes.string,
+        endTime: PropTypes.string,
+        img: PropTypes.string,
+    }).isRequired,
 }
 
 export default Mixes

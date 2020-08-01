@@ -1,6 +1,5 @@
 import React from 'react';
 import { cx } from 'emotion';
-import animate from 'animate.css';
 import { animation } from '../../../enums/animation';
 import { useMediaQuery } from 'react-responsive';
 import { media } from '../../../enums/media';

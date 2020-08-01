@@ -1,12 +1,13 @@
 import { cx } from 'emotion';
 import React, { useEffect, useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
 import { mediaPlayerWrapper, contextContainer, context, timeline, playHead, pButton,
     contextText, playlist, contextImage, audioPlayer, elapsedTime,
     timeDisplay } from './MediaPlayer.styles';
-import {addListener, removeListener} from "../../../../helpers/listeners";
-import {ReactComponent as PlayButtonSvg } from'../../../../svg/multimedia.svg'
-import {media} from "../../../../enums/media";
+import { addListener, removeListener} from '../../../../helpers/listeners';
+import { ReactComponent as PlayButtonSvg } from'../../../../svg/multimedia.svg'
+import { media } from '../../../../enums/media';
 
 const MediaPlayer = ({
     handlePlay,
@@ -88,7 +89,8 @@ const MediaPlayer = ({
     return(
         <div className={ mediaPlayerWrapper }>
             <audio id="music" ref={ musicNodeRef }>
-                <source src={'https://proletdev.s3-us-west-1.amazonaws.com/June2020_portfolioMix+copy.mp3'} type={'audio/mp3'}/>
+                <source src={'./June2020_portfolioMix-copy.mp3'} type={'audio/mp3'}/>
+                {/*<source src={'https://proletdev.s3-us-west-1.amazonaws.com/June2020_portfolioMix+copy.mp3'} type={'audio/mp3'}/>*/}
             </audio>
 
             <div className={ contextContainer }>
@@ -132,4 +134,36 @@ const MediaPlayer = ({
         </div>
     )
 }
+
+MediaPlayer.propTypes={
+    handlePlay: PropTypes.func.isRequired,
+    getTimeUpdate: PropTypes.func.isRequired,
+    loadedTrack: PropTypes.shape({
+        timelineWidth : PropTypes.number
+    }).isRequired,
+    setMovePlayHead: PropTypes.func.isRequired,
+    clickPercent: PropTypes.func.isRequired,
+    trackListing: PropTypes.arrayOf(
+        PropTypes.shape({
+            artist: PropTypes.string,
+            endTime: PropTypes.string,
+            id: PropTypes.string,
+            img: PropTypes.string,
+            startTime: PropTypes.string,
+            title: PropTypes.string,
+        }).isRequired
+    ).isRequired,
+
+    switchImage: PropTypes.func.isRequired,
+
+    currentTrack: PropTypes.shape({
+        artist: PropTypes.string,
+        endTime: PropTypes.string,
+        id: PropTypes.string,
+        img: PropTypes.string,
+        startTime: PropTypes.string,
+        title: PropTypes.string,
+    }).isRequired
+}
+
 export default MediaPlayer

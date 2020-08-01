@@ -76,7 +76,7 @@ const Tile = ({ content, mobileImages })=>{
             {isMobile && (
                 <>
                     {content.map( (project , idx)=> (
-                        <div id={ project.id } className={ cx(tileGridItem, imgLeftStyle )}>
+                        <div key={`project-${project.id}`} id={ project.id } className={ cx(tileGridItem, imgLeftStyle )}>
                             { (project.hasMobileImg  ?
                                 <TileImage image={ content[idx].hasMobileImg }/> :
                                 <TileImage image={ content[idx].image }/> )}

@@ -1,18 +1,20 @@
 import React from 'react';
-import { CardContainer, cardWrapper, cardBorder, CardStyle , CardImgWrapper , cardTitle, cardList } from './Card.styles';
+import PropTypes from 'prop-types';
+import { CardContainer, cardWrapper, cardBorder, CardStyle ,
+    CardImgWrapper , cardTitle, cardList } from './Card.styles';
 
 export const CardDeck =({ cards })=>{
     const hasCards = cards !== undefined
 
     return(
-        <div id={'card-container'} className={ CardContainer }>
+        <div className={ CardContainer }>
             { hasCards && (cards.map( card => (
                 <div key={`card-${card.id}`} className={ cardWrapper }>
-                    <div className={cardBorder}>
-                        <div className={CardStyle}>
-                            <figure className={CardImgWrapper} >
+                    <div className={ cardBorder }>
+                        <div className={ CardStyle }>
+                            <figure className={ CardImgWrapper }>
                                 <div>
-                                    <h4 className={ cardTitle}>
+                                    <h4 className={ cardTitle }>
                                         { card.id.toUpperCase() }
                                     </h4>
                                 </div>
@@ -22,7 +24,9 @@ export const CardDeck =({ cards })=>{
                             <div>
                                 <ul className={ cardList }>
                                     {[card.list.join(' | ')].map( item =>(
-                                        <li key={`card-list${ item }`}>{item}</li>
+                                        <li key={`card-list${ item }`}>
+                                            {item}
+                                        </li>
                                     ))}
                                 </ul>
                             </div>
@@ -35,4 +39,12 @@ export const CardDeck =({ cards })=>{
     )
 }
 
+CardDeck.propTypes={
+    cards: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        list: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+        title: PropTypes.string.isRequired,
+    }))
+};
 export default CardDeck
