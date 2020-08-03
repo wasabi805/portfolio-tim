@@ -17,7 +17,6 @@ export default handleActions({
     },
 
     [actions.setInitialTrack] :( state, { payload } )=>{
-        console.log('i fired!' , payload)
         return{
             ...state,
             initialTrack: payload

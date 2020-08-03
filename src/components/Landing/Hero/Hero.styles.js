@@ -33,7 +33,7 @@ export const heroContainer = css({
     width: '100%',
     paddingTop: '5vh',
 
-    [mediaQuery.Desktop] :{
+    [mediaQuery.desktop] :{
         display: 'flex',
     }
 
@@ -43,7 +43,7 @@ export const heroContext = css({
     position: 'relative',
     width: '100%',
 
-    [ mediaQuery.Desktop ]:{
+    [ mediaQuery.desktop ]:{
         width: '45vw',
         paddingLeft: '4rem',
     },
@@ -52,18 +52,18 @@ export const heroContext = css({
         paddingLeft: '0.5rem',
         paddingTop: '12vh',
 
-        [ mediaQuery.TabletPortrait ] :{
+        [ mediaQuery.tabletPortrait ] :{
             paddingLeft: 0
         },
 
-        [ mediaQuery.Desktop ] :{
+        [ mediaQuery.desktop ] :{
             paddingTop: 0
         },
     },
 
     "& h3":{
         paddingLeft: '1em',
-        [ mediaQuery.TabletPortrait ] :{
+        [ mediaQuery.tabletPortrait ] :{
             paddingLeft: 0
         },
 
@@ -85,7 +85,7 @@ export const heroImage = css({
     opacity : 0.5,
     position: 'absolute',
 
-    [mediaQuery.Desktop]:{
+    [mediaQuery.desktop]:{
         width: '60vw',
         right: 0,
     }

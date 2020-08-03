@@ -11,7 +11,7 @@ export const Sample = css({
     opacity: '0.5',
     zIndex: 200,
 
-    [mediaQuery.Desktop]:{
+    [mediaQuery.desktop]:{
         top: '286px'
     },
 

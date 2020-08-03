@@ -7,7 +7,7 @@ export const skillsSectionTitle = css({
     zIndex: '10',
     textAlign: 'center',
 
-    [mediaQuery.Desktop]:{
+    [mediaQuery.desktop]:{
         float: 'right',
     }
 

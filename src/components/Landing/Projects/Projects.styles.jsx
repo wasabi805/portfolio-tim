@@ -8,7 +8,7 @@ export const projectsWrapper = css({
     "& h2":{
         fontSize: '10vw',
         textAlign: 'center',
-        [mediaQuery.DeskTopWide]:{
+        [mediaQuery.deskTopWide]:{
             fontSize: '5vw',
         },
 
@@ -17,7 +17,7 @@ export const projectsWrapper = css({
         textDecoration : 'none'
     },
 
-    [mediaQuery.DeskTopWide] : {
+    [mediaQuery.deskTopWide] : {
         paddingTop: '1.25rem',
     }
 });
@@ -32,11 +32,11 @@ export const projectsBackgroundImage = css({
         display: 'block',
         width: '100%',
 
-        [mediaQuery.TabletPortrait] : {
+        [mediaQuery.tabletPortrait] : {
             width: '45vw'
         },
 
-        [mediaQuery.DeskTopWide] : {
+        [mediaQuery.deskTopWide] : {
             width: '100%',
             // border: '1px solid purple',
         }

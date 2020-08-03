@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import MediaPlayer from './MediaPlayer';
 
 const MediaPlayerContainer = ({ trackListing , initialTrackImage })=>{
-
     /** Calculates width for loaded audio file specific to loaded song  */
     const [loadedTrack , setLoadedTrack] = useState({timelineWidth: null});
+    const [initialImageLoaded , loadInitialImage] = useState(false)
 
     const [currentTrack, setCurrentTrack] = useState()
 
@@ -19,8 +19,11 @@ const MediaPlayerContainer = ({ trackListing , initialTrackImage })=>{
 
     /**Set Initial Track Image*/
     useEffect(()=>{
-        setCurrentTrack(initialTrackImage)
-    }, initialTrackImage)
+        if(!initialImageLoaded && initialTrackImage){
+            loadInitialImage(true)
+            setCurrentTrack(initialTrackImage)
+        }
+    });
 
     const switchImage = ( seconds ) => {
         const jumpToTrack = trackListing.find(
@@ -29,11 +32,13 @@ const MediaPlayerContainer = ({ trackListing , initialTrackImage })=>{
                 seconds <= song.endTime
             ))
 
+        if( initialTrackImage && initialTrackImage.startTime === 0 ){
+            setCurrentTrack( initialTrackImage )
+        }
+
         if(currentTrack !== jumpToTrack ){
             setCurrentTrack(jumpToTrack || {})
         }
-
-        // console.log(seconds, 'seconds')
     }
 
     /**Elapsed Time Bar*/

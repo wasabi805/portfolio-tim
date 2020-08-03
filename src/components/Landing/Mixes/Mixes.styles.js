@@ -5,7 +5,7 @@ export const mixesWrapper = css({
     position: 'relative',
     width: '99%',
     paddingTop: '20%',
-    [mediaQuery.Desktop]:{
+    [mediaQuery.desktop]:{
         paddingTop: 0,
     },
 });

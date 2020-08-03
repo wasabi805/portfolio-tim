@@ -18,7 +18,6 @@ const MediaPlayer = ({
     trackListing,
     switchImage,
     currentTrack,
-    loadInitialTrack,
 })=>{
     const musicNodeRef = useRef();
     const pButtonNodeRef = useRef();
@@ -57,7 +56,7 @@ const MediaPlayer = ({
             removeListener(musicNode,'timeupdate', timeUpdate, false);
         }
         const mouseUp =( event )=> {
-            switchImage( musicNode.currentTime )
+            // switchImage( musicNode.currentTime )
 
             if (onPlayHead == true) {
                 movePlayHead(event);
@@ -80,7 +79,6 @@ const MediaPlayer = ({
             movePlayHead(e);
             musicNode.currentTime = duration * clickPercent(e, timeLineNode);
         }, false )
-        //-------------------------------------------------------------
     }
 
     /** adds listener once these two are mounted*/

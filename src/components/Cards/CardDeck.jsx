@@ -9,7 +9,7 @@ export const CardDeck =({ cards })=>{
     return(
         <div className={ CardContainer }>
             { hasCards && (cards.map( card => (
-                <div key={`card-${card.id}`} className={ cardWrapper }>
+                <div key={`card-${card.id}`} className={ cardWrapper } >
                     <div className={ cardBorder }>
                         <div className={ CardStyle }>
                             <figure className={ CardImgWrapper }>

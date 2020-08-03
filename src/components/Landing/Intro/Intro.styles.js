@@ -13,11 +13,11 @@ export const IntroContext = css({
         marginTop: 0,
         marginBottom: 0,
         paddingTop: '2vh',
-       [mediaQuery.Desktop] : {
+       [mediaQuery.desktop] : {
 
        },
 
-       [mediaQuery.DeskTopWide]: {
+       [mediaQuery.deskTopWide]: {
             fontSize: '1.7vw',
            width: '75%',
            margin: 'auto',

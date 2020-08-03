@@ -21,7 +21,7 @@ export const sectionStyle= css({
         right  : 0,
         fontSize: '3rem',
 
-        [ mediaQuery.Desktop ] :{
+        [ mediaQuery.desktop ] :{
             fontSize: '4.5rem',
         }
     },
@@ -29,7 +29,7 @@ export const sectionStyle= css({
     h3:{
         margin: 0,
 
-        [mediaQuery.TabletPortrait] :{
+        [mediaQuery.tabletPortrait] :{
             fontSize: '4.5rem',
         }
     },
@@ -43,10 +43,10 @@ export const sectionStyle= css({
     color: colors.white,
     padding: '0 2rem',
 
-    [mediaQuery.Desktop] :{
+    [mediaQuery.desktop] :{
 
     },
-    [mediaQuery.DeskTopWide] :{
+    [mediaQuery.deskTopWide] :{
 
     }
 });

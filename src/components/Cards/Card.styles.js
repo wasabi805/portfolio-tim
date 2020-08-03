@@ -8,13 +8,13 @@ export const CardContainer = css({
 
     gridTemplateColumns: '1fr 1fr 1fr',
 
-    [mediaQuery.Desktop]: {
+    [mediaQuery.desktop]: {
         display: 'grid',
         columnGap: '1vw',
         paddingTop: '12vh',
     },
 
-    [mediaQuery.DeskTopWide]: {
+    [mediaQuery.deskTopWide]: {
         display: 'grid',
         columnGap: '2rem',
     },
@@ -72,7 +72,7 @@ export const CardStyle = css({
             display: 'inline-block',
             fontSize: '3vw',
 
-            [mediaQuery.TabletPortrait] :{
+            [mediaQuery.tabletPortrait] :{
                 fontSize : '1vw'
             },
 
@@ -92,13 +92,13 @@ export const CardStyle = css({
             marginInlineStart: '0px',
             marginInlineEnd:'0px',
 
-            [mediaQuery.TabletPortrait] :{
+            [mediaQuery.tabletPortrait] :{
                 fontSize : '2vw'
             }
         },
     },
 
-    [ mediaQuery.Desktop ] :{
+    [ mediaQuery.desktop ] :{
         border: 'none',
     }
 
@@ -128,19 +128,30 @@ export const cardTitle = css({
     left: '0', right: '0',
     marginBottom: '1vh',
     textAlign: 'center',
-    fontSize: '1.5vw',
+    fontSize: '6vw',
     zIndex: 9,
 
-    // [mediaQuery.xl]:{
-    //     fontSize: '1.7vw',
-    // }
+    [mediaQuery.tabletPortrait]:{
+        fontSize: '1.7vw',
+    }
 });
 
 export const cardList = css({
     textAlign: 'center',
+    margin: '0',
+
     "& li":{
         listStyleType:'none',
-        fontSize: '1.3vw' ,
-        fontFamily: 'D-DINCondensed'
+        fontFamily: 'D-DINCondensed',
+
+        fontSize: '5vw',
+
+        [mediaQuery.tabletPortrait]:{
+            fontSize: '2vw'
+        },
+
+        [mediaQuery.desktop]:{
+            fontSize: '1.3vw' ,
+        }
     }
 });
