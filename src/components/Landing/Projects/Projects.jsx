@@ -33,13 +33,9 @@ const Projects = ()=>{
                             <img src={ purpleCircuits } alt=""/>
                         </>
                     )}
-                    { isLaptop && (
-                        <>
-                            <img src={ purpleCircuits } alt=""/>
-                            {/*<img className={ rotateImage } src={ purpleCircuits } alt=""/>*/}
-                            </>
-                    )}
+                    { isLaptop && (<img src={ purpleCircuits } alt=""/>)}
                 </div>
+
                 <Tile
                     content={ projectsList }
                     mobileImages={ mobileImages }

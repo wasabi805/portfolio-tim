@@ -31,15 +31,6 @@ export const projectsBackgroundImage = css({
     "& img": {
         display: 'block',
         width: '100%',
-
-        [mediaQuery.tabletLandscape] : {
-            width: '45vw'
-        },
-
-        [mediaQuery.deskTopWide] : {
-            width: '100%',
-            // border: '1px solid purple',
-        }
     }
 });
 

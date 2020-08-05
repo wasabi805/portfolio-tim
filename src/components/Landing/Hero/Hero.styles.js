@@ -133,3 +133,7 @@ export const jobTitle = css({
     marginRight: 'auto',
 });
 
+export const secondaryColor = css({
+    color:' #d3e0ed'
+})
+

@@ -23,9 +23,8 @@ export const footerWrapper = css({
 });
 
 export const footerContainer = css({
-    display: 'grid',
     flex: 1,
-    placeItems: 'center',
+    // placeItems: 'center',
     background: '#2a2b2d',
     backgroundImage: `url("https://www.transparenttextures.com/patterns/fabric-of-squares.png")`,
 
@@ -44,16 +43,26 @@ export const footerContainer = css({
 
     "& h5":{
         marginTop: '2vh',
-        marginLeft: '4vw',
-        position: 'absolute',
+        // marginLeft: '4vw',
+        // position: 'absolute',
         fontSize: '3vw',
     }
+});
+
+export const footerContextContainer = css({
+    paddingLeft: '2%',
+
+    [mediaQuery.tabletPortrait]:{
+        paddingLeft: '10%',
+    }
+
 });
 
 export const footerContextWrapper = css({
     "& h4":{
         fontSize: '3vw',
         color: '#cb82bd',
+        margin: 0,
         [mediaQuery.deskTopWide]:{
             margin: 0,
             marginTop: '16vh',
@@ -98,12 +107,16 @@ export const iconWrapperText = css({
 });
 
 export const contactEmail = css({
+    fontSize: '12px',
+
     [ mediaQuery.deskTopWide ]: {
         fontSize : '2vw',
     },
 })
 
 export const contactPhone =css({
+    fontSize: '14px',
+
     [ mediaQuery.deskTopWide ]: {
         fontSize : '1.5vw',
     },
@@ -125,6 +138,21 @@ export const contactInfo = css({
 export const socialMediaContainer = css({
     display: 'flex',
     zIndex: 10,
+
+    [mediaQuery.tabletPortrait]:{
+        width: '26vw',
+    },
+
+    [mediaQuery.tabletLandscape]:{
+        width: '30vw',
+    },
+
+    [mediaQuery.desktop]:{
+        // width: '50%',
+        width: '23vw',
+        paddingBottom: '12vh',
+    },
+
     [mediaQuery.deskTopWide]: {
         width: '16vw',
         paddingBottom: '12vh',

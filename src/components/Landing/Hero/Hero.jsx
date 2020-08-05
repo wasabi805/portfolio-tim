@@ -8,13 +8,14 @@ import { heroBackgroundImg } from '../Home/Home.styles';
 import { jobTitle , circleContainer } from "./Hero.styles";
 import StencilTim from '../../../images/tim-01-stencil-transparet.png';
 import { ReactComponent as QuarterCircle } from '../../../svg/quarter-circle.svg'
-import { heroSection, heroContainer , heroContextWrapper, heroContext, heroTitle, heroImage } from "./Hero.styles";
+import { heroSection, heroContainer , heroContextWrapper, heroContext, heroTitle, heroImage , secondaryColor } from "./Hero.styles";
 
 const Hero = () => {
 
     const isTablet = useMediaQuery({ query: media.LAPTOP })
     const isDesktop = useMediaQuery({query: media.DESKTOP})
-    const TitleText = ({ text })=> <h3 className={cx(animation.FADE_IN_DOWN )}> { text } </h3>
+
+    const TitleText = ({ text , className })=> <h3 className={cx(animation.FADE_IN_DOWN , className )}> { text } </h3>
 
     return(
         <>
@@ -30,8 +31,8 @@ const Hero = () => {
                             <h1 className={ cx( heroTitle, animation.FADE_IN_DOWN)}>
                                 Hello
                             </h1>
-                            <TitleText text={'My'} />
-                            <TitleText text={'name is'}  />
+                            <TitleText text={'My'} className={secondaryColor}/>
+                            <TitleText text={'name is'} className={secondaryColor} />
                             <TitleText text={'Timothy'} />
 
                             <div className={circleContainer} >

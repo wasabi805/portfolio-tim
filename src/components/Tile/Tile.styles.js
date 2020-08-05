@@ -86,7 +86,7 @@ export const tileGridItem = css({
     padding: '20px',
     zIndex: '20',
 
-    [mediaQuery.deskTopWide]:{
+    [mediaQuery.tabletLandscape]:{
         display: 'grid',
         gridColumnGap: '22px',
         marginBottom: '3rem',

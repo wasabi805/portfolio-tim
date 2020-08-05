@@ -6,6 +6,7 @@ import {
     footer,
     footerWrapper,
     footerContainer,
+    footerContextContainer,
     footerContextWrapper,
     iconWrapper,
     contactEmail,
@@ -31,7 +32,7 @@ const Contact = ()=>{
             <div className={footerWrapper}>
                 <div className={ footerContainer }>
                     <h5>Contact</h5>
-                   <div>
+                   <div className={footerContextContainer}>
                        <div className={contactInfo}>
                            <span className={ iconContainer }>
                                <span className={iconWrapper}>
@@ -66,7 +67,9 @@ const Contact = ()=>{
                 </div>
 
                 <div className={ footerContainer } >
-                    <div>
+                    <div style={{
+                        marginTop: '12px',
+                    }}>
                         <div className={ footerContextWrapper} >
                             <h4>
                                 About Timothy...
