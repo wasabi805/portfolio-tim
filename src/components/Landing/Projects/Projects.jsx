@@ -22,7 +22,9 @@ const Projects = ()=>{
     const isLaptop = useMediaQuery({ query: media.LAPTOP })
 
     return(
-        <section id="projects-section" className={ cx( sectionStyle, sectionPaddingSides,  sectionPaddingBottom ) }>
+        <section id="projects-section"
+                 className={ cx( sectionStyle, sectionPaddingSides,  sectionPaddingBottom ) }>
+
             <div className={ projectsWrapper }>
                 <h3>Projects</h3>
                 <div className={ cx(projectsBackgroundImage) }>

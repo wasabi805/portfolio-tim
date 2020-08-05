@@ -44,7 +44,6 @@ const Tile = ({ content })=>{
     const onTileHover = (e)=>{
         e.persist()
         setSelectedTile( e.currentTarget.id)
-        console.log(selectedTile)
     }
 
     return(

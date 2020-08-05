@@ -45,13 +45,3 @@ export const IntroContext = css({
 
     },
 });
-
-
-// font-family: Morganite-SemiBold;
-// font-size: 40px;
-// margin-right: 10%;
-// margin-top: 11%;
-// margin-left: 16%;
-// padding-top: 2vh;
-// }
-
