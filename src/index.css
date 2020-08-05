@@ -44,6 +44,31 @@
   font-family: 'D-DINExp-Italic';
   src: local('D-DINExp-Italic'), url(./fonts/D-DINExp-Italic.ttf) format('truetype') ;
 }
+@font-face {
+  font-family: 'Morganite-Medium';
+  src: local('Morganite-Medium'), url(./fonts/Morganite-Medium.ttf) format('truetype') ;
+}
+@font-face {
+  font-family: 'Morganite-SemiBold';
+  src: local('Morganite-SemiBold'), url(./fonts/Morganite-SemiBold.ttf) format('truetype') ;
+}
+@font-face {
+  font-family: 'GoshaSans-Regular';
+  src: local('GoshaSans-Regular'), url(./fonts/GoshaSans-Regular.ttf) format('truetype') ;
+}
+@font-face {
+  font-family: 'GoshaSans-Bold';
+  src: local('GoshaSans-Bold'), url(./fonts/GoshaSans-Bold.ttf) format('truetype') ;
+}
+
+@keyframes animateStatic {
+  0% {
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 100% 100%;
+  }
+}
 
 body {
   margin: 0;
@@ -54,8 +79,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  overflow-x: hidden;
-  background: black;
+  /*overflow-x: hidden;*/
+  /*background: cyan;*/
+  background-image: url("images/noisy-texture-blk.png");
+  animation: animateStatic .5s linear infinite;
+
 }
 
 code {

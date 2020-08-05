@@ -32,7 +32,7 @@ export const projectsBackgroundImage = css({
         display: 'block',
         width: '100%',
 
-        [mediaQuery.tabletPortrait] : {
+        [mediaQuery.tabletLandscape] : {
             width: '45vw'
         },
 

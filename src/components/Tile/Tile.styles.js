@@ -10,10 +10,17 @@ export const getTileImageStyle = ( url )=> css({
     backgroundImage : `url(${url})`,
     backgroundSize: 'cover',
     backgroundRepeat: "no-repeat",
+    boxShadow: 'rgb(0 180 255 / 20%) 0px 3px 3px -2px, rgb(26 158 148 / 14%) 0px 3px 4px 0px, rgb(60 255 115 / 12%) 0px 1px 8px 0px',
+
+    transition: 'transform .2s'
+});
+
+export const zoomIMage = css({
+    transform: 'scale(1.06)'
 });
 
 export const tileImageOverlay = css({
-    zIndex: '100',
+    zIndex: '2',
     position: 'absolute',
     height: '100%',
     width: '100%',
@@ -26,14 +33,19 @@ export const tileImageOverlay = css({
 
 });
 
-export const tileTitle = css({
-
-});
-
 export const tileContextStyle = css({
     color: 'white',
     margin: 'auto',
     width: '100%',
+
+    [mediaQuery.mobileS]:{
+        textAlign: 'center'
+    },
+
+    [mediaQuery.tabletLandscape]:{
+        textAlign: 'start'
+    },
+
     "& h3":{
         paddingTop: '25px',
         fontSize: '5vw',
@@ -65,16 +77,18 @@ export const tileContextStyle = css({
 
 export const tileGridContainerStyle = css({
     display: 'grid',
-    gridGap : '5%',
-    color: 'black'
+    gridGap : '2%',
+    color: 'black',
 });
 
 export const tileGridItem = css({
     // display: 'grid',
     padding: '20px',
-    zIndex: '10',
+    zIndex: '20',
+
     [mediaQuery.deskTopWide]:{
         display: 'grid',
+        gridColumnGap: '22px',
         marginBottom: '3rem',
     }
 });

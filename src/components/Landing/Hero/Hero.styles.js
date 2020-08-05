@@ -26,6 +26,12 @@ const fillLine = keyframes({
 
 export const heroSection = css({
     padding: 0,
+    height: '75%',
+
+    [mediaQuery.desktop]:{
+
+    }
+
 });
 
 export const heroContainer = css({
@@ -52,7 +58,7 @@ export const heroContext = css({
         paddingLeft: '0.5rem',
         paddingTop: '12vh',
 
-        [ mediaQuery.tabletPortrait ] :{
+        [ mediaQuery.tabletLandscape ] :{
             paddingLeft: 0
         },
 
@@ -63,7 +69,7 @@ export const heroContext = css({
 
     "& h3":{
         paddingLeft: '1em',
-        [ mediaQuery.tabletPortrait ] :{
+        [ mediaQuery.tabletLandscape ] :{
             paddingLeft: 0
         },
 
@@ -88,15 +94,23 @@ export const heroImage = css({
     [mediaQuery.desktop]:{
         width: '60vw',
         right: 0,
-    }
+    },
+
+    [mediaQuery.deskTopWide]:{
+        width: '56vw'
+    },
 });
 
 export const circleContainer = css({
     position: 'relative',
     width:' 100%',
     textAlign: 'center',
-    marginTop: '3em',
     marginBottom: '3em',
+
+    [mediaQuery.desktop]:{
+        width: '68%'
+    },
+
     "& path":{
         stroke: '#4a4a4a85',
         fill: 'none',

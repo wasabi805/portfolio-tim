@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cx } from 'emotion';
-import { sectionStyle , sectionPaddingBottom } from '../../Common/Section/SectionContainer.styles';
+import { cx , css } from 'emotion';
+import { sectionStyle , sectionPaddingBottom , sectionPaddingSides} from '../../Common/Section/SectionContainer.styles';
 
 import {
     skillsSectionTitle,
@@ -17,7 +17,9 @@ import purpleCircuits from '../../../images/Purple-technology-data-internet-72 c
 const Skills = ({ cards })=>{
 
     return(
-        <section id="skills-section" className={ cx(sectionStyle, sectionPaddingBottom ) } >
+        <section id="skills-section" className={
+            cx(sectionStyle , sectionPaddingSides , sectionPaddingBottom)
+        }>
             <h2 className={ skillsSectionTitle }>Skills</h2>
             <div className={ skillsBackgroundWrapper }>
                 <div id={'skills-purple'}>

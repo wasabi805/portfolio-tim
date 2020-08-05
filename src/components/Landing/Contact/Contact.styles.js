@@ -8,7 +8,7 @@ export const footer = css({
     padding: '0',
     margin: '0',
 
-    [mediaQuery.mobile] :{
+    [mediaQuery.mobileS] :{
         padding: '0',
         margin: '0'
     },

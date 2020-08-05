@@ -28,6 +28,10 @@ export const LandingNavigationSection = css({
         listStyle: "none"
     },
 
+    [mediaQuery.tabletLandscape]:{
+        fontSize:'1.2vw',
+    },
+
     [mediaQuery.deskTopWide]: {
         fontSize: '1.2vw',
     }

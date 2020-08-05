@@ -12,8 +12,10 @@
 /coverage
 
 # production
-
 /server/.env
+
+#test track
+/public/June2020_portfolioMix-copy.mp3
 
 # misc
 .DS_Store

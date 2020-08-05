@@ -1,6 +1,8 @@
 export const media = {
-    // MOBILE : '(max-device-width: 576px)',
-    MOBILE : '(max-device-width: 767px)',
-    LAPTOP : '( min-device-width: 768px )',
-    DESKTOP: '',
+
+    MOBILE : '( min-device-width: 320px)',
+    TABLET: '( min-device-width: 576px)',
+    LAPTOP : '( max-device-width: 1023px )',
+    DESKTOP: '( min-device-width: 1024px)',
 }
+

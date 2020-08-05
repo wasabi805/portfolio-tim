@@ -5,8 +5,12 @@ export const CardContainer = css({
     position: 'relative',
     color: 'white',
     width: '100%',
-
     gridTemplateColumns: '1fr 1fr 1fr',
+
+    [mediaQuery.tabletPortrait]:{
+        display: 'flex',
+        gridColumnGap: '16px'
+    },
 
     [mediaQuery.desktop]: {
         display: 'grid',
@@ -30,7 +34,7 @@ export const CardContainer = css({
 
 export const cardWrapper = css({
     display: 'flex',
-    padding: '0',
+    padding: '3vh 0',
 });
 
 export const cardBorder = css({
@@ -63,17 +67,26 @@ export const CardStyle = css({
         flexWrap: 'wrap',
         justifyContent: 'center',
         position: 'relative',
-        padding: '3em',
-        // paddingTop : '0.5em',
+        padding: '3vh 20% 6vh 20%',
+
+        [mediaQuery.tabletPortrait]:{
+            padding: '3vh 5% 6vh 5%',
+        },
+
+        [mediaQuery.tabletLandscape]:{
+            padding: '3vh 0 6vh 0',
+        },
+
+
 
         "& ul":{
             fontFamily: 'D-DINCondensed',
-            margin: '0 2em',
             display: 'inline-block',
-            fontSize: '3vw',
 
-            [mediaQuery.tabletPortrait] :{
-                fontSize : '1vw'
+            [mediaQuery.tabletLandscape] :{
+                margin: '0 2em',
+                fontSize: '3vw',
+                width: '60%',
             },
 
             "& li":{
@@ -92,7 +105,7 @@ export const CardStyle = css({
             marginInlineStart: '0px',
             marginInlineEnd:'0px',
 
-            [mediaQuery.tabletPortrait] :{
+            [mediaQuery.tabletLandscape] :{
                 fontSize : '2vw'
             }
         },
@@ -123,16 +136,21 @@ export const CardImgWrapper = css({
 
 export const cardTitle = css({
     position: 'absolute',
+    color: '#d3e0ed',
     bottom: 0,
     display: 'block',
     left: '0', right: '0',
-    marginBottom: '1vh',
+    marginBottom: '3vh',
     textAlign: 'center',
     fontSize: '6vw',
     zIndex: 9,
 
     [mediaQuery.tabletPortrait]:{
-        fontSize: '1.7vw',
+        fontSize: '2.3vw',
+    },
+
+    [mediaQuery.tabletLandscape]:{
+        fontSize: '1.8vw'
     }
 });
 
@@ -142,16 +160,20 @@ export const cardList = css({
 
     "& li":{
         listStyleType:'none',
-        fontFamily: 'D-DINCondensed',
+        fontFamily: 'GoshaSans-Regular',
 
-        fontSize: '5vw',
+        fontSize: '3.4vw',
 
         [mediaQuery.tabletPortrait]:{
             fontSize: '2vw'
         },
 
+        [mediaQuery.tabletLandscape]:{
+            fontSize: '2vw'
+        },
+
         [mediaQuery.desktop]:{
-            fontSize: '1.3vw' ,
+            fontSize: '1vw' ,
         }
     }
 });

@@ -3,11 +3,10 @@ import { mediaQuery } from '../media-queries/mediaQueries';
 
 export const AppStyle = css({
 
-    [mediaQuery.xl]:{
+    [mediaQuery.deskTopWide]:{
         position: 'relative',
-        // width: '75vw',
-        marginLeft: 'auto',
-        marginRight: 'auto',
+        marginLeft: '10%',
+        marginRight: '10%',
     }
 });
 

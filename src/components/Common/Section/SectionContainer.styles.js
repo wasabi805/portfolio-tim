@@ -1,18 +1,8 @@
-import { css , keyframes } from 'emotion';
+import { css } from 'emotion';
 import { theme } from "../../StyleThemes/StylesThemes";
 import { mediaQuery } from "../../../media-queries/mediaQueries";
 
-const { body, colors } = theme.light
-
-const animateStatic = keyframes({
-    "0%" :{
-        backgroundPosition: '0 0'
-    },
-
-    "100%":{
-    backgroundPosition: '100% 100%'
-    }
-});
+const { colors } = theme.light
 
 export const sectionStyle= css({
     h2:{
@@ -29,28 +19,25 @@ export const sectionStyle= css({
     h3:{
         margin: 0,
 
-        [mediaQuery.tabletPortrait] :{
+        [mediaQuery.tabletLandscape] :{
             fontSize: '4.5rem',
         }
     },
 
     position: 'relative',
-    background: body.section,
-    backgroundImage: `url(${body.sectionNoise})`,
-    animation: `${animateStatic} .5s linear infinite`,
-
     fontFamily: 'MonumentExtended-Regular',
     color: colors.white,
-    padding: '0 2rem',
-
-    [mediaQuery.desktop] :{
-
-    },
-    [mediaQuery.deskTopWide] :{
-
-    }
+    // padding: '0 2rem',
 });
 
 export const sectionPaddingBottom = css({
-    paddingBottom: '20vh',
+    paddingBottom: '11vh',
+})
+
+export const sectionPaddingSides = css({
+    padding: '0px 2%',
+
+    [mediaQuery.desktop]: {
+        padding: '5vh 10%'
+    }
 })

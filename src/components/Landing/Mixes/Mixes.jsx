@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { sectionStyle } from '../../Common/Section/SectionContainer.styles';
+import { cx } from 'emotion';
+import { sectionStyle , sectionPaddingSides } from '../../Common/Section/SectionContainer.styles';
 import { mixesWrapper } from './Mixes.styles';
 import MediaPlayer from "./MediaPlayer";
 
 const Mixes = ({ trackListing, initialTrackImage })=>{
     return(
-        <section id="mixes-section" className={ sectionStyle }>
+        <section id="mixes-section" className={ cx( sectionStyle , sectionPaddingSides) }>
             <div className={ mixesWrapper }>
                 <h2>Mixes</h2>
+
             </div>
             <MediaPlayer
                 trackListing={ trackListing }

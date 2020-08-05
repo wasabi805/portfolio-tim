@@ -12,8 +12,8 @@ import { heroSection, heroContainer , heroContextWrapper, heroContext, heroTitle
 
 const Hero = () => {
 
-    const isMobile = useMediaQuery({ query: media.MOBILE })
-    const isLaptop = useMediaQuery({ query: media.LAPTOP })
+    const isTablet = useMediaQuery({ query: media.LAPTOP })
+    const isDesktop = useMediaQuery({query: media.DESKTOP})
     const TitleText = ({ text })=> <h3 className={cx(animation.FADE_IN_DOWN )}> { text } </h3>
 
     return(
@@ -23,31 +23,16 @@ const Hero = () => {
                     <div className={ heroContextWrapper }>
                         <div className={ heroContext }>
 
-                            { isMobile && (
-                                <>
-                                    <div className={heroImage} >
-                                        <img src={ StencilTim } className={ heroBackgroundImg }/>
-                                    </div>
+                            <div id={'removeMe'} className={heroImage}>
+                                {isTablet && <img src={ StencilTim } className={ heroBackgroundImg }/>}
+                            </div>
 
-                                    <h1 className={ cx( heroTitle, animation.FADE_IN_DOWN)}>
-                                        Hello
-                                    </h1>
-                                    <TitleText text={'My'} />
-                                    <TitleText text={'name is'} />
-                                    <TitleText text={'Timothy'} />
-                                </>
-                            )}
-
-                            {isLaptop && (
-                                <>
-                                    <h1 className={ cx( heroTitle, animation.FADE_IN_DOWN,)}>
-                                        Hello
-                                    </h1>
-
-                                    <TitleText text={'My name is'}/>
-                                    <TitleText text={'Timothy'}/>
-                                </>
-                            )}
+                            <h1 className={ cx( heroTitle, animation.FADE_IN_DOWN)}>
+                                Hello
+                            </h1>
+                            <TitleText text={'My'} />
+                            <TitleText text={'name is'}  />
+                            <TitleText text={'Timothy'} />
 
                             <div className={circleContainer} >
                                 <QuarterCircle/>
@@ -58,8 +43,8 @@ const Hero = () => {
                         </div>
                     </div>
 
-                    {isLaptop && (
-                        <div className={heroImage} >
+                    {isDesktop && (
+                        <div className={ heroImage } >
                             <img src={ StencilTim } className={ heroBackgroundImg }/>
                         </div>
                     )}

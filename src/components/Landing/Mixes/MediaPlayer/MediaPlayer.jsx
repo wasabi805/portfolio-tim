@@ -31,7 +31,9 @@ const MediaPlayer = ({
     const [timeLineNode, setTimeLineNode] = useState(null);
     const [elapsedTimeNode , setElapsedTimeNode] = useState(null);
 
-    const isLaptop = useMediaQuery({ query: media.LAPTOP })
+    const isTablet = useMediaQuery({query: media.TABLET});
+    const isLaptop = useMediaQuery({ query: media.LAPTOP });
+
 
     useEffect(()=>{
         setMusicNode(musicNodeRef.current)
@@ -98,7 +100,7 @@ const MediaPlayer = ({
                         <img src={ currentTrack.img }/>
                    </div>
 
-                   {isLaptop && (
+                   {isTablet && (
                        <div className={ contextText }>
                            <ul className={ playlist }>
                                {trackListing && trackListing.map( track => (

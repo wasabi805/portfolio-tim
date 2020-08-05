@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from "react-redux";
 import selectors from '../../../store/Projects/Projects.selector'
-import { sectionStyle , sectionPaddingBottom } from '../../Common/Section/SectionContainer.styles';
+import { sectionStyle , sectionPaddingSides,  sectionPaddingBottom } from '../../Common/Section/SectionContainer.styles';
 import { cx } from 'emotion';
 import { projectsWrapper, projectsBackgroundImage, rotateImage } from './Projects.styles';
 import { useMediaQuery } from 'react-responsive';
@@ -22,7 +22,7 @@ const Projects = ()=>{
     const isLaptop = useMediaQuery({ query: media.LAPTOP })
 
     return(
-        <section id="projects-section" className={ cx( sectionStyle, sectionPaddingBottom ) }>
+        <section id="projects-section" className={ cx( sectionStyle, sectionPaddingSides,  sectionPaddingBottom ) }>
             <div className={ projectsWrapper }>
                 <h3>Projects</h3>
                 <div className={ cx(projectsBackgroundImage) }>
@@ -36,7 +36,7 @@ const Projects = ()=>{
                     { isLaptop && (
                         <>
                             <img src={ purpleCircuits } alt=""/>
-                            <img className={ rotateImage } src={ purpleCircuits } alt=""/>
+                            {/*<img className={ rotateImage } src={ purpleCircuits } alt=""/>*/}
                             </>
                     )}
                 </div>

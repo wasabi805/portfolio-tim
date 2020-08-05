@@ -1,22 +1,26 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { sectionStyle , sectionPaddingBottom} from '../../Common/Section/SectionContainer.styles';
-import { IntroContext } from './Intro.styles';
+import { sectionStyle } from '../../Common/Section/SectionContainer.styles';
+import { IntroContainer, IntroContext } from './Intro.styles';
 
 
 const Intro = ()=>{
     return(
-        <section className={cx(sectionStyle , sectionPaddingBottom)}>
+        <section className={cx(sectionStyle , IntroContainer)}>
                <div className={ IntroContext } >
-                   <h4 > Intro :
-                       When the la-la hits ya lyrics just splits ya
-                       Head so hard, that your hat can't fit you
-                       Either I'm with ya or against ya
-                       Format venture, back through that maze I sent ya
-                       Talking to the rap inventor
-                       Ninja with the game tight, fifth of that flame right
-                       Spell my name right, B-I, double-G, I-E
-                       Iced out, lights out, me and Cease-a-Leo</h4>
+                   <h4
+                       style={{
+                           fontFamily: 'Morganite-SemiBold',
+                           // fontSize: '40px',
+                           // marginRight: '10%',
+                           // marginTop: '5%',
+                           // marginLeft: '10%',
+                           // paddingTop: '2vh',
+                       }}>
+                       Based out of Phoenix Metro Area, AZ. I specialize in crafting stylish custom websites.
+                       If you like hip-hop and R<span style={{fontFamily: 'Arial', fontSize: '2vw'}}>&</span>B,
+                       checkout my mix below. Thanks for stopping by!
+                   </h4>
                </div>
         </section>
     )

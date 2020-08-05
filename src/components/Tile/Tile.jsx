@@ -1,31 +1,31 @@
-import React  from 'react';
+import React, { useState } from 'react';
 import { cx } from 'emotion';
 import PropTypes from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
-import { media } from "../../enums/media";
+import { BREAKPOINTS } from '../../media-queries/Breakpoints';
 import { isEvenIndex } from '../../helpers/types';
 import {
     getTileImageStyle ,
+    zoomIMage,
     tileImageOverlay,
     tileContextStyle ,
     tileGridContainerStyle,
     tileGridItem,
     imgLeftStyle,
     imgRightStyle,
-    tileTitle
 } from './Tile.styles';
 
-const TileImage =( {image : url} )=>(
-    <div id="tileImage"
-         className={ getTileImageStyle( url) }
+const TileImage =( {id, image : url, animation} )=>(
+    <div id={`${ id }-image`}
+         className={ cx(getTileImageStyle( url), animation) }
     >
         <div className={ tileImageOverlay }/>
     </div>)
 
-const TileContext = ({ title ,context })=>(
-    <div className={ tileContextStyle }>
-        <h5
-            // className={cx("glitch" , tileTitle )}
+const TileContext = ({id, title ,context , animation })=>(
+    <div id={`${id}-context`} className={ tileContextStyle }>
+        <h5 id={`${id}-title`}
+            className={cx(animation )}
             data-text={ title }
         >{ title }
         </h5>
@@ -33,14 +33,23 @@ const TileContext = ({ title ,context })=>(
     </div>
 )
 
-const Tile = ({ content, mobileImages })=>{
+const Tile = ({ content })=>{
 
-    const isMobile = useMediaQuery({ query: media.MOBILE });
-    const isLaptop = useMediaQuery({ query: media.LAPTOP });
+    const isMobile = useMediaQuery( BREAKPOINTS.MOBILE );
+    const isTablet = useMediaQuery( BREAKPOINTS.TABLET )
+    const isLaptop = useMediaQuery( BREAKPOINTS.LAPTOP);
+
+    const [selectedTile , setSelectedTile] = useState();
+
+    const onTileHover = (e)=>{
+        e.persist()
+        setSelectedTile( e.currentTarget.id)
+        console.log(selectedTile)
+    }
 
     return(
-        <div className={tileGridContainerStyle} >
-            {isLaptop && (
+        <div className={tileGridContainerStyle}>
+            {(isLaptop || isTablet) && (
                 <>
                     { content.map( (project , idx)=> {
                         if( isEvenIndex(idx) ){
@@ -48,24 +57,43 @@ const Tile = ({ content, mobileImages })=>{
                                 <div
                                     key={ `project-${project.id}` }
                                     id={ project.id }
-                                    className={ cx(tileGridItem, imgLeftStyle )}
+                                    className={ cx(tileGridItem, imgLeftStyle , )}
+                                    onMouseOver={ (e)=>onTileHover(e)}
+                                    onMouseOut={()=>setSelectedTile(null)}
                                 >
-                                    <TileImage image={ content[idx].image }/>
-                                    <TileContext title={ content[idx].title } context={ content[idx].context }/>
+                                    <TileImage
+                                        id={ content[idx].id }
+                                        image={ content[idx].image }
+                                        animation={ (selectedTile === project.id) && zoomIMage }
+                                    />
+                                    <TileContext
+                                        id={ content[idx].id }
+                                        title={ content[idx].title }
+                                        context={ content[idx].context }
+                                        animation={(selectedTile === project.id) && 'glitch' }
+                                    />
                                 </div>
                             )
-                        }else{
+                        }
+                        else{
                             return (
                                 <div
                                     key={ `project-${project.id}` }
                                     id={ project.id }
                                     className={ cx(tileGridItem, imgRightStyle)}
+                                    onMouseOver={ (e)=>onTileHover(e)}
                                 >
                                     <TileContext
+                                        id={ content[idx].id }
                                         title={ content[idx].title }
                                         context={ content[idx].context }
+                                        animation={(selectedTile === project.id) && 'glitch' }
                                     />
-                                    <TileImage image={ content[idx].image } />
+                                    <TileImage
+                                        id={ content[idx].id }
+                                        image={ content[idx].image }
+                                        animation={ (selectedTile === project.id) && zoomIMage }
+                                    />
                                 </div>
                             )
                         }
