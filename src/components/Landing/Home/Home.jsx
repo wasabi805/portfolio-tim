@@ -18,7 +18,7 @@ import { homeSection } from "./Home.styles";
 
 const Home = ()=>{
     return(
-        <div id="home-section" className={ homeSection }>
+        <>
             <LandingNavigation
                 sections={[
                     SECTION_HOME_ABOUT,
@@ -28,13 +28,15 @@ const Home = ()=>{
                     SECTION_CONTACT,
                 ]}
             />
-            <Hero/>
-            <Intro/>
-            <Skills/>
-            <Projects/>
-            <Mixes/>
-            <Contact/>
-        </div>
+            <div id="home-section" className={ homeSection }>
+                <Hero/>
+                <Intro/>
+                <Skills/>
+                <Projects/>
+                <Mixes/>
+                <Contact/>
+            </div>
+        </>
     )
 };
 

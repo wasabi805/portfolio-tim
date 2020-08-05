@@ -3,12 +3,22 @@ import PropTypes from 'prop-types';
 import { LandingNavigationSection } from './LandingNavigation.styles';
 
 const LandingNavigation = ({ sections })=>{
-    const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+
+    const scrollToRef = ( elemId ) => document.getElementById( elemId ).scrollIntoView({behavior: 'smooth'})
+
     return(
         <nav className={ LandingNavigationSection }>
-            {sections.map(sec => (
-                <a key={`link-${sec}`} href="" onClick={ ()=>scrollToRef() }>{sec}</a>
-            ))}
+            {sections && sections.map(sec => {
+                return(
+                   <div >
+                       <button key={`link-${sec}`}
+                               onClick={()=>scrollToRef(`${sec}-section`)}
+                       >
+                           <p>{sec}</p>
+                       </button>
+                   </div>
+                )
+            })}
         </nav>
     )
 }

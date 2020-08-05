@@ -19,7 +19,7 @@ const Hero = () => {
 
     return(
         <>
-            <section className={ cx( sectionStyle , heroSection )}>
+            <section id={'about-section'} className={ cx( sectionStyle , heroSection )}>
                 <div className={ heroContainer }>
                     <div className={ heroContextWrapper }>
                         <div className={ heroContext }>
