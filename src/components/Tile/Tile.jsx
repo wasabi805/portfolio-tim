@@ -39,7 +39,8 @@ const Tile = ({ content, history })=>{
 
     const isMobile = useMediaQuery( BREAKPOINTS.MOBILE );
     const isTablet = useMediaQuery( BREAKPOINTS.TABLET )
-    const isLaptop = useMediaQuery( BREAKPOINTS.LAPTOP);
+    const isLaptop = useMediaQuery( BREAKPOINTS.LAPTOP );
+    const isDesktop = useMediaQuery( BREAKPOINTS.DESKTOP );
 
     const [selectedTile , setSelectedTile] = useState();
 
@@ -50,7 +51,7 @@ const Tile = ({ content, history })=>{
 
     return(
         <div className={tileGridContainerStyle}>
-            {(isLaptop || isTablet) && (
+            {(isLaptop || isTablet || isDesktop) && (
                 <>
                     { content.map( (project , idx)=> {
                         if( isEvenIndex(idx) ){

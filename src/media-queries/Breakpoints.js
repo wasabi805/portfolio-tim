@@ -11,6 +11,10 @@ export const BREAKPOINTS = {
 
     LAPTOP: {
         minWidth: 1024, maxWidth: 2000
+    },
+
+    DESKTOP:{
+        minWidth: 2001
     }
 }
 
