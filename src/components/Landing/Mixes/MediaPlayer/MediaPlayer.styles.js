@@ -80,6 +80,7 @@ export const audioPlayer = css({
     height: '60px',
     justifyContent: 'center',
     border: 'solid',
+    background: '#222022'
 });
 
 export const elapsedTime = css({

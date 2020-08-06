@@ -22,7 +22,7 @@ const Skills = ({ cards })=>{
         }>
             <h2 className={ skillsSectionTitle }>Skills</h2>
             <div className={ skillsBackgroundWrapper }>
-                <div id={'skills-purple'}>
+                <div id={'skills-purple'} style={{width: '70vw'}}>
                     <img
                         className={ purpleCircuitsRS }
                         src={ purpleCircuits }

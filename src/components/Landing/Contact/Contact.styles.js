@@ -43,7 +43,7 @@ export const footerContainer = css({
 
     "& h5":{
         marginTop: '2vh',
-        // marginLeft: '4vw',
+        marginLeft: '10%',
         // position: 'absolute',
         fontSize: '3vw',
     }
@@ -64,8 +64,9 @@ export const footerContextWrapper = css({
         color: '#cb82bd',
         margin: 0,
         [mediaQuery.deskTopWide]:{
+            fontSize: '1.75vw',
             margin: 0,
-            marginTop: '16vh',
+            marginTop: '24%',
         }
     },
 

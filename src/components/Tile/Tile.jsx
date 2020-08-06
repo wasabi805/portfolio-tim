@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { cx } from 'emotion';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom'
+import { ROUTE_TEST } from '../../constants/routeConstants';
 import { useMediaQuery } from 'react-responsive';
 import { BREAKPOINTS } from '../../media-queries/Breakpoints';
 import { isEvenIndex } from '../../helpers/types';
@@ -33,7 +35,7 @@ const TileContext = ({id, title ,context , animation })=>(
     </div>
 )
 
-const Tile = ({ content })=>{
+const Tile = ({ content, history })=>{
 
     const isMobile = useMediaQuery( BREAKPOINTS.MOBILE );
     const isTablet = useMediaQuery( BREAKPOINTS.TABLET )
@@ -56,7 +58,8 @@ const Tile = ({ content })=>{
                                 <div
                                     key={ `project-${project.id}` }
                                     id={ project.id }
-                                    className={ cx(tileGridItem, imgLeftStyle , )}
+                                    className={ cx(tileGridItem, imgLeftStyle ,'WuTang' )}
+                                    onClick={()=>history.push( ROUTE_TEST )}
                                     onMouseOver={ (e)=>onTileHover(e)}
                                     onMouseOut={()=>setSelectedTile(null)}
                                 >
@@ -126,4 +129,4 @@ Tile.propTypes = {
     )
 };
 
-export default Tile
+export default withRouter(Tile)

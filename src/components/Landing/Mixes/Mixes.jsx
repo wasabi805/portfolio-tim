@@ -8,8 +8,9 @@ import MediaPlayer from "./MediaPlayer";
 const Mixes = ({ trackListing, initialTrackImage })=>{
     return(
         <section id="mixes-section" className={ cx( sectionStyle , sectionPaddingSides) }>
+            <h2>Mixes</h2>
             <div className={ mixesWrapper }>
-                <h2>Mixes</h2>
+
 
             </div>
             <MediaPlayer

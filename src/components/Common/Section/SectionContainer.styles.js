@@ -38,6 +38,6 @@ export const sectionPaddingSides = css({
     padding: '0px 4%',
 
     [mediaQuery.deskTopWide]: {
-        padding: '5vh 10%'
+        // padding: '5vh 10%'
     }
 })

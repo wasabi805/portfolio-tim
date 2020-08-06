@@ -58,6 +58,7 @@ export const tileContextStyle = css({
     },
 
     "& h5":{
+        color: "#d3e0ed",
         fontSize: '3vw',
         margin: 0,
         textAlign: 'center',
