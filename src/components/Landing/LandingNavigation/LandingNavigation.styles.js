@@ -21,7 +21,6 @@ export const LandingNavigationSection = css({
         border: 'none',
         padding: '0!important',
         margin: '0 1em',
-        /*optional*/
         cursor: 'pointer',
         textDecoration: 'none',
         outline: 'none',
@@ -37,6 +36,7 @@ export const LandingNavigationSection = css({
 
             [mediaQuery.deskTopWide]: {
                 fontSize: '1.2vw',
+                width: '6em',
             }
         }
 

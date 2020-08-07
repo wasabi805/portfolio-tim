@@ -37,6 +37,7 @@ export const tileContextStyle = css({
     color: 'white',
     margin: 'auto',
     width: '100%',
+    marginLeft: '5%',
 
     [mediaQuery.mobileS]:{
         textAlign: 'center'
@@ -46,18 +47,7 @@ export const tileContextStyle = css({
         textAlign: 'start'
     },
 
-    "& h3":{
-        paddingTop: '25px',
-        fontSize: '5vw',
-        fontFamily: '',
-        marginLeft : '2rem',
-
-        [mediaQuery.deskTopWide]: {
-            fontSize: '2.6vw',
-        }
-    },
-
-    "& h5":{
+    "& strong":{
         color: "#d3e0ed",
         fontSize: '3vw',
         margin: 0,
@@ -68,11 +58,9 @@ export const tileContextStyle = css({
         }
     },
 
-    "& p":{
+    "& span":{
+        display :'block',
         fontFamily: 'Helvetica',
-        [mediaQuery.desktop]: {
-            marginLeft: '4rem',
-        }
     }
 });
 
@@ -83,9 +71,7 @@ export const tileGridContainerStyle = css({
 });
 
 export const tileGridItem = css({
-    // display: 'grid',
     padding: '20px',
-    zIndex: '20',
 
     [mediaQuery.tabletLandscape]:{
         display: 'grid',

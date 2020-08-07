@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { cx } from 'emotion';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom'
+import { withRouter , Link } from 'react-router-dom'
 import { ROUTE_TEST } from '../../constants/routeConstants';
 import { useMediaQuery } from 'react-responsive';
 import { BREAKPOINTS } from '../../media-queries/Breakpoints';
@@ -18,21 +18,21 @@ import {
 } from './Tile.styles';
 
 const TileImage =( {id, image : url, animation} )=>(
-    <div id={`${ id }-image`}
+    <picture id={`${ id }-image`}
          className={ cx(getTileImageStyle( url), animation) }
     >
-        <div className={ tileImageOverlay }/>
-    </div>)
+        <span className={ tileImageOverlay }/>
+    </picture>)
 
 const TileContext = ({id, title ,context , animation })=>(
-    <div id={`${id}-context`} className={ tileContextStyle }>
-        <h5 id={`${id}-title`}
+    <span id={`${id}-context`} className={ tileContextStyle }>
+        <strong id={`${id}-title`}
             className={cx(animation )}
             data-text={ title }
         >{ title }
-        </h5>
-        <p>{ context }</p>
-    </div>
+        </strong>
+        <span>{ context }</span>
+    </span>
 )
 
 const Tile = ({ content, history })=>{
@@ -56,14 +56,14 @@ const Tile = ({ content, history })=>{
                     { content.map( (project , idx)=> {
                         if( isEvenIndex(idx) ){
                             return (
-                                <div
-                                    key={ `project-${project.id}` }
-                                    id={ project.id }
-                                    className={ cx(tileGridItem, imgLeftStyle ,'WuTang' )}
-                                    onClick={()=>history.push( ROUTE_TEST )}
-                                    onMouseOver={ (e)=>onTileHover(e)}
-                                    onMouseOut={()=>setSelectedTile(null)}
-                                >
+                               <a href={'https://ebay.com'} style={{zIndex: 10}}>
+                                    <span
+                                        key={ `project-${project.id}` }
+                                        id={ project.id }
+                                        className={ cx(tileGridItem, imgLeftStyle )}
+                                        onMouseOver={ (e)=>onTileHover(e)}
+                                        onMouseOut={()=>setSelectedTile(null)}
+                                    >
                                     <TileImage
                                         id={ content[idx].id }
                                         image={ content[idx].image }
@@ -75,29 +75,32 @@ const Tile = ({ content, history })=>{
                                         context={ content[idx].context }
                                         animation={(selectedTile === project.id) && 'glitch' }
                                     />
-                                </div>
+                                </span>
+                               </a>
                             )
                         }
                         else{
                             return (
-                                <div
-                                    key={ `project-${project.id}` }
-                                    id={ project.id }
-                                    className={ cx(tileGridItem, imgRightStyle)}
-                                    onMouseOver={ (e)=>onTileHover(e)}
-                                >
-                                    <TileContext
-                                        id={ content[idx].id }
-                                        title={ content[idx].title }
-                                        context={ content[idx].context }
-                                        animation={(selectedTile === project.id) && 'glitch' }
-                                    />
-                                    <TileImage
-                                        id={ content[idx].id }
-                                        image={ content[idx].image }
-                                        animation={ (selectedTile === project.id) && zoomIMage }
-                                    />
-                                </div>
+                                <a href={'https://ebay.com'} style={{zIndex: 10}}>
+                                    <span
+                                        key={ `project-${project.id}` }
+                                        id={ project.id }
+                                        className={ cx(tileGridItem, imgRightStyle)}
+                                        onMouseOver={ (e)=>onTileHover(e)}
+                                    >
+                                        <TileContext
+                                            id={ content[idx].id }
+                                            title={ content[idx].title }
+                                            context={ content[idx].context }
+                                            animation={(selectedTile === project.id) && 'glitch' }
+                                        />
+                                        <TileImage
+                                            id={ content[idx].id }
+                                            image={ content[idx].image }
+                                            animation={ (selectedTile === project.id) && zoomIMage }
+                                        />
+                                    </span>
+                                </a>
                             )
                         }
                     }) }

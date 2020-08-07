@@ -18,10 +18,6 @@ export const sectionStyle= css({
 
     h3:{
         margin: 0,
-
-        [mediaQuery.tabletLandscape] :{
-            fontSize: '4.5rem',
-        }
     },
 
     position: 'relative',

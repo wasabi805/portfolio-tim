@@ -54,26 +54,11 @@ export const heroContext = css({
         paddingLeft: '4rem',
     },
 
-    "& h1":{
-        paddingLeft: '0.5rem',
-        paddingTop: '12vh',
-
-        [ mediaQuery.tabletLandscape ] :{
-            paddingLeft: 0
-        },
-
-        [ mediaQuery.desktop ] :{
-            paddingTop: 0
-        },
-    },
-
     "& h3":{
         paddingLeft: '1em',
         [ mediaQuery.tabletLandscape ] :{
             paddingLeft: 0
         },
-
-        fontSize : '5.5vw',
     }
 
 });
@@ -90,6 +75,7 @@ export const heroContextWrapper = css({
 export const heroImage = css({
     opacity : 0.5,
     position: 'absolute',
+    top:0,
 
     [mediaQuery.desktop]:{
         width: '60vw',
@@ -121,19 +107,40 @@ export const circleContainer = css({
 });
 
 export const jobTitle = css({
-    color: '#bb54a885',
+    // color: '#78426e',
+    color: '#bf43b8',
     fontSize: '4vw',
     position: 'absolute',
     width: '100%',
-    top:'50%',
+    top: '50%',
     bottom: '50%',
     left: 0,
+    zIndex: 10,
     right: 0,
     marginLeft: 'auto',
     marginRight: 'auto',
+    '-webkit-text-stroke-width': '1px',
+    '-webkit-text-stroke-color': '#502b49',
 });
 
-export const secondaryColor = css({
-    color:' #d3e0ed'
+export const headingLineTwo = css({
+    color:' #d3e0ed',
+    [mediaQuery.deskTopWide]:{
+        fontSize: '4vw',
+    }
 })
+
+export const headingLineFour = css({
+    color:' #d3e0ed',
+    [mediaQuery.deskTopWide]:{
+        fontSize: '4vw',
+    }
+})
+
+export const headingLineFive = css({
+    [mediaQuery.deskTopWide]:{
+        fontSize : '5.5vw',
+    }
+})
+
 
