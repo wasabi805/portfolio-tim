@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5000;
 const db = require('./config/keys').mongoURI;
 const tracks = require('./routes/api/tracks');
 const skills = require('./routes/api/skills');
+const projects = require('./routes/api/projects');
 
 mongoose.connect(db , { useNewUrlParser: true }).then(()=>{
     console.log('mongodb connect!')}).catch((err)=>{console.log(err);
@@ -21,16 +22,14 @@ app.use((req, res, next)=>{
 })
 
 app.use('/api/tracks', tracks); //see http://localhost:5000/api/tracks/test
-app.use('/api/skills', skills)
+app.use('/api/skills', skills);
+app.use('/api/projects', projects)
+
 
 // app.get('/', (req, res) => res.send('Welcome to the back end of my portfolio!'));
 //Serves static assets if in prod
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('build'));
-
-    // app.get('*', (req, res)=>{
-    //     res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
-    // })
 }
 
 app.listen(PORT, () => {

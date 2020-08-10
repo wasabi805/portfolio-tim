@@ -75,7 +75,7 @@ export const heroContextWrapper = css({
 export const heroImage = css({
     opacity : 0.5,
     position: 'absolute',
-    top:0,
+    // top:0,
 
     [mediaQuery.desktop]:{
         width: '60vw',
@@ -122,6 +122,13 @@ export const jobTitle = css({
     '-webkit-text-stroke-width': '1px',
     '-webkit-text-stroke-color': '#502b49',
 });
+
+export const headingLineOne = css({
+    color:' #d3e0ed',
+    [mediaQuery.deskTopWide]:{
+        fontSize: '4vw',
+    }
+})
 
 export const headingLineTwo = css({
     color:' #d3e0ed',

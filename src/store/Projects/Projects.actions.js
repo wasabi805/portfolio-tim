@@ -6,6 +6,8 @@ import { createActions } from 'redux-actions';
 
 const projectsActions = createActions(
     'SOME_PLACEHOLDER',
+    'FETCH_PROJECTS',
+    'UPDATE_PROJECTS_LIST'
 )
 
 export default projectsActions;

@@ -1,22 +1,14 @@
 import React from 'react';
-import { useSelector } from "react-redux";
-import selectors from '../../../store/Projects/Projects.selector'
 import { sectionStyle , sectionPaddingSides,  sectionPaddingBottom } from '../../Common/Section/SectionContainer.styles';
 import { cx } from 'emotion';
 import { projectsWrapper, projectsBackgroundImage, rotateImage } from './Projects.styles';
 import { useMediaQuery } from 'react-responsive';
 import { media } from "../../../enums/media";
-import { getNestedProperty } from "../../../helpers/objectUtils";
 import purpleCircuits from '../../../images/Purple-technology-data-internet-72 copy.jpg'
 import Tile from '../../Tile/Tile';
 
 
-const Projects = ()=>{
-    const projectsList = useSelector( state =>
-        getNestedProperty( selectors.projects(state) , 'projects'));
-
-    const mobileImages = useSelector( state=>
-        getNestedProperty( selectors.projects(state) , 'mobileImg') )
+const Projects = ({ projectsList, mobileImages })=>{
 
     const isMobile = useMediaQuery({ query: media.MOBILE })
     const isLaptop = useMediaQuery({ query: media.LAPTOP })

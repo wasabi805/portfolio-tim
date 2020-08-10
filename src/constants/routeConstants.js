@@ -8,3 +8,4 @@ export const ROUTE_TEST = '/ebay'
 
 export const TRACK_LIST = '/api/tracks/track-list';
 export const SKILLS_LIST = '/api/skills/skill-set';
+export const PROJECTS_LIST = '/api/projects/projects-list'

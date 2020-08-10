@@ -5,5 +5,5 @@ const getProjects = state => {
 }
 
 export default {
-    projects: state => getNestedProperty( state , 'projects'),
+    projects: state => getProjects( state ),
 }

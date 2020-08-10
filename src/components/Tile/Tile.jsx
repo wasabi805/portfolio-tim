@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { cx } from 'emotion';
 import PropTypes from 'prop-types';
-import { withRouter , Link } from 'react-router-dom'
-import { ROUTE_TEST } from '../../constants/routeConstants';
 import { useMediaQuery } from 'react-responsive';
 import { BREAKPOINTS } from '../../media-queries/Breakpoints';
 import { isEvenIndex } from '../../helpers/types';
@@ -17,12 +15,14 @@ import {
     imgRightStyle,
 } from './Tile.styles';
 
-const TileImage =( {id, image : url, animation} )=>(
-    <picture id={`${ id }-image`}
-         className={ cx(getTileImageStyle( url), animation) }
-    >
-        <span className={ tileImageOverlay }/>
-    </picture>)
+const TileImage =( {id, image : url, animation} )=>{
+    return(
+        <div id={`${ id }-image`}
+                 className={ cx(getTileImageStyle( url), animation) }
+        >
+            <span className={ tileImageOverlay }/>
+        </div>)
+}
 
 const TileContext = ({id, title ,context , animation })=>(
     <span id={`${id}-context`} className={ tileContextStyle }>
@@ -35,8 +35,7 @@ const TileContext = ({id, title ,context , animation })=>(
     </span>
 )
 
-const Tile = ({ content, history })=>{
-
+const Tile = ({ content})=>{
     const isMobile = useMediaQuery( BREAKPOINTS.MOBILE );
     const isTablet = useMediaQuery( BREAKPOINTS.TABLET )
     const isLaptop = useMediaQuery( BREAKPOINTS.LAPTOP );
@@ -53,10 +52,10 @@ const Tile = ({ content, history })=>{
         <div className={tileGridContainerStyle}>
             {(isLaptop || isTablet || isDesktop) && (
                 <>
-                    { content.map( (project , idx)=> {
+                    {content && content.map( (project , idx)=> {
                         if( isEvenIndex(idx) ){
                             return (
-                               <a href={'https://ebay.com'} style={{zIndex: 10}}>
+                               <a href={project.href} style={{zIndex: 10}}>
                                     <span
                                         key={ `project-${project.id}` }
                                         id={ project.id }
@@ -81,7 +80,7 @@ const Tile = ({ content, history })=>{
                         }
                         else{
                             return (
-                                <a href={'https://ebay.com'} style={{zIndex: 10}}>
+                                <a href={project.href} style={{zIndex: 10}}>
                                     <span
                                         key={ `project-${project.id}` }
                                         id={ project.id }
@@ -109,11 +108,9 @@ const Tile = ({ content, history })=>{
 
             {isMobile && (
                 <>
-                    {content.map( (project , idx)=> (
+                    {content && content.map( (project , idx)=> (
                         <div key={`project-${project.id}`} id={ project.id } className={ cx(tileGridItem, imgLeftStyle )}>
-                            { (project.hasMobileImg  ?
-                                <TileImage image={ content[idx].hasMobileImg }/> :
-                                <TileImage image={ content[idx].image }/> )}
+                            { (project.hasMobileImg  ? <TileImage image={ content[idx].hasMobileImg }/> : <TileImage image={ content[idx].image }/> )}
                             <TileContext title={ content[idx].title } context={ content[idx].context }/>
                         </div>
                     ))}
@@ -133,4 +130,4 @@ Tile.propTypes = {
     )
 };
 
-export default withRouter(Tile)
+export default Tile

@@ -12,6 +12,7 @@ import { heroSection, heroContainer , heroContextWrapper, heroContext, heroTitle
 
 const Hero = () => {
 
+    const isMobile = useMediaQuery({query: media.MOBILE})
     const isTablet = useMediaQuery({ query: media.LAPTOP })
     const isDesktop = useMediaQuery({query: media.DESKTOP})
 
