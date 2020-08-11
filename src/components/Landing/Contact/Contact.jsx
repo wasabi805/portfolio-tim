@@ -107,7 +107,7 @@ const Contact = ()=>{
                                 />
 
                                 <SvgIconSocial
-                                    link={''}
+                                    link={CONTACTS.github}
                                     icon={<GithubIcon/>}
                                     theme={{iconWrapper: socialIconWrapper}}
                                 />
