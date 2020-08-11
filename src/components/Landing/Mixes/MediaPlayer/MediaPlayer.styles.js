@@ -2,7 +2,7 @@ import { css } from 'emotion';
 
 export const mediaPlayerWrapper =css({
     display: 'flex',
-    paddingBottom: '17vh'
+    paddingBottom: '17vh',
 });
 
 export const contextContainer = css({
@@ -76,9 +76,10 @@ export const playlist = css({
 export const contextImage = css({
     flex: '1' ,
     position: 'relative',
+    minHeight: '73vh',
 
     "& img":{
-        height: 'auto',
+        height: '100%',
         width: '100%',
     }
 
