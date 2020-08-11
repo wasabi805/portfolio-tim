@@ -18,7 +18,7 @@ const Projects = ({ projectsList, mobileImages })=>{
                  className={ cx( sectionStyle, sectionPaddingSides,  sectionPaddingBottom ) }>
 
             <div className={ projectsWrapper }>
-                <h3>Projects</h3>
+                <h2>Projects</h2>
                 <div className={ cx(projectsBackgroundImage) }>
                     { isMobile && (
                         <>

@@ -64,7 +64,6 @@ export const playlist = css({
 });
 
 export const contextImage = css({
-    display: 'flex',
     flex: '1' ,
     position: 'relative',
 

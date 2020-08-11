@@ -54,18 +54,7 @@ export const heroContext = css({
         paddingLeft: '4rem',
     },
 
-    "& h3":{
-        paddingLeft: '1em',
-        [ mediaQuery.tabletLandscape ] :{
-            paddingLeft: 0
-        },
-    }
-
 });
-
-export const heroTitle = css({
-
-})
 
 export const heroContextWrapper = css({
     position: 'relative',
@@ -93,8 +82,15 @@ export const circleContainer = css({
     textAlign: 'center',
     marginBottom: '3em',
 
+    "& svg":{
+        width: '30%',
+        [mediaQuery.desktop]:{
+            width: '50%'
+        }
+    },
+
     [mediaQuery.desktop]:{
-        width: '68%'
+        width: '68%',
     },
 
     "& path":{
@@ -121,30 +117,85 @@ export const jobTitle = css({
     marginRight: 'auto',
     '-webkit-text-stroke-width': '1px',
     '-webkit-text-stroke-color': '#502b49',
+
+    [mediaQuery.desktop]:{
+        fontSize: '3vw',
+    },
+
 });
 
-export const headingLineOne = css({
-    color:' #d3e0ed',
-    [mediaQuery.deskTopWide]:{
-        fontSize: '4vw',
+export const heroTitle = css({
+    marginTop: '20vh',
+    marginLeft: '5vw',
+    fontSize: '3vw',
+    [mediaQuery.tabletPortrait]:{
+        marginTop: '25vh',
+    },
+    [mediaQuery.tabletLandscape]:{
+        marginTop: '34vh',
+    },
+
+    [mediaQuery.desktop]:{
+        padding: 0,
+        marginTop: '10vh',
+        marginLeft: '0vh'
     }
 })
 
 export const headingLineTwo = css({
     color:' #d3e0ed',
+    fontSize: '7vw',
+    paddingLeft: '5vw',
+
+    [mediaQuery.tabletPortrait]:{
+        fontSize: '7vw'
+    },
+
+    [mediaQuery.tabletLandscape]:{
+
+    },
+
+    [mediaQuery.desktop]:{
+        padding: 0,
+        fontSize: '6vw',
+    },
+
+    [mediaQuery.deskTopWide]:{
+        fontSize: '4vw',
+    }
+})
+
+export const headingLineThree = css({
+    color:' #d3e0ed',
+    fontSize: '7vw',
+    paddingLeft: '5vw',
+
+    [mediaQuery.tabletPortrait]:{
+        fontSize: '7vw'
+    },
+
+    [mediaQuery.desktop]:{
+        padding: 0,
+        fontSize: '6vw',
+    },
+
     [mediaQuery.deskTopWide]:{
         fontSize: '4vw',
     }
 })
 
 export const headingLineFour = css({
-    color:' #d3e0ed',
-    [mediaQuery.deskTopWide]:{
-        fontSize: '4vw',
-    }
-})
+    fontSize: '10vw',
+    paddingLeft: '5vw',
+    [mediaQuery.tabletPortrait]:{
+        fontSize: '11vw'
+    },
 
-export const headingLineFive = css({
+    [mediaQuery.desktop]:{
+        padding: 0,
+        fontSize: '8vw',
+    },
+
     [mediaQuery.deskTopWide]:{
         fontSize : '5.5vw',
     }

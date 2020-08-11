@@ -8,7 +8,7 @@ import { heroBackgroundImg } from '../Home/Home.styles';
 import { jobTitle , circleContainer } from "./Hero.styles";
 import StencilTim from '../../../images/tim-01-stencil-transparet.png';
 import { ReactComponent as QuarterCircle } from '../../../svg/quarter-circle.svg'
-import { heroSection, heroContainer , heroContextWrapper, heroContext, heroTitle, heroImage , headingLineTwo, headingLineFour, headingLineFive} from "./Hero.styles";
+import { heroSection, heroContainer , heroContextWrapper, heroContext, heroTitle, heroImage , headingLineTwo, headingLineThree, headingLineFour} from "./Hero.styles";
 
 const Hero = () => {
 
@@ -33,8 +33,8 @@ const Hero = () => {
                                 Hello
                             </h1>
                             <TitleText text={'My'} className={headingLineTwo}/>
-                            <TitleText text={'name is'} className={headingLineFour} />
-                            <TitleText text={'Timothy'} className={ headingLineFive }/>
+                            <TitleText text={'name is'} className={headingLineThree} />
+                            <TitleText text={'Timothy'} className={ headingLineFour }/>
 
                             <div className={circleContainer} >
                                 <QuarterCircle/>

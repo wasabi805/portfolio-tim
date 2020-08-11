@@ -81,7 +81,7 @@ export const footerContextWrapper = css({
     }
 });
 
-export const iconContainer = css({
+export const contactIconContainer = css({
     display: 'grid',
     placeItems: 'center',
     borderRadius: '50%',
@@ -92,13 +92,13 @@ export const iconContainer = css({
     background: '#62627e',
     zIndex: 1,
 
-    [mediaQuery.deskTopWide]:{
-        width: '3vw',
-        height:' 3vw',
+    [mediaQuery.desktop]:{
+        width: '2vw',
+        height:' 2vw',
     }
 });
 
-export const iconWrapper = css({
+export const contactSvgContainer = css({
     zIndex: 10,
     display: 'inline-block',
 });
@@ -109,14 +109,16 @@ export const iconWrapperText = css({
 
 export const contactEmail = css({
     fontSize: '12px',
+    margin: 'auto 0',
 
-    [ mediaQuery.deskTopWide ]: {
-        fontSize : '2vw',
+    [ mediaQuery.desktop ]: {
+        fontSize : '1.5vw',
     },
 })
 
 export const contactPhone =css({
     fontSize: '14px',
+    margin: 'auto 0',
 
     [ mediaQuery.deskTopWide ]: {
         fontSize : '1.5vw',
@@ -125,15 +127,17 @@ export const contactPhone =css({
 
 export const contactLocation = css({
     fontSize : '2.2vw',
+    margin: 'auto 0',
     [ mediaQuery.deskTopWide ]: {
         fontSize : '1.2vw',
+        color: 'red',
     },
 });
 
 export const contactInfo = css({
     display : 'flex',
     color: 'white',
-    border: '1px #00ffff12 cyan'
+    // border: '1px solid cyan'
 });
 
 export const socialMediaContainer = css({

@@ -1,18 +1,18 @@
 import React from 'react';
 import { cx , css } from 'emotion';
 import { sectionStyle } from '../../Common/Section/SectionContainer.styles';
+import { CONTACTS } from "../../../constants/contact";
 import {
-    sectionTitle ,
     footer,
     footerWrapper,
     footerContainer,
     footerContextContainer,
     footerContextWrapper,
-    iconWrapper,
+    contactSvgContainer,
     contactEmail,
     contactPhone,
     contactLocation,
-    iconContainer,
+    contactIconContainer,
     iconWrapperText,
     contactInfo,
     socialMediaContainer,
@@ -26,86 +26,89 @@ import {ReactComponent as TwitterIcon} from '../../../svg/twitter (1).svg';
 import {ReactComponent as LinkedInIcon} from '../../../svg/linkedin (3).svg';
 import {ReactComponent as GithubIcon} from '../../../svg/github.svg';
 
+import SvgIconInline from "../../Common/SvgIcon/SvgIconInline";
+import SvgIconSocial from '../../Common/SvgIcon/SvgIconSocial'
+
+const contactIconTheme = {
+    iconWrapper: [ contactInfo ],
+    svgWrapper: [ contactIconContainer ],
+    svgContainer: [contactSvgContainer],
+    iconText: [iconWrapperText ]
+}
+
+const locationTheme = {
+    ...contactIconTheme,
+    iconText: {...contactIconTheme.iconText , contactLocation}
+}
+const phoneTheme = {
+    ...contactIconTheme,
+    iconText: [...contactIconTheme.iconText, contactPhone ]
+}
+
+const emailTheme = {
+    ...contactIconTheme,
+    iconText: [...contactIconTheme.iconText, contactEmail ]
+}
+
 const Contact = ()=>{
     return(
         <section id="contact-section" className={cx(sectionStyle, footer )}>
             <div className={footerWrapper}>
                 <div className={ footerContainer }>
                     <h5>Contact</h5>
-                   <div className={footerContextContainer}>
-                       <div className={contactInfo}>
-                           <span className={ iconContainer }>
-                               <span className={iconWrapper}>
-                                   <PinSvg/>
-                               </span>
-                           </span>
-                           <p className={ cx(iconWrapperText, contactLocation)} >Tempe, Arizona</p>
-                       </div>
+                   <div className={ footerContextContainer }>
 
+                       <SvgIconInline
+                           theme={ locationTheme }
+                           text={CONTACTS.location}
+                           svg={<PinSvg/>}
+                       />
 
-                       <div className={contactInfo}>
-                           <span className={ iconContainer }>
-                               <span className={iconWrapper}>
-                                   <PhoneSvg/>
-                               </span>
-                           </span>
-                           <p className={ cx(iconWrapperText , contactPhone) }>650 464 9906</p>
-                       </div>
+                       <SvgIconInline
+                           theme={ phoneTheme }
+                           text={CONTACTS.phone}
+                           svg={<PhoneSvg/>}
+                       />
 
-                       <div className={contactInfo}>
-                           <span className={ iconContainer }>
-                               <span className={iconWrapper}>
-                                   <EmailSvg/>
-                               </span>
-                           </span>
-                           <p className={ cx(iconWrapperText , contactEmail) }>tim@proletdev.com</p>
-                       </div>
+                       <SvgIconInline
+                           theme={ emailTheme }
+                           text={CONTACTS.email}
+                           svg={<EmailSvg/>}
+                       />
                    </div>
+                </div>
 
                 {/* ----    -----   -----   -----   -----   ----    ----    ----    ----    ---   */}
 
-                </div>
-
                 <div className={ footerContainer } >
-                    <div style={{
-                        marginTop: '12px',
-                    }}>
+                    <div className={css({marginTop: '12px'})}>
                         <div className={ footerContextWrapper} >
-                            <h4>
-                                About Timothy...
-                            </h4>
 
-                            <p>
-                                I love Barro's pizza and playing Gears. Let's be internet BFFs.
-                            </p>
-
+                            <h4>About Timothy...</h4>
+                            <p>I love Barro's pizza and playing Gears. Let's be internet BFFs.</p>
                             <div className={ socialMediaContainer }  >
-                                <span className={ socialIconWrapper }>
-                                    <span>
-                                        <FacebookIcon/>
-                                    </span>
-                                </span>
 
-                                <span className={ socialIconWrapper }>
-                                    <span>
-                                        <TwitterIcon/>
-                                    </span>
-                                </span>
+                                <SvgIconSocial
+                                    icon={<FacebookIcon/>}
+                                    theme={{iconWrapper: socialIconWrapper}}
+                                />
 
-                                <span className={ socialIconWrapper }>
-                                    <span>
-                                        <LinkedInIcon/>
-                                    </span>
-                                </span>
+                                <SvgIconSocial
+                                    icon={<TwitterIcon/>}
+                                    theme={{iconWrapper: socialIconWrapper}}
+                                />
 
-                                <span className={ socialIconWrapper }>
-                                    <span>
-                                        <GithubIcon/>
-                                    </span>
-                                </span>
+                                <SvgIconSocial
+                                    icon={<LinkedInIcon/>}
+                                    theme={{iconWrapper: socialIconWrapper}}
+                                />
+
+                                <SvgIconSocial
+                                    icon={<GithubIcon/>}
+                                    theme={{iconWrapper: socialIconWrapper}}
+                                />
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
