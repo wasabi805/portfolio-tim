@@ -12,7 +12,6 @@ import { heroSection, heroContainer , heroContextWrapper, heroContext, heroTitle
 
 const Hero = () => {
 
-    const isMobile = useMediaQuery({query: media.MOBILE})
     const isTablet = useMediaQuery({ query: media.LAPTOP })
     const isDesktop = useMediaQuery({query: media.DESKTOP})
 
@@ -25,7 +24,7 @@ const Hero = () => {
                     <div className={ heroContextWrapper }>
                         <div className={ heroContext }>
 
-                            <div id={'removeMe'} className={heroImage}>
+                            <div className={heroImage}>
                                 {isTablet && <img src={ StencilTim } className={ heroBackgroundImg }/>}
                             </div>
 

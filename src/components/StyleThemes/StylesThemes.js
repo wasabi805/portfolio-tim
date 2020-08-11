@@ -5,7 +5,6 @@ export const theme = {
         colors:{
             primary: '#383434',
             secondary: "cyan",
-            tertiary: "lime",
             white: "white",
         },
         body:{

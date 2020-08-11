@@ -14,7 +14,7 @@ export const contextContainer = css({
 
 export const context = css({
     display : 'flex' ,
-    border : '1px solid lime',
+    // border : '1px solid lime',
 });
 
 export const timeline = css({
@@ -50,6 +50,7 @@ export const pButton = css({
 export const contextText = css({
     flex: '1' ,
     display: 'flex',
+    position: 'relative',
     background : '#00ffff4a',
 });
 
@@ -61,6 +62,15 @@ export const playlist = css({
     fontFamily: 'D-DINCondensed',
     listStyleType: 'none',
     overflow: 'auto',
+    width: '100%',
+
+    "-webkit-scrollbar" : {
+        display: 'none',
+    },
+
+    "-ms-overflow-style": 'none',
+    'scrollbar-width': 'none'
+
 });
 
 export const contextImage = css({
@@ -78,7 +88,7 @@ export const audioPlayer = css({
     display: 'flex',
     height: '60px',
     justifyContent: 'center',
-    border: 'solid',
+    borderTop: 'solid',
     background: '#222022'
 });
 

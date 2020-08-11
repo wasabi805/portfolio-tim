@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import { LandingNavigationSection } from './LandingNavigation.styles';
 
 const LandingNavigation = ({ sections })=>{
-
     const [activeLink , setActiveLink] = useState();
     const animateLink = (sec)=>{
-        console.log(sec)
         if(sec){
             setActiveLink( sec )
         }
@@ -15,7 +13,6 @@ const LandingNavigation = ({ sections })=>{
     const stopAnimation = ()=>{
         setActiveLink(null)
     };
-
 
     const scrollToRef = ( elemId ) => document.getElementById( elemId ).scrollIntoView({behavior: 'smooth'})
 

@@ -8,10 +8,16 @@ export const IntroContainer = css({
     }
 });
 
+export const ampersand = css({
+    fontFamily: 'Arial',
+    fontSize: '2vw'
+})
+
 export const IntroContext = css({
-    fontFamily: 'D-DINCondensed',
     display: 'grid',
     height: '20vw',
+    fontFamily: 'Morganite-SemiBold',
+    letterSpacing: '1px',
 
     "& h4":{
         fontFamily: 'Morganite-SemiBold',

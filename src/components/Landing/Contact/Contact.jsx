@@ -90,20 +90,24 @@ const Contact = ()=>{
 
                                 <SvgIconSocial
                                     icon={<FacebookIcon/>}
+                                    link={CONTACTS.facebook}
                                     theme={{iconWrapper: socialIconWrapper}}
                                 />
 
                                 <SvgIconSocial
                                     icon={<TwitterIcon/>}
+                                    link={''}
                                     theme={{iconWrapper: socialIconWrapper}}
                                 />
 
                                 <SvgIconSocial
+                                    link={CONTACTS.linkedin}
                                     icon={<LinkedInIcon/>}
                                     theme={{iconWrapper: socialIconWrapper}}
                                 />
 
                                 <SvgIconSocial
+                                    link={''}
                                     icon={<GithubIcon/>}
                                     theme={{iconWrapper: socialIconWrapper}}
                                 />
