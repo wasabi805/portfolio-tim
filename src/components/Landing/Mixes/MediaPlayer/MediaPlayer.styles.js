@@ -1,8 +1,17 @@
 import { css } from 'emotion';
+import {mediaQuery} from "../../../../media-queries/mediaQueries";
 
 export const mediaPlayerWrapper =css({
     display: 'flex',
-    paddingBottom: '17vh',
+    paddingBottom: '5vh',
+
+    [mediaQuery.tabletPortrait]:{
+        paddingBottom: '12vh',
+    },
+
+    [mediaQuery.desktop]:{
+        paddingBottom: '17vh',
+    }
 });
 
 export const contextContainer = css({
@@ -76,13 +85,16 @@ export const playlist = css({
 export const contextImage = css({
     flex: '1' ,
     position: 'relative',
-    minHeight: '73vh',
+    minHeight: '39vh',
 
     "& img":{
         height: '100%',
         width: '100%',
-    }
+    },
 
+    [mediaQuery.desktop]:{
+        minHeight: '73vh',
+    },
 });
 
 export const audioPlayer = css({

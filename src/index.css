@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 @font-face {
+  font-family: 'Cardo-Regular';
+  src: local('Cardo-Regular'), url(./fonts/Cardo-Regular.ttf) format('truetype');
+}
+
+@font-face {
   font-family: 'MonumentExtended-Regular';
   src: local('MonumentExtended-Regular'), url(./fonts/MonumentExtended-Regular.ttf) format('truetype');
 }

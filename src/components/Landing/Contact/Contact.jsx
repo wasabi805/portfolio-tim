@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx , css } from 'emotion';
+import { cx } from 'emotion';
 import { sectionStyle } from '../../Common/Section/SectionContainer.styles';
 import { CONTACTS } from "../../../constants/contact";
 import {
@@ -38,7 +38,7 @@ const contactIconTheme = {
 
 const locationTheme = {
     ...contactIconTheme,
-    iconText: {...contactIconTheme.iconText , contactLocation}
+    iconText: [...contactIconTheme.iconText , contactLocation ]
 }
 const phoneTheme = {
     ...contactIconTheme,
@@ -55,9 +55,8 @@ const Contact = ()=>{
         <section id="contact-section" className={cx(sectionStyle, footer )}>
             <div className={footerWrapper}>
                 <div className={ footerContainer }>
-                    <h5>Contact</h5>
                    <div className={ footerContextContainer }>
-
+                       <h4>Contact</h4>
                        <SvgIconInline
                            theme={ locationTheme }
                            text={CONTACTS.location}
@@ -81,12 +80,11 @@ const Contact = ()=>{
                 {/* ----    -----   -----   -----   -----   ----    ----    ----    ----    ---   */}
 
                 <div className={ footerContainer } >
-                    <div className={css({marginTop: '12px'})}>
+                    <div>
                         <div className={ footerContextWrapper} >
-
                             <h4>About Timothy...</h4>
-                            <p>I love Barro's pizza and playing Gears. Let's be internet BFFs.</p>
-                            <div className={ socialMediaContainer }  >
+                            <strong >I love Barro's pizza and playing Gears. Let's be internet BFFs.</strong>
+                            <span className={ socialMediaContainer }  >
 
                                 <SvgIconSocial
                                     icon={<FacebookIcon/>}
@@ -111,7 +109,7 @@ const Contact = ()=>{
                                     icon={<GithubIcon/>}
                                     theme={{iconWrapper: socialIconWrapper}}
                                 />
-                            </div>
+                            </span>
                         </div>
                     </div>
                 </div>

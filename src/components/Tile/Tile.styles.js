@@ -49,29 +49,45 @@ export const tileContextStyle = css({
 
     "& strong":{
         color: "#d3e0ed",
-        fontSize: '3vw',
+        fontSize: '4.4vw',
         margin: 0,
         textAlign: 'center',
+        display: 'block',
+
+        [mediaQuery.tabletPortrait]:{
+            fontSize: '3vw',
+        },
+
+        [mediaQuery.tabletLandscape]:{
+            fontSize: '3vw',
+        },
 
         [mediaQuery.desktop]:{
             fontSize: '2vw',
-        }
+            display: 'initial',
+        },
     },
 
     "& span":{
         display :'block',
         fontFamily: 'Helvetica',
+
+        [mediaQuery.tabletPortrait]:{
+            // width: '75%',
+            // margin: '0 auto',
+        },
     }
 });
 
 export const tileGridContainerStyle = css({
     display: 'grid',
-    gridGap : '2%',
+    gridGap : '6%',
     color: 'black',
 });
 
 export const tileGridItem = css({
     padding: '20px',
+    zIndex: 0,
 
     [mediaQuery.tabletLandscape]:{
         display: 'grid',

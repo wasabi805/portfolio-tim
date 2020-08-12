@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cx } from 'emotion';
+import { cx, css } from 'emotion';
 
 const SvgIconInline = ({ theme , svg, text })=>(
     <div className={cx(theme.iconWrapper)}>
-            <span className={ cx(theme.svgWrapper) }>
-                <span className={ cx( theme.svgContainer ) }>
+        <p className={ cx(theme.iconText , css({display: 'flex', alignItems: 'center' })) }>
+            <span className={ cx(theme.svgWrapper) } >
+                <span className={ cx( theme.svgContainer ) }  >
                     { svg }
                 </span>
-            </span>
-        <p className={ cx(theme.iconText) }>{ text }</p>
+            </span> { text }</p>
     </div>
 )
 

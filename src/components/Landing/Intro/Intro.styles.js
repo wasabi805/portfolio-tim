@@ -2,9 +2,10 @@ import { css } from 'emotion';
 import { mediaQuery } from '../../../media-queries/mediaQueries';
 
 export const IntroContainer = css({
-    paddingBottom: '8vh',
-    [mediaQuery.tabletPortrait]:{
-        paddingBottom: '15vh'
+    paddingBottom: '50%',
+
+    [mediaQuery.desktop]:{
+        paddingBottom: '20vh'
     }
 });
 
@@ -18,6 +19,7 @@ export const IntroContext = css({
     height: '20vw',
     fontFamily: 'Morganite-SemiBold',
     letterSpacing: '1px',
+    textAlign: 'center',
 
     "& h4":{
         fontFamily: 'Morganite-SemiBold',
@@ -25,7 +27,6 @@ export const IntroContext = css({
         marginTop: 0,
         marginRight: '10%',
         marginLeft: '10%',
-
 
         [mediaQuery.tabletPortrait]:{
             fontSize: '40px',
@@ -39,6 +40,7 @@ export const IntroContext = css({
             marginTop: '11%',
             marginLeft: '16%',
             paddingTop: '2vh',
+            textAlign: 'initial'
         },
 
         [mediaQuery.deskTopWide]: {

@@ -50,7 +50,7 @@ const Tile = ({ content})=>{
 
     return(
         <div className={tileGridContainerStyle}>
-            {(isLaptop || isTablet || isDesktop) && (
+            {(isLaptop || isDesktop) && (
                 <>
                     {content && content.map( (project , idx)=> {
                         if( isEvenIndex(idx) ){
@@ -106,7 +106,7 @@ const Tile = ({ content})=>{
                 </>
             )}
 
-            {isMobile && (
+            {(isMobile || isTablet) && (
                 <>
                     {content && content.map( (project , idx)=> (
                         <div key={`project-${project.id}`} id={ project.id } className={ cx(tileGridItem, imgLeftStyle )}>
